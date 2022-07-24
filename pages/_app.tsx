@@ -7,6 +7,7 @@ import MainThemeProvider from "../styles/MainThemeProvider";
 import { NavBar } from "../components/NavBar";
 import { userData } from "../utils/data";
 import { GlobalStyle } from "../styles/GlobalStyle";
+import { StyledPageContentWrapper } from "../components/StyledElements";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useThemeMode();
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <NavBar userData={userData} />
 
+      <StyledPageContentWrapper>
       <Component {...pageProps} userData={userData} />
+      </StyledPageContentWrapper>
     </MainThemeProvider>
   );
 }

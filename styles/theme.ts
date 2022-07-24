@@ -11,7 +11,7 @@ export const lightTheme = {
     bodyColor: "#666",
     titleColor: "#333",
     textMuted: "#aaa",
-    light: "#ffffff"
+    light: "#ffffff",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
