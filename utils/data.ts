@@ -1,8 +1,10 @@
-import Avatar from '/public/assets/images/RaphaelAvatar.png'
-import LinkedinIcon from '/public/assets/images/linkedin-brands.svg'
-import TwitterIcon from '/public/assets/images/twitter-brands.svg'
-import GithubIcon from '/public/assets/images/github-brands.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faParagraph, faCode } from '@fortawesome/free-solid-svg-icons'
 
+import Avatar from "/public/assets/images/RaphaelAvatar.png";
+import LinkedinIcon from "/public/assets/images/linkedin-brands.svg";
+import TwitterIcon from "/public/assets/images/twitter-brands.svg";
+import GithubIcon from "/public/assets/images/github-brands.svg";
 
 export const userData = {
   title: "Web Developer",
@@ -11,27 +13,34 @@ export const userData = {
   imgSrc: Avatar.src,
   socialLinks: [
     {
-      title: 'Github',
+      title: "Github",
       imgSrc: LinkedinIcon.src,
-      link: "https://github.com/raph941"
+      link: "https://github.com/raph941",
     },
     {
-      title: 'Linkedin',
+      title: "Linkedin",
       imgSrc: TwitterIcon.src,
-      link: "https://www.linkedin.com/in/raphaelehindero/"
+      link: "https://www.linkedin.com/in/raphaelehindero/",
     },
     {
-      title: 'Twitter',
+      title: "Twitter",
       imgSrc: GithubIcon.src,
-      link: "https://twitter.com/RaphaelEhindero"
-    }
+      link: "https://twitter.com/RaphaelEhindero",
+    },
   ],
   whatIDo: [
     {
-
+      icon: faCode,
+      title: "Software Development",
+      description: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content."
+    },
+    {
+      icon: faParagraph,
+      title: "Content Writing",
+      description:
+        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
     }
   ]
 };
 
-
-export type UserDataType = typeof userData
+export type UserDataType = typeof userData;
