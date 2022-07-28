@@ -7,6 +7,7 @@ const StyledH1 = styled.h1<{ theme: ThemeType }>`
   margin-top: 0;
   margin-bottom: 20px;
   color: ${({ theme }) => theme.variables.titleColor};
+  font-weight: bold;
 
   @media ${(props) => props.theme.mediaQueries.mobile} {
     font-size: 36px;
@@ -45,11 +46,11 @@ const StyledH2 = styled.h2<{ theme: ThemeType }>`
     bottom: 0;
   }
 
-  /* @media ${(props) => props.theme.mediaQueries.mobile} {
-    font-size: 36px;
-    line-height: 42px;
-    margin-bottom: 12px;
-  } */
+  &.weight-bold {
+    font-family: "Poppins",Helvetica,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
 `;
 
 const StyledH4 = styled.h4<{ theme: ThemeType }>`
@@ -58,19 +59,26 @@ const StyledH4 = styled.h4<{ theme: ThemeType }>`
   font-weight: 300;
   margin-bottom: 10px;
   color: ${({ theme }) => theme.variables.bodyColor};
+  font-weight: 600;
 `;
 
 const StyledBodyText = styled.p<{ theme: ThemeType }>`
   font-size: 14px;
   font-weight: 400;
   font-style: normal;
+  text-align: justify;
   line-height: 1.75em;
   color: ${({ theme }) => theme.variables.bodyColor};
 `;
 
-const Divider = styled.div<{ theme: ThemeType }>`
-  padding: 0 1.625rem;
+const SectionDivider = styled.div<{ theme: ThemeType }>`
+  /* padding: 0 1.625rem; */
+  height: 120px;
   width: 100%;
+
+  @media ${(props) => props.theme.mediaQueries.mobileTablet} {
+    height: 80px;
+  }
 `;
 
 const StyledPageContentWrapper = styled.div<{ theme: ThemeType }>`
@@ -101,6 +109,6 @@ export {
   StyledBodyText,
   StyledH4,
   StyledH2,
-  Divider,
+  SectionDivider,
   StyledPageContentWrapper,
 };

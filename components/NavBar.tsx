@@ -66,11 +66,6 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
               </Link>
             </NavItem>
             <NavItem className="px-sm-3">
-              <Link href="/resume/">
-                <span className="nav-link">Resume</span>
-              </Link>
-            </NavItem>
-            <NavItem className="px-sm-3">
               <Link className="nav-link" href="/portfolio/">
                 <span className="nav-link">Portfolio</span>
               </Link>

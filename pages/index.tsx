@@ -5,7 +5,7 @@ import { Button } from "reactstrap";
 import styled from "styled-components";
 import { WhatIDo } from "../components";
 import {
-  Divider,
+  SectionDivider,
   StyledBodyText,
   StyledH1,
   StyledH4,
@@ -107,7 +107,7 @@ const Home: FC<HeroProps> = (props) => {
             ))}
           </div>
 
-          <div className="d-flex flex-column flex-sm-row buttons-wrapper">
+          <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
             <Link href="" download>
               <span className="btn btn-secondary">Download CV</span>
             </Link>
@@ -118,7 +118,7 @@ const Home: FC<HeroProps> = (props) => {
         </div>
       </div>
 
-      <Divider />
+      <SectionDivider />
 
       <WhatIDo data={userData?.whatIDo} className="mt-5 w-100" />
     </StyledWrapper>
