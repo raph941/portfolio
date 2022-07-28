@@ -46,7 +46,7 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
       <ReactStrapNavbar expand="md" light>
         <NavbarBrand href="/">
           <Image
-            src={userData.imgSrc}
+            src={userData.meta.imgSrc}
             height={40}
             width={40}
             alt="Avatar"
