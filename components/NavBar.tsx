@@ -12,13 +12,15 @@ import {
 } from "reactstrap";
 import styled from "styled-components";
 import { UserDataType } from "../utils/data";
+import { ThemeType } from "../styles/theme";
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.div<{ theme: ThemeType }>`
+  z-index: 1000;
+  background-color: ${({ theme }) => theme.variables.slightlyTransparent};
   width: -webkit-fill-available;
-  position: absolute;
+  position: fixed;
 
   .navbar-collapse {
-    background: white;
     margin-right: -18px;
     margin-left: -16px;
     padding: 0px 16px;
@@ -42,7 +44,7 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
   const handleNavbarToggle = () => setIsOpen((current) => !current);
 
   return (
-    <StyledWrapper className="px-2 px-sm-5 py-3">
+    <StyledWrapper className="px-2 px-sm-5">
       <ReactStrapNavbar expand="md" light>
         <NavbarBrand href="/">
           <Image

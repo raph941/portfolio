@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faParagraph, faCode,  } from "@fortawesome/free-solid-svg-icons";
-import NodeJsIcon from "/public/assets/icons/node-js-brands.svg"
-import PythonIcon from "/public/assets/icons/python-brands.svg"
-import ReactIcon from "/public/assets/icons/react-brands.svg"
-import JavaScriptIcon from "/public/assets/icons/square-js-brands.svg"
-import DjangoIcon from "/public/assets/icons/django.svg"
-import TypeScriptIcon from "/public/assets/icons/typescript.svg"
-
+import { faParagraph, faCode } from "@fortawesome/free-solid-svg-icons";
+import NodeJsIcon from "/public/assets/icons/node-js-brands.svg";
+import PythonIcon from "/public/assets/icons/python-brands.svg";
+import ReactIcon from "/public/assets/icons/react-brands.svg";
+import JavaScriptIcon from "/public/assets/icons/square-js-brands.svg";
+import DjangoIcon from "/public/assets/icons/django.svg";
+import TypeScriptIcon from "/public/assets/icons/typescript.svg";
 
 import Avatar from "/public/assets/images/RaphaelAvatar.png";
 import LinkedinIcon from "/public/assets/images/linkedin-brands.svg";
@@ -54,30 +53,46 @@ export const userData = {
   ],
   techStack: [
     {
-      name: 'Python',
-      image: PythonIcon
+      name: "Python",
+      image: PythonIcon,
     },
     {
-      name: 'Django',
-      image: DjangoIcon
+      name: "Django",
+      image: DjangoIcon,
     },
     {
-      name: 'JavaScript',
-      image: JavaScriptIcon
+      name: "JavaScript",
+      image: JavaScriptIcon,
     },
     {
-      name: 'TypeScript',
-      image: TypeScriptIcon
+      name: "TypeScript",
+      image: TypeScriptIcon,
     },
     {
-      name: 'React',
-      image: ReactIcon
+      name: "React",
+      image: ReactIcon,
     },
     {
-      name: 'NodeJs',
-      image: NodeJsIcon
-    }
+      name: "NodeJs",
+      image: NodeJsIcon,
+    },
   ],
+  footer: {
+    links: [
+      {
+        label: 'Twitter',
+        link: ""
+      },
+      {
+        label: 'LinkedIn',
+        link: '',
+      },
+      {
+        label: 'Github',
+        link: ''
+      }
+    ]
+  }
 };
 
 export type UserDataType = typeof userData;
