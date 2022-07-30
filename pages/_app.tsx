@@ -4,10 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useThemeMode } from "../hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";
-import { NavBar } from "../components/NavBar";
 import { userData } from "../utils/data";
 import { GlobalStyle } from "../styles/GlobalStyle";
-import { StyledPageContentWrapper } from "../components/StyledElements";
+import { Footer, StyledPageContentWrapper, NavBar, SectionDivider } from "../components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useThemeMode();
@@ -18,8 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NavBar userData={userData} />
 
       <StyledPageContentWrapper>
-      <Component {...pageProps} userData={userData} />
+        <Component {...pageProps} userData={userData} />
       </StyledPageContentWrapper>
+
+      <SectionDivider />
+      <Footer data={userData?.footer} />
     </MainThemeProvider>
   );
 }

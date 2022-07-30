@@ -79,7 +79,10 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
   } = props;
 
   return (
-    <StyledWrapper className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper">
+    <StyledWrapper
+      className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper"
+      role="navigation"
+    >
       <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
         <div className="img-frame" />
       </div>
@@ -110,10 +113,17 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
 
         <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
           <Link href="" download>
-            <span className="btn btn-secondary">Download CV</span>
+            <span role="button" className="btn btn-secondary">
+              Download CV
+            </span>
           </Link>
           <Link href="/contact">
-            <span className="btn btn-outline-secondary">Contact</span>
+            <span
+              role="button"
+              className="btn btn-outline-secondary"
+            >
+              Contact
+            </span>
           </Link>
         </div>
       </div>
