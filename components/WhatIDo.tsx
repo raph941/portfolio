@@ -6,6 +6,7 @@ import { StyledBodyText, StyledH2, StyledH4 } from "./StyledElements";
 import { Col, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import Image from "next/image";
 
 interface WhatIDoProps {
   data: UserDataType["whatIDo"];
