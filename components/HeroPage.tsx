@@ -57,6 +57,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 
     .socials-wrapper,
     .buttons-wrapper {
+      gap: 0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -117,7 +118,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
 
         <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
           <Link href="" download>
-            <span role="button" className="btn btn-secondary mb-1 mb-sm-0">
+            <span role="button" className="btn btn-secondary mb-2 mb-sm-0">
               Download CV
             </span>
           </Link>

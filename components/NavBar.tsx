@@ -33,6 +33,15 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   .nav-link {
     cursor: pointer;
   }
+
+  .navbar-toggler {
+    font-size: 1rem;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 interface NavBarProps {
