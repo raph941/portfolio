@@ -117,7 +117,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
 
         <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
           <Link href="" download>
-            <span role="button" className="btn btn-secondary">
+            <span role="button" className="btn btn-secondary mb-1 mb-sm-0">
               Download CV
             </span>
           </Link>
