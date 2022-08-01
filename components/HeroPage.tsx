@@ -45,6 +45,10 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     min-height: calc(100vh - 106px);
 
+    .img-frame {
+      border: 12px solid ${({ theme }) => theme.variableslight};
+    }
+
     .img-frame,
     .hero-avatar {
       height: 250px;
@@ -87,7 +91,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         <div className="img-frame" />
       </div>
       <div className="d-flex flex-column justify-content-center flex-grow-1">
-        <StyledH4 className="title-text text-muted">{title}</StyledH4>
+        <StyledH4 className="title-text text-muted mt-3 mt-sm-0">{title}</StyledH4>
         <StyledH1 className="name-text">{name}</StyledH1>
         <StyledBodyText>{bio}</StyledBodyText>
 

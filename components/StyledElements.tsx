@@ -9,8 +9,8 @@ const StyledH1 = styled.h1<{ theme: ThemeType }>`
   color: ${({ theme }) => theme.variables.titleColor};
   font-weight: bold;
 
-  @media ${(props) => props.theme.mediaQueries.mobile} {
-    font-size: 36px;
+  @media ${(props) => props.theme.mediaQueries.mobileTablet} {
+    font-size: 32px;
     line-height: 42px;
     margin-bottom: 12px;
   }

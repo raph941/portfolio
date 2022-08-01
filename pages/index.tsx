@@ -23,7 +23,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 const Home: FC<HeroProps> = (props) => {
   const { userData } = props;
   const wrapperClassName =
-    "d-flex flex-column justify-content-center align-items-center px-sm-5 page-content pt-5 pt-sm-0";
+    "d-flex flex-column justify-content-center align-items-center px-sm-5 page-content pt-4 pt-sm-0";
 
   return (
     <StyledWrapper className={wrapperClassName}>
