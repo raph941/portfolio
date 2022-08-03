@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import classNames from "classnames";
 
 import { UserDataType } from "../utils/data";
-import { StyledBodyText, StyledH2, StyledH4 } from "./StyledElements";
+import { StyledBodyText, StyledSectionTitle, StyledH4 } from "./StyledElements";
 import { Col, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
 
 const TechStack: FC<TechStackProps> = ({ data, className }) => (
   <StyledWrapper className={classNames(className, "page-content")}>
-    <StyledH2 className="weight-bold">Daily Tools</StyledH2>
+    <StyledSectionTitle className="weight-bold">Daily Tools</StyledSectionTitle>
 
     <Row>
       {data?.map(({ image, name }, key) => (

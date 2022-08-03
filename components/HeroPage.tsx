@@ -11,7 +11,7 @@ import { UserDataType } from "../utils/data";
 import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 30px);
 
   .hero-avatar > img {
     height: 350px;

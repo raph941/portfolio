@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import { WhatIDo, HeroPage } from "../components";
+import { WhatIDo, HeroPage, About } from "../components";
 import { TechStack } from "../components/TechStack";
 import { ThemeType } from "../styles/theme";
 import { userData, UserDataType } from "../utils/data";
@@ -28,6 +28,8 @@ const Home: FC<HeroProps> = (props) => {
   return (
     <StyledWrapper className={wrapperClassName}>
       <HeroPage data={userData?.meta} />
+
+      <About data={userData?.about} techStack={userData?.techStack} />
 
       <WhatIDo data={userData?.whatIDo} className="section mt-5 w-100" />
 

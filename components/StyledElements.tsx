@@ -25,6 +25,32 @@ const StyledH2 = styled.h2<{ theme: ThemeType }>`
   padding-bottom: 7px;
   color: ${({ theme }) => theme.variables.titleColor};
 
+  &.weight-bold {
+    font-family: "Poppins",Helvetica,sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+`;
+
+const StyledH4 = styled.h4<{ theme: ThemeType }>`
+  font-size: 16px;
+  color: #aaa;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: ${({ theme }) => theme.variables.bodyColor};
+  font-weight: 600;
+`;
+
+
+const StyledSectionTitle = styled(StyledH2)`
+  display: inline-block;
+  position: relative;
+  font-size: 21px;
+  margin: 0 0 30px;
+  z-index: 1;
+  padding-bottom: 7px;
+  color: ${({ theme }) => theme.variables.titleColor};
+
   &:before {
     display: block;
     position: absolute;
@@ -51,15 +77,6 @@ const StyledH2 = styled.h2<{ theme: ThemeType }>`
     font-weight: 600;
     font-style: normal;
   }
-`;
-
-const StyledH4 = styled.h4<{ theme: ThemeType }>`
-  font-size: 16px;
-  color: #aaa;
-  font-weight: 300;
-  margin-bottom: 10px;
-  color: ${({ theme }) => theme.variables.bodyColor};
-  font-weight: 600;
 `;
 
 const StyledBodyText = styled.p<{ theme: ThemeType }>`
@@ -109,6 +126,7 @@ export {
   StyledBodyText,
   StyledH4,
   StyledH2,
+  StyledSectionTitle,
   SectionDivider,
   StyledPageContentWrapper,
 };
