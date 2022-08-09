@@ -1,3 +1,4 @@
+import { Button } from "reactstrap";
 import styled from "styled-components";
 import { ThemeType } from "../styles/theme";
 
@@ -121,6 +122,10 @@ const StyledPageContentWrapper = styled.div<{ theme: ThemeType }>`
   }
 `;
 
+const StyledButton = styled(Button)`
+
+`
+
 export {
   StyledH1,
   StyledBodyText,
@@ -129,4 +134,5 @@ export {
   StyledSectionTitle,
   SectionDivider,
   StyledPageContentWrapper,
+  StyledButton
 };

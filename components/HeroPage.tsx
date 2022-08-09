@@ -122,7 +122,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
               Download CV
             </span>
           </Link>
-          <Link href="/contact">
+          <Link href="/#contact">
             <span
               role="button"
               className="btn btn-outline-secondary"

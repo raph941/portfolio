@@ -14,11 +14,12 @@ interface WhatIDoProps {
 }
 
 const StyledWrapper = styled.div`
+  padding: 100px 0;
   .icon {
     font-size: 2.0625rem;
     margin-right: 20px;
   }
-`
+`;
 
 const WhatIDo: FC<WhatIDoProps> = ({ data, className }) => (
   <StyledWrapper className={classNames(className, "page-content")}>

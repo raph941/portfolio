@@ -33,7 +33,6 @@ const StyledWrapper = styled.div`
   .stack-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-      /* gap: 0px 10px;  */
     padding: 0px;
     margin: 20px 0px 0px;
     overflow: hidden;
@@ -42,7 +41,6 @@ const StyledWrapper = styled.div`
     li {
       display: flex;
       align-items: center;
-      /* justify-content: center; */
       padding: 10px;
     }
 
@@ -53,7 +51,7 @@ const StyledWrapper = styled.div`
 `;
 
 const About: React.FunctionComponent<AboutProps> = ({ data, techStack }) => (
-  <StyledWrapper>
+  <StyledWrapper id="about">
     <StyledSectionTitle className="about-title">About me</StyledSectionTitle>
 
     <StyledBodyText className="text-justify about-text">

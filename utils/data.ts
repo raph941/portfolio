@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faParagraph, faCode } from "@fortawesome/free-solid-svg-icons";
 import NodeJsIcon from "/public/assets/icons/node-js-brands.svg";
 import PythonIcon from "/public/assets/icons/python-brands.svg";
@@ -15,23 +14,23 @@ import GithubIcon from "/public/assets/images/github-brands.svg";
 export const userData = {
   meta: {
     title: "<Web Developer />",
-    name: "Raphael Ehindero",
+    name: "I'm Raphael Ehindero",
     bio: "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.  ",
     imgSrc: Avatar.src,
     socialLinks: [
       {
         title: "Github",
-        imgSrc: LinkedinIcon.src,
+        imgSrc: GithubIcon.src,
         link: "https://github.com/raph941",
       },
       {
         title: "Linkedin",
-        imgSrc: TwitterIcon.src,
+        imgSrc: LinkedinIcon.src,
         link: "https://www.linkedin.com/in/raphaelehindero/",
       },
       {
         title: "Twitter",
-        imgSrc: GithubIcon.src,
+        imgSrc: TwitterIcon.src,
         link: "https://twitter.com/RaphaelEhindero",
       },
     ],
@@ -97,7 +96,21 @@ export const userData = {
   projects: {},
   about: {
     text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
-    recentStack: ['JavaScript (Es6+)', 'TypeScript', 'React', 'Node.js', 'Python', 'Django']
+    recentStack: [
+      "JavaScript (Es6+)",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Python",
+      "Django",
+    ],
+  },
+  contact: {
+    email: "raph941@gmail.com",
+    title: "Let's chat",
+    subtitle:
+      "My inbox/DMs are alway opens, wether you have a question or want to connect. Feel free to reach out on Linkedin or simply send me mail.",
+    actionText: "Say hello"
   },
 };
 

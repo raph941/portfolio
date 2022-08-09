@@ -44,6 +44,10 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   }
 `;
 
+const StyledNavItem = styled(NavItem)`
+  font-weight: 500;
+`
+
 interface NavBarProps {
   userData: UserDataType;
 }
@@ -71,26 +75,26 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
           navbar
         >
           <Nav navbar>
-            <NavItem className="px-sm-3">
-              <Link className="nav-link" href="/about/">
+            <StyledNavItem className="px-sm-3">
+              <Link className="nav-link" href="/#about">
                 <span className="nav-link">About</span>
               </Link>
-            </NavItem>
-            <NavItem className="px-sm-3">
+            </StyledNavItem>
+            <StyledNavItem className="px-sm-3">
               <Link className="nav-link" href="/portfolio/">
                 <span className="nav-link">Portfolio</span>
               </Link>
-            </NavItem>
-            <NavItem className="px-sm-3">
+            </StyledNavItem>
+            <StyledNavItem className="px-sm-3">
+              <Link className="nav-link" href="/#contact">
+                <span className="nav-link">Contact</span>
+              </Link>
+            </StyledNavItem>
+            <StyledNavItem className="px-sm-3">
               <Link className="nav-link" href="/blog/">
                 <span className="nav-link">Blog</span>
               </Link>
-            </NavItem>
-            <NavItem className="px-sm-3">
-              <Link className="nav-link" href="/contact/">
-                <span className="nav-link">Contact</span>
-              </Link>
-            </NavItem>
+            </StyledNavItem>
           </Nav>
         </Collapse>
       </ReactStrapNavbar>

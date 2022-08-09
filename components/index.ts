@@ -5,3 +5,4 @@ export { HeroPage } from "./HeroPage";
 export { TechStack } from "./TechStack";
 export { Footer } from "./Footer"
 export { About } from "./About"
+export { Contact } from "./Contact"

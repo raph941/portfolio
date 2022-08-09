@@ -20,7 +20,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} userData={userData} />
       </StyledPageContentWrapper>
 
-      <SectionDivider />
       <Footer data={userData?.footer} />
     </MainThemeProvider>
   );
