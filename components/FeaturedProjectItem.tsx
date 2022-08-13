@@ -72,8 +72,8 @@ const FeaturedProjects: React.FunctionComponent<FeaturedProjectsprop> = ({
           ))}
         </div>
         <div className="links-wrap">
-            {codehost && <Image />}
-            {liveLink && <Image  />}
+            {/* {codehost && <Image />}
+            {liveLink && <Image  />} */}
         </div>
       </div>
     </StyledWrapper>
