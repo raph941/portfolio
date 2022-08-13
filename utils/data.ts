@@ -112,6 +112,44 @@ export const userData = {
       "My inbox/DMs are alway opens, wether you have a question or want to connect. Feel free to reach out on Linkedin or simply send me mail.",
     actionText: "Say hello"
   },
+  portfolio: {
+    featuredProjects: [
+      {
+        title: "Dabafinance",
+        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ['React', 'Typescript', 'Python'],
+        liveLink: "",
+        codehost: "",
+      },
+      {
+        title: "Dabafinance",
+        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ['React', 'Typescript', 'Python'],
+        liveLink: "",
+        codehost: "",
+      },
+    ],
+    otherProjects: [
+      {
+        title: "Dabafinance",
+        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ['React', 'Typescript', 'Python'],
+        liveLink: "",
+        codehost: "",
+      },
+      {
+        title: "Dabafinance",
+        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ['React', 'Typescript', 'Python'],
+        liveLink: "",
+        codehost: "",
+      },
+    ]
+  }
 };
 
 export type UserDataType = typeof userData;

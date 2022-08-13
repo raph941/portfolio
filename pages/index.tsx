@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Button } from "reactstrap";
 import styled from "styled-components";
 import { WhatIDo, HeroPage, About, Contact } from "../components";
+import { Portfolio } from "../components/Portfolio";
 import { TechStack } from "../components/TechStack";
 import { ThemeType } from "../styles/theme";
 import { userData, UserDataType } from "../utils/data";
@@ -34,6 +35,8 @@ const Home: FC<HeroProps> = (props) => {
       <WhatIDo data={userData?.whatIDo} className="section mt-5 w-100" />
 
       {/* <TechStack data={userData?.techStack} className="section" /> */}
+
+      <Portfolio data={userData?.portfolio} />
 
       <Contact data={userData?.contact} className="section" />
     </StyledWrapper>
