@@ -13,6 +13,8 @@ export const lightTheme = {
     textMuted: "#aaa",
     light: "#ffffff",
     slightlyTransparent: "#ffffff89",
+    darkText: "#222",
+    thetiary: "#9688ea",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
