@@ -65,16 +65,12 @@ const FeaturedProjects: React.FunctionComponent<FeaturedProjectsprop> = ({
           ))}
         </div>
         <div className="links-wrap">
-          {/* {codehost && <Image />}
-            {liveLink && <Image  />} */}
         </div>
       </div>
 
       <div className="image-wrap position-relative">
         <Image
           src={image}
-          //   height={200}
-          //   width={200}
           alt={title}
           layout="fill"
           objectFit="contain"
