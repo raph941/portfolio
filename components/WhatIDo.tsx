@@ -14,6 +14,7 @@ interface WhatIDoProps {
 }
 
 const StyledWrapper = styled.div`
+  min-height: 60vh;
   padding: 100px 0;
   .icon {
     font-size: 2.0625rem;

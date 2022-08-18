@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Button } from "reactstrap";
 import styled from "styled-components";
 import { WhatIDo, HeroPage, About, Contact } from "../components";
+import { PortfolioPreview } from "../components/PortfolioPreview";
 import { TechStack } from "../components/TechStack";
 import { ThemeType } from "../styles/theme";
 import { userData, UserDataType } from "../utils/data";
