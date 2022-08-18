@@ -113,6 +113,9 @@ export const userData = {
     actionText: "Say hello"
   },
   portfolio: {
+    categories: [
+      'All', 'Frontend', 'Fullstack', 'Python', 'JavaScript'
+    ],
     featuredProjects: [
       {
         title: "Dabafinance",
@@ -120,7 +123,7 @@ export const userData = {
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
-        codehost: "",
+        codeHost: "",
       },
       {
         title: "Dabafinance",
@@ -128,7 +131,7 @@ export const userData = {
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
-        codehost: "",
+        codeHost: "",
       },
     ],
     otherProjects: [
@@ -138,7 +141,7 @@ export const userData = {
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
-        codehost: "",
+        codeHost: "",
       },
       {
         title: "Dabafinance",
@@ -146,7 +149,7 @@ export const userData = {
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
-        codehost: "",
+        codeHost: "",
       },
     ]
   }

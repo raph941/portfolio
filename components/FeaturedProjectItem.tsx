@@ -20,6 +20,7 @@ interface FeaturedProjectsprop {
 
 const StyledWrapper = styled.div`
   .image-wrap {
+    grid-column: 1 / 8;
     width: 100%;
     object-fit: contain;
     height: 300px;
@@ -27,6 +28,7 @@ const StyledWrapper = styled.div`
 
   .text-content-wrap {
     text-align: right;
+    z-index: 10;
   }
 
   .description-card {
@@ -51,17 +53,8 @@ const FeaturedProjects: React.FunctionComponent<FeaturedProjectsprop> = ({
   title,
 }) => {
   return (
-    <StyledWrapper className="d-flex align-items-center justify-content-center flex-column flex-sm-row gap-4">
-      <div className="image-wrap position-relative">
-        <Image
-          src={image}
-          //   height={200}
-          //   width={200}
-          alt={title}
-          layout="fill"
-        />
-      </div>
-
+    <StyledWrapper className="d-flex align-items-center justify-content-center flex-column flex-sm-row
+    ]">
       <div className="d-flex flex-column text-content-wrap align-items-end">
         <StyledH2 className="mb-2">{title}</StyledH2>
         <StyledH4 className="description-card">{description}</StyledH4>
@@ -72,9 +65,20 @@ const FeaturedProjects: React.FunctionComponent<FeaturedProjectsprop> = ({
           ))}
         </div>
         <div className="links-wrap">
-            {/* {codehost && <Image />}
+          {/* {codehost && <Image />}
             {liveLink && <Image  />} */}
         </div>
+      </div>
+
+      <div className="image-wrap position-relative">
+        <Image
+          src={image}
+          //   height={200}
+          //   width={200}
+          alt={title}
+          layout="fill"
+          objectFit="contain"
+        />
       </div>
     </StyledWrapper>
   );

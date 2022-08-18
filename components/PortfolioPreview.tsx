@@ -4,14 +4,14 @@ import { UserDataType } from "../utils/data";
 import { FeaturedProjects } from "./FeaturedProjectItem";
 import { StyledSectionTitle } from "./StyledElements";
 
-interface Portfolioprop {
+interface PortfolioPreviewprop {
   data: UserDataType["portfolio"];
 }
 
 const StyledWrapper = styled.div``;
 
-const Portfolio: React.FunctionComponent<Portfolioprop> = ({ data }) => {
-  const { featuredProjects, otherProjects } = data || {};
+const PortfolioPreview: React.FunctionComponent<PortfolioPreviewprop> = ({ data }) => {
+  const { featuredProjects } = data || {};
 
   return (
     <StyledWrapper>
@@ -28,4 +28,4 @@ const Portfolio: React.FunctionComponent<Portfolioprop> = ({ data }) => {
   );
 };
 
-export { Portfolio };
+export { PortfolioPreview };
