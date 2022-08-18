@@ -1,14 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
 import { FC } from "react";
-import { Button } from "reactstrap";
 import styled from "styled-components";
 import { WhatIDo, HeroPage, About, Contact } from "../components";
-import { PortfolioPreview } from "../components/PortfolioPreview";
-import { TechStack } from "../components/TechStack";
 import { ThemeType } from "../styles/theme";
-import { userData, UserDataType } from "../utils/data";
-import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
+import { UserDataType } from "../utils/data";
 
 interface HeroProps {
   userData: UserDataType;
