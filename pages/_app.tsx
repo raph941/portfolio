@@ -1,6 +1,9 @@
 import type { AppProps } from "next/app";
 
+import "antd/dist/antd.css"
+
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 import { useThemeMode } from "../hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";

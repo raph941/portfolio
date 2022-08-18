@@ -124,6 +124,7 @@ export const userData = {
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
         codeHost: "",
+        category: ['frontend', 'backend', 'fullstack']
       },
       {
         title: "Dabafinance",
@@ -132,6 +133,7 @@ export const userData = {
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
         codeHost: "",
+        category: ['frontend']
       },
     ],
     otherProjects: [
@@ -142,14 +144,25 @@ export const userData = {
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
         codeHost: "",
+        category: ['fullstack']
       },
       {
-        title: "Dabafinance",
+        title: "Dabafinance Last",
         image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
         stacks: ['React', 'Typescript', 'Python'],
         liveLink: "",
         codeHost: "",
+        category: ['frontend']
+      },
+      {
+        title: "Dabafinance Last",
+        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ['React', 'Typescript', 'Python'],
+        liveLink: "",
+        codeHost: "",
+        category: ['backend', 'python']
       },
     ]
   }

@@ -29,10 +29,12 @@ interface PortfolioItemProps {
   codeHost: string;
   liveLink: string;
   icon?: string;
+  onClick?: () => void;
 }
 
 const StyledWrapper = styled.div`
   box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.282);
+  max-width: 343px;
 
   .card-header,
   .card-body,
@@ -58,9 +60,10 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
   stacks,
   title,
   icon,
+  onClick,
 }) => {
   return (
-    <StyledWrapper as={Card} className="card" role="button">
+    <StyledWrapper onClick={onClick} as={Card} className="card" role="button">
       <CardHeader>
         <div className="d-flex justify-content-between links">
           <Image src={icon || FolderIcon} width={30} height={30} alt="Folder" />
@@ -91,7 +94,9 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
         <CardText>{description}</CardText>
         <CardFooter>
           {stacks?.map((value, index) => (
-            <small className="mr-2" key={index}>{value}</small>
+            <small className="mx-2" key={index}>
+              {value}
+            </small>
           ))}
         </CardFooter>
       </CardBody>

@@ -36,8 +36,6 @@ const Home: FC<HeroProps> = (props) => {
 
       {/* <TechStack data={userData?.techStack} className="section" /> */}
 
-      <PortfolioPreview data={userData?.portfolio} />
-
       <Contact data={userData?.contact} className="section" />
     </StyledWrapper>
   );
