@@ -27,21 +27,27 @@ const StyledH2 = styled.h2<{ theme: ThemeType }>`
   color: ${({ theme }) => theme.variables.titleColor};
 
   &.weight-bold {
-    font-family: "Poppins",Helvetica,sans-serif;
+    font-family: "Poppins", Helvetica, sans-serif;
     font-weight: 600;
     font-style: normal;
   }
 `;
 
+const StyledH3 = styled.h4<{ theme: ThemeType }>`
+  font-size: 20px;
+  color: #aaa;
+  margin-bottom: 10px;
+  color: ${({ theme }) => theme.variables.bodyColor};
+  font-weight: 800;
+`;
+
 const StyledH4 = styled.h4<{ theme: ThemeType }>`
   font-size: 16px;
   color: #aaa;
-  font-weight: 300;
   margin-bottom: 10px;
   color: ${({ theme }) => theme.variables.bodyColor};
   font-weight: 600;
 `;
-
 
 const StyledSectionTitle = styled(StyledH2)`
   display: inline-block;
@@ -74,7 +80,7 @@ const StyledSectionTitle = styled(StyledH2)`
   }
 
   &.weight-bold {
-    font-family: "Poppins",Helvetica,sans-serif;
+    font-family: "Poppins", Helvetica, sans-serif;
     font-weight: 600;
     font-style: normal;
   }
@@ -122,9 +128,15 @@ const StyledPageContentWrapper = styled.div<{ theme: ThemeType }>`
   }
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)``;
 
-`
+const BlogItemsWrapper = styled.div`
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr;  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 2rem;
+  row-gap: 2rem;
+`;
 
 export {
   StyledH1,
@@ -134,5 +146,7 @@ export {
   StyledSectionTitle,
   SectionDivider,
   StyledPageContentWrapper,
-  StyledButton
+  StyledButton,
+  BlogItemsWrapper,
+  StyledH3,
 };

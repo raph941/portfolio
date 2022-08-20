@@ -13,6 +13,8 @@ export const lightTheme = {
     textMuted: "#aaa",
     light: "#ffffff",
     slightlyTransparent: "#ffffff89",
+    darkText: "#222",
+    thetiary: "#9688ea",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -35,7 +37,10 @@ export const darkTheme = {
     titleColor: "#333",
     textMuted: "#aaa",
     light: "#444444",
-    slightlyTransparent: "#ffffff89", // TODO: get dark variant
+    // TODO: get dark variant for the following
+    slightlyTransparent: "#ffffff89",
+    darkText: "#222",
+    thetiary: "#9688ea",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

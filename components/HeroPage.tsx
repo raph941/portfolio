@@ -39,14 +39,11 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     margin: 3rem 0;
   }
 
-  .hero-wrapper {
-  }
-
   @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     min-height: calc(100vh - 106px);
 
     .img-frame {
-      border: 12px solid ${({ theme }) => theme.variableslight};
+      border: 12px solid ${({ theme }) => theme.variables.light};
     }
 
     .img-frame,
@@ -92,7 +89,9 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         <div className="img-frame" />
       </div>
       <div className="d-flex flex-column justify-content-center flex-grow-1">
-        <StyledH4 className="title-text text-muted mt-3 mt-sm-0">{title}</StyledH4>
+        <StyledH4 className="title-text text-muted mt-3 mt-sm-0">
+          {title}
+        </StyledH4>
         <StyledH1 className="name-text">{name}</StyledH1>
         <StyledBodyText>{bio}</StyledBodyText>
 
@@ -123,10 +122,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
             </span>
           </Link>
           <Link href="/#contact">
-            <span
-              role="button"
-              className="btn btn-outline-secondary"
-            >
+            <span role="button" className="btn btn-outline-secondary">
               Contact
             </span>
           </Link>

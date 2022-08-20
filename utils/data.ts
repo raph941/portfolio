@@ -110,7 +110,51 @@ export const userData = {
     title: "Let's chat",
     subtitle:
       "My inbox/DMs are alway opens, wether you have a question or want to connect. Feel free to reach out on Linkedin or simply send me mail.",
-    actionText: "Say hello"
+    actionText: "Say hello",
+  },
+  blogs: {
+    featured: {
+      title: "The Hello world project",
+      date: "04 Dec 2019",
+      image:
+        "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
+      category: "Codeing",
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+    },
+    otherBlogs: [
+      {
+        title: "The Hello world project",
+        date: "04 Dec 2019",
+        image:
+          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
+        category: "Codeing",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+      },
+      {
+        title: "The Hello world project",
+        date: "04 Dec 2019",
+        image:
+          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
+        category: "Codeing",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+      },
+      {
+        title: "The Hello world project",
+        date: "04 Dec 2019",
+        image:
+          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
+        category: "Codeing",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+      },
+      {
+        title: "The Hello world project",
+        date: "04 Dec 2019",
+        image:
+          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
+        category: "Codeing",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+      },
+    ],
   },
   portfolio: {
     categories: [
