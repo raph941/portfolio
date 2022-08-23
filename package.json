@@ -3,12 +3,12 @@
     "version": "1.0.0",
     "description": "Raphael Ehindero's portfolio",
     "scripts": {
-      "start:server": "npm run start --prefix server",
+      "start:backend": "npm run start --prefix backend",
       "start:frontend": "npm run start --prefix frontend",
-      "start": "npm run start:server && npm run start:frontend",
-      "build": "npm run build --prefix frontend && npm run start --prefix server",
+      "start": "npm run start:backend && npm run start:frontend",
+      "build": "npm run build --prefix frontend && npm run start --prefix backend",
 
-      "dev:server": "yarn --cwd server develop",
+      "dev:backend": "yarn --cwd backend develop",
       "dev:frontend": "wait-on http://localhost:1337/admin && yarn --cwd frontend dev",
       "dev": "cross-env FORCE_COLOR=1 npm-run-all -l -p dev:*"
     },
