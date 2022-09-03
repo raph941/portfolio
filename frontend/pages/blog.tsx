@@ -9,6 +9,7 @@ import {
 import { BlogItem } from "../components/BlogItem";
 import { FeaturedBlogItem } from "../components/FeaturedBlogItem";
 import { UserDataType } from "../utils/data";
+import { GlobalContext } from "./_app";
 
 const StyledWrapper = styled.div`
   min-height: calc(100vh - 120px);
@@ -33,6 +34,9 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ userData }) => {
   const {
     blogs: { featured, otherBlogs },
   } = userData;
+
+  const value = React.useContext(GlobalContext)
+  console.log({value})
 
   return (
     <StyledWrapper className="">

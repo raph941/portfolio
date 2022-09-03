@@ -10,4 +10,8 @@ declare namespace DTO {
             
         }
     }
+
+    export interface PageProps {
+        userMeta: any
+    }
 }

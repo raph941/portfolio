@@ -14,18 +14,20 @@ import {
   SectionDivider,
 } from "../components";
 import { NextComponentType, NextPageContext } from "next";
+import { makeRequest } from "../lib/request";
 
 export const GlobalContext = React.createContext({});
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useThemeMode();
+  console.log({ pageProps });
 
   return (
     <MainThemeProvider theme={theme}>
       <GlobalStyle />
       <NavBar userData={userData} />
 
-      <GlobalContext.Provider value={global}>
+      <GlobalContext.Provider value={pageProps?.userMeta}>
         <StyledPageContentWrapper>
           <Component {...pageProps} userData={userData} />
         </StyledPageContentWrapper>
@@ -38,11 +40,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 MyApp.getInitialProps = async (ctx: NextPageContext) => {
   // Portfolio meta data
-  let userMeta = {};
+  const userMeta = await makeRequest({
+    path: "/metadata",
+    urlParamsObject: { populate: "*" },
+  });
+
 
   return {
     pageProps: {
-      userMeta: userMeta
+      userMeta: userMeta?.data?.attributes,
     },
   };
 };

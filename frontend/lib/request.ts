@@ -1,4 +1,5 @@
 import qs from "qs";
+import { message } from "antd";
 
 interface MakeRequestProps {
   /**
@@ -20,31 +21,33 @@ export const makeRequest = async ({
   urlParamsObject = {},
   options = {},
 }: MakeRequestProps) => {
-    const authorizationToken = process.env.API_TOKEN
+  const authorizationToken = process.env.API_TOKEN;
   // Merge default and user options
   const mergedOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: authorizationToken ? `Bearer ${authorizationToken}` : ''
+      Authorization: authorizationToken ? `Bearer ${authorizationToken}` : "",
     },
     ...options,
   };
 
   // Build request URL
   const parsedQueryString = qs.stringify(urlParamsObject);
-  const queryString = parsedQueryString ? `?${parsedQueryString}` : ""
+  const queryString = parsedQueryString ? `?${parsedQueryString}` : "";
 
   // "http://localhost:1337" - Strapi's default localhost address
-  const requestUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${path}${queryString}`
+  const requestUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api${path}${queryString}`;
 
   // Trigger API call
   const response = await fetch(requestUrl, mergedOptions);
 
+  const data = await response.json();
+
   // Handle response
   if (!response.ok) {
-    console.error(response.statusText);
-    throw new Error(`An error occured please try again`);
+    message.error(data?.error?.message)
+    // throw new Error(`An error occured please try again`);
   }
-  const data = await response.json();
+
   return data;
 };

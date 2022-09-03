@@ -10,7 +10,7 @@ import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../utils/data";
 import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
 
-const StyledWrapper = styled.div<{ theme: ThemeType }>`
+const StyledWrapper = styled.div<{ theme: ThemeType; imgSrc: string }>`
   min-height: calc(100vh - 30px);
 
   .hero-avatar > img {
@@ -23,6 +23,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     border: 20px solid ${({ theme }) => theme.variableslight};
     border-radius: 50%;
     background: url(${RaphaelAvatar.src});
+    /* background: ${({ imgSrc }) => `url(${imgSrc})`}; */
     background-size: cover;
   }
 
@@ -72,18 +73,27 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 `;
 
 interface HeroPageProps {
-  data: UserDataType["meta"];
+  bio?: string;
+  imgSrc?: string;
+  name?: string;
+  title?: string;
+  socialLinks?: any[];
+  cv_link?: string;
 }
 
-const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
-  const {
-    data: { bio, imgSrc, name, title, socialLinks },
-  } = props;
-
+const HeroPage: React.FunctionComponent<HeroPageProps> = ({
+  bio,
+  imgSrc = "",
+  name,
+  socialLinks,
+  title,
+  cv_link = "",
+}) => {
   return (
     <StyledWrapper
       className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper"
       role="navigation"
+      imgSrc={imgSrc}
     >
       <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
         <div className="img-frame" />
@@ -116,7 +126,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         </div>
 
         <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
-          <Link href="" download>
+          <Link href={cv_link || ""} download>
             <span role="button" className="btn btn-secondary mb-2 mb-sm-0">
               Download CV
             </span>

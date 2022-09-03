@@ -15,17 +15,6 @@
     "title": {
       "type": "string"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "description": {
       "type": "text"
     },
@@ -43,6 +32,9 @@
       "relation": "oneToMany",
       "target": "api::project-category.project-category",
       "mappedBy": "project"
+    },
+    "thumbnail_link": {
+      "type": "string"
     }
   }
 }

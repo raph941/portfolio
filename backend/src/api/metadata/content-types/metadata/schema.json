@@ -71,6 +71,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::project.project"
+    },
+    "cv_link": {
+      "type": "string"
     }
   }
 }
