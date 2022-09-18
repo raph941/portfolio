@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { StyledBodyText, StyledSectionTitle, StyledH4 } from "./StyledElements";
 import { Col, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

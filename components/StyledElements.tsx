@@ -124,7 +124,7 @@ const StyledPageContentWrapper = styled.div<{ theme: ThemeType }>`
     min-width: 100%;
     min-height: 100%;
     width: 100%;
-    padding: 52px 40px 60px;
+    padding: 52px 20px 60px;
   }
 `;
 
@@ -132,7 +132,6 @@ const StyledButton = styled(Button)``;
 
 const BlogItemsWrapper = styled.div`
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr;  */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   column-gap: 2rem;
   row-gap: 2rem;

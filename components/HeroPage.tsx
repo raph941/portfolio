@@ -7,7 +7,7 @@ import {
   StyledH4,
 } from "../components/StyledElements";
 import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`

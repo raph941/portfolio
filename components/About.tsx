@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { StyledSectionTitle, StyledH2, StyledBodyText } from "./StyledElements";
 
 interface AboutProps {

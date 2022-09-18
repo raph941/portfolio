@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { PortfolioItem, RightLeftNav, StyledH1 } from "../components";
 import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { Drawer } from "antd";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 

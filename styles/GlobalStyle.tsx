@@ -20,6 +20,21 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
         border-radius: 1.875rem;
         font-size: 0.875rem;
     }
+
+    .flex-next-img-wrap {
+        width: 100%;
+    }
+    
+    .flex-next-img {
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+    }
+
+    .flex-next-img-wrap span {
+        padding-top: 0 !important;
+        width: -webkit-fill-available;
+    }
 `;
 
 export { GlobalStyle };

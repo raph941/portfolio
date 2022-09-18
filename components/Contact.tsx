@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { StyledBodyText, StyledButton, StyledH1 } from "./StyledElements";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`

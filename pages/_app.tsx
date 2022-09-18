@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useThemeMode } from "../hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";
-import { userData } from "../utils/data";
+import { userData } from "../data/userData";
 import { GlobalStyle } from "../styles/GlobalStyle";
 import { Footer, StyledPageContentWrapper, NavBar, SectionDivider } from "../components";
 

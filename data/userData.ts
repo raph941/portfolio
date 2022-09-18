@@ -114,6 +114,7 @@ export const userData = {
   },
   blogs: {
     featured: {
+      slug:  "the_hello_world_project5",
       title: "The Hello world project",
       date: "04 Dec 2019",
       image:
@@ -123,6 +124,7 @@ export const userData = {
     },
     otherBlogs: [
       {
+        slug:  "the_hello_world_project1",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
@@ -131,6 +133,7 @@ export const userData = {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
       },
       {
+        slug:  "the_hello_world_project2",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
@@ -139,6 +142,7 @@ export const userData = {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
       },
       {
+        slug:  "the_hello_world_project3",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
@@ -147,6 +151,7 @@ export const userData = {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
       },
       {
+        slug:  "the_hello_world_project4",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:

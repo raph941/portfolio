@@ -2,7 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { WhatIDo, HeroPage, About, Contact } from "../components";
 import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 
 interface HeroProps {
   userData: UserDataType;

@@ -11,7 +11,7 @@ import {
   NavLink,
 } from "reactstrap";
 import styled from "styled-components";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { ThemeType } from "../styles/theme";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
@@ -81,17 +81,17 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
               </Link>
             </StyledNavItem>
             <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/portfolio/">
-                <span className="nav-link">Portfolio</span>
-              </Link>
-            </StyledNavItem>
-            <StyledNavItem className="px-sm-3">
               <Link className="nav-link" href="/#contact">
                 <span className="nav-link">Contact</span>
               </Link>
             </StyledNavItem>
             <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/blog/">
+              <Link className="nav-link" href="/portfolio/">
+                <span className="nav-link">Portfolio</span>
+              </Link>
+            </StyledNavItem>
+            <StyledNavItem className="px-sm-3">
+              <Link className="nav-link" href="/blogs/">
                 <span className="nav-link">Blog</span>
               </Link>
             </StyledNavItem>

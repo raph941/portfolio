@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import router from "next/router";
 import {
   BlogItemsWrapper,
-  SectionDivider,
   StyledH1,
   StyledH2,
-} from "../components";
-import { BlogItem } from "../components/BlogItem";
-import { FeaturedBlogItem } from "../components/FeaturedBlogItem";
-import { UserDataType } from "../utils/data";
+  BlogItem
+} from "../../components";
+import { FeaturedBlogItem } from "../../components/FeaturedBlogItem";
+import { UserDataType } from "../../data/userData";
 
 const StyledWrapper = styled.div`
   min-height: calc(100vh - 120px);
@@ -34,6 +34,10 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ userData }) => {
     blogs: { featured, otherBlogs },
   } = userData;
 
+  const handleNavigateToDetail = (slug: string) => {
+    router.push(`/blogs/${slug}`);
+  };
+
   return (
     <StyledWrapper className="">
       <StyledH1 className="page-title">Blogs</StyledH1>
@@ -41,14 +45,14 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ userData }) => {
       <StyledH2 className="page-title">Featured</StyledH2>
       {featured && (
         <div>
-          <FeaturedBlogItem {...featured} />
+          <FeaturedBlogItem onClick={handleNavigateToDetail} {...featured} />
         </div>
       )}
       <StyledH2 className="page-title">Others Blogs</StyledH2>
 
       <BlogItemsWrapper>
         {otherBlogs?.map((data, index) => (
-          <BlogItem key={index} {...data} />
+          <BlogItem onClick={handleNavigateToDetail} key={index} {...data} />
         ))}
       </BlogItemsWrapper>
 

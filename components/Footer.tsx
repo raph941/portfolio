@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Row } from "reactstrap";
 import styled from "styled-components";
-import { UserDataType } from "../utils/data";
+import { UserDataType } from "../data/userData";
 import { ThemeType } from "../styles/theme";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`

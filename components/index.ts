@@ -8,3 +8,5 @@ export { About } from "./About";
 export { Contact } from "./Contact";
 export { PortfolioItem } from "./PortfolioItem";
 export { RightLeftNav } from "./RightLeftNav";
+export { BlogItem } from "./BlogItem"
+export { ShareContent } from "./ShareContent"

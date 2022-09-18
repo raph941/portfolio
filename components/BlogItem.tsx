@@ -4,11 +4,13 @@ import { ThemeType } from "../styles/theme";
 import { StyledBodyText, StyledH4 } from "./StyledElements";
 
 interface BlogItemProps {
+  slug: string;
   title: string;
   category?: string;
   image: string;
   date: string;
   content?: string;
+  onClick: (slug: string) => void;
 }
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
@@ -45,9 +47,11 @@ const BlogItem: React.FunctionComponent<BlogItemProps> = ({
   image,
   title,
   category,
+  slug,
+  onClick,
 }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper onClick={() =>  onClick(slug)}>
       <StyledImage bgImage={image}>
         <StyledBodyText className="category">{category}</StyledBodyText>
       </StyledImage>
