@@ -46,7 +46,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 
 const StyledNavItem = styled(NavItem)`
   font-weight: 500;
-`
+`;
 
 interface NavBarProps {
   userData: UserDataType;
@@ -59,14 +59,16 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
   return (
     <StyledWrapper className="px-2 px-sm-5">
       <ReactStrapNavbar expand="md" light>
-        <NavbarBrand href="/">
-          <Image
-            src={userData.meta.imgSrc}
-            height={40}
-            width={40}
-            alt="Avatar"
-            className="avatar-image rounded-circle"
-          />
+        <NavbarBrand>
+          <Link href="/">
+            <Image
+              src={userData.meta.imgSrc}
+              height={40}
+              width={40}
+              alt="Avatar"
+              className="avatar-image rounded-circle"
+            />
+          </Link>
         </NavbarBrand>
         <NavbarToggler onClick={handleNavbarToggle} />
         <Collapse

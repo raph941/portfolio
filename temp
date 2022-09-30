@@ -36,6 +36,11 @@ interface BlogPageProps {
 
 const Blog: React.FunctionComponent<BlogPageProps> = () => {
   const [posts, setPosts] = useState<BlogType[]>([]);
+  const [pageInfo, setPageInfo] = useState<{
+    hasNextPage: boolean;
+    endCursor: string;
+  }>();
+  const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_POSTS, {
     variables: {
       first: 1,
@@ -46,42 +51,38 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
     router.push(`/blogs/${slug}`);
   };
 
-  const handleUpdateQuery = (
-    previousResult: any,
-    { fetchMoreResult }: { fetchMoreResult: any }
-  ) => {
-    if (!fetchMoreResult) {
-      return previousResult;
-    }
-
-    return {
-      ...fetchMoreResult,
-      posts: {
-        ...fetchMoreResult?.posts,
-        nodes: [
-          ...previousResult?.posts?.nodes,
-          ...fetchMoreResult?.posts?.nodes,
-        ],
-      },
-    };
-  };
-
-  const handleShowMore = () => {
-    fetchMore({
-      updateQuery: handleUpdateQuery,
-      variables: {
-        first: 1,
-        after: data?.posts?.pageInfo?.endCursor,
-      },
-    });
-  };
-
-  useEffect(() => {
+  // TODO: Use TypePolicy to merge and normalise the post/fetchmore data
+  // https://www.apollographql.com/docs/react/pagination/core-api/
+  const handlePostsDataUpdate = (data: any) => {
     if (!data) {
       return;
     }
-    setPosts(() => [...formatPostsData(data?.posts?.nodes)]);
+    console.log(data);
+
+    setPosts((current) => [...current, ...formatPostsData(data?.posts?.nodes)]);
+    setPageInfo(() => ({
+      endCursor: data?.posts?.pageInfo?.endCursor,
+      hasNextPage: data?.posts?.pageInfo?.hasNextPage,
+    }));
+    setLoadingMore(false);
+  };
+
+  useEffect(() => {
+    handlePostsDataUpdate(data);
   }, [data]);
+
+  const handleShowMore = async () => {
+    setLoadingMore(true);
+    const { data: moreData } = await fetchMore({
+      updateQuery
+      variables: {
+        first: 1, // Number of posts to getch at a time.
+        // https://master--wpgraphql-docs.netlify.app/getting-started/posts/#after
+        after: pageInfo?.endCursor,
+      },
+    });
+    // handlePostsDataUpdate(moreData);
+  };
 
   return (
     <StyledWrapper className="">
@@ -109,13 +110,13 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
         </BlogItemsWrapper>
       </section>
 
-      {data?.posts?.pageInfo.hasNextPage && (
+      {pageInfo?.hasNextPage && (
         <div className="show-more-wrap">
           <button
             className="btn btn-outline-secondary"
             onClick={() => handleShowMore()}
           >
-            Show more
+            {loadingMore ? 'Loading...' : 'Show more'}
           </button>
         </div>
       )}
@@ -124,4 +125,3 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
 };
 
 export default Blog;
-
