@@ -39,15 +39,15 @@ export const userData = {
   whatIDo: [
     {
       icon: faCode,
-      title: "Software Development",
+      title: "Build Software Applications",
       description:
-        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+        "With over 4 years of software development experience, On day to day basis I contribute to building rohburst, scalable, and user friendly applications that solves user's problems. Checkout the portfolio section of this site to see some of my projects that are sharable here.",
     },
     {
       icon: faParagraph,
       title: "Content Writing",
       description:
-        "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.",
+        "This is a relatively newer area, where I try to share some ideas, knowledge and thoughts on various tech subjects and passionate about. Checkout the blog section of this site to see some of my writeups.",
     },
   ],
   techStack: [
@@ -95,7 +95,7 @@ export const userData = {
   openSourceContrubutions: {},
   projects: {},
   about: {
-    text: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+    text: 'Hello! My name is Raphael and I enjoy building softwares that solves world problems, one little piece at a time. My interests has largly been on the web development eco-system using various available tools, languages and frameworks.',
     recentStack: [
       "JavaScript (Es6+)",
       "TypeScript",
@@ -109,7 +109,7 @@ export const userData = {
     email: "raph941@gmail.com",
     title: "Let's chat",
     subtitle:
-      "My inbox/DMs are alway opens, wether you have a question or want to connect. Feel free to reach out on Linkedin or simply send me mail.",
+      "My inbox is alway opens, whether you have a question or just want to connect. Feel free to reach out on Linkedin or simply send me mail.",
     actionText: "Say hello",
   },
   portfolio: {
@@ -119,8 +119,7 @@ export const userData = {
         title: "Portfolio",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description:
-          "This current project, you are viewing.",
+        description: "This current project, you are viewing.",
         stacks: ["React", "Typescript", "NextJs", "GraphQl"],
         liveLink: "https://raph941.com",
         codeHost: "https://github.com/raph941/portfolio",
@@ -131,7 +130,7 @@ export const userData = {
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
           "This is a proprietary site I worked on, as a landing page for the dabafinance product.",
-        stacks: ["React", "Typescript", "JavaScript", 'NextJs', "Wordpress"],
+        stacks: ["React", "Typescript", "JavaScript", "NextJs", "Wordpress"],
         liveLink: "https://dabafinance.com",
         codeHost: "",
       },
@@ -149,12 +148,18 @@ export const userData = {
         title: "Chat App",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description:
-          "A fun sideproject, to build a fullstack chat system",
-        stacks: ["React", "Typescript", "Django/Python", "fullstack", "JavaScript", "React"],
+        description: "A fun sideproject, to build a fullstack chat system",
+        stacks: [
+          "React",
+          "Typescript",
+          "Django/Python",
+          "fullstack",
+          "JavaScript",
+          "React",
+        ],
         liveLink: "https://chatapp-fullstack.netlify.app",
         codeHost: "https://github.com/raph941/chatApp-FE",
-      }
+      },
     ],
     otherProjects: [
       {
@@ -165,7 +170,8 @@ export const userData = {
           "A travel agency template sie, built for practice during my HNG internship",
         stacks: ["HTML/CSS/JS"],
         liveLink: "https://explorenet.netlify.app",
-        codeHost: "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
+        codeHost:
+          "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
       },
       {
         title: "Artist Portfolio",
@@ -175,7 +181,8 @@ export const userData = {
           "A portfolio templte for an artists to display their work to his online viewers.",
         stacks: ["HTML/CSS/JS"],
         liveLink: "https://explorenet.netlify.app",
-        codeHost: "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
+        codeHost:
+          "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
       },
       {
         title: "App Landing Page",
