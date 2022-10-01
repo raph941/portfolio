@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 
 import client from "../lib/apollo-client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import { useThemeMode } from "../hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";

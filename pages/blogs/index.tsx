@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import router from "next/router";
+import Skeleton from "react-loading-skeleton";
 import {
   BlogItemsWrapper,
   StyledH1,
@@ -38,7 +39,7 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
   const [posts, setPosts] = useState<BlogType[]>([]);
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_POSTS, {
     variables: {
-      first: 1,
+      first: 20,
     },
   });
 
@@ -70,7 +71,7 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
     fetchMore({
       updateQuery: handleUpdateQuery,
       variables: {
-        first: 1,
+        first: 20,
         after: data?.posts?.pageInfo?.endCursor,
       },
     });
@@ -89,13 +90,19 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
 
       <section>
         <StyledH2 className="page-title">Featured</StyledH2>
-        {!!posts?.length && (
-          <div>
-            <FeaturedBlogItem
-              onClick={handleNavigateToDetail}
-              {...posts?.[0]}
-            />
+        {loading ? (
+          <div className="mb-3">
+            <Skeleton count={5} />
           </div>
+        ) : (
+          !!posts?.length && (
+            <div>
+              <FeaturedBlogItem
+                onClick={handleNavigateToDetail}
+                {...posts?.[0]}
+              />
+            </div>
+          )
         )}
       </section>
 
@@ -103,9 +110,19 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
         <StyledH2 className="page-title">Others Blogs</StyledH2>
 
         <BlogItemsWrapper>
-          {posts?.map((post, index) => (
-            <BlogItem onClick={handleNavigateToDetail} key={index} {...post} />
-          ))}
+          {loading ? (
+            <div className="mb-3">
+              <Skeleton count={5} />
+            </div>
+          ) : (
+            posts?.map((post, index) => (
+              <BlogItem
+                onClick={handleNavigateToDetail}
+                key={index}
+                {...post}
+              />
+            ))
+          )}
         </BlogItemsWrapper>
       </section>
 
@@ -124,4 +141,3 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
 };
 
 export default Blog;
-
