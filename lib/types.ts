@@ -21,3 +21,14 @@ export interface BlogType {
   modified: string;
   featuredImage: FeaturedImageType;
 }
+
+
+export interface ProjectType {
+  title: string;
+  image?: string;
+  description?: string;
+  stacks?: string[];
+  liveLink?: string;
+  codeHost?: string;
+  showDetailView?: boolean
+}

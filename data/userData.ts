@@ -112,119 +112,90 @@ export const userData = {
       "My inbox/DMs are alway opens, wether you have a question or want to connect. Feel free to reach out on Linkedin or simply send me mail.",
     actionText: "Say hello",
   },
-  blogs: {
-    featured: {
-      slug: "the_hello_world_project5",
-      title: "The Hello world project",
-      date: "04 Dec 2019",
-      image:
-        "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
-      category: "Codeing",
-      content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
-    },
-    otherBlogs: [
-      {
-        slug: "the_hello_world_project1",
-        title: "The Hello world project",
-        date: "04 Dec 2019",
-        image:
-          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
-        category: "Codeing",
-        content:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
-      },
-      {
-        slug: "the_hello_world_project2",
-        title: "The Hello world project",
-        date: "04 Dec 2019",
-        image:
-          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
-        category: "Codeing",
-        content:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
-      },
-      {
-        slug: "the_hello_world_project3",
-        title: "The Hello world project",
-        date: "04 Dec 2019",
-        image:
-          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
-        category: "Codeing",
-        content:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
-      },
-      {
-        slug: "the_hello_world_project4",
-        title: "The Hello world project",
-        date: "04 Dec 2019",
-        image:
-          "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
-        category: "Codeing",
-        content:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
-      },
-    ],
-  },
   portfolio: {
-    categories: ["All", "Frontend", "Fullstack", "Python", "JavaScript"],
+    categories: ["All", "React", "NextJs", "Django/Python", "HTML/CSS/JS"],
     featuredProjects: [
       {
-        title: "Dabafinance",
+        title: "Portfolio",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ["React", "Typescript", "Python"],
-        liveLink: "",
-        codeHost: "",
-        category: ["frontend", "backend", "fullstack"],
+          "This current project, you are viewing.",
+        stacks: ["React", "Typescript", "NextJs", "GraphQl"],
+        liveLink: "https://raph941.com",
+        codeHost: "https://github.com/raph941/portfolio",
       },
       {
-        title: "Dabafinance",
+        title: "Dabafinance Landing Page",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ["React", "Typescript", "Python"],
-        liveLink: "",
+          "This is a proprietary site I worked on, as a landing page for the dabafinance product.",
+        stacks: ["React", "Typescript", "JavaScript", 'NextJs', "Wordpress"],
+        liveLink: "https://dabafinance.com",
         codeHost: "",
-        category: ["frontend"],
       },
+      {
+        title: "Loan Management System",
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "This is a demo version of a propietary enterprise software built, to manage company loans, repayments and other organizatioal functions.",
+        stacks: ["React", "Typescript", "Django/Python", "JavaScript"],
+        liveLink: "https://opulent-systems.netlify.app/login",
+        codeHost: "",
+      },
+      {
+        title: "Chat App",
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "A fun sideproject, to build a fullstack chat system",
+        stacks: ["React", "Typescript", "Django/Python", "fullstack", "JavaScript", "React"],
+        liveLink: "https://chatapp-fullstack.netlify.app",
+        codeHost: "https://github.com/raph941/chatApp-FE",
+      }
     ],
     otherProjects: [
       {
-        title: "Dabafinance",
+        title: "Travel Site",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ["React", "Typescript", "Python"],
-        liveLink: "",
-        codeHost: "",
-        category: ["fullstack"],
+          "A travel agency template sie, built for practice during my HNG internship",
+        stacks: ["HTML/CSS/JS"],
+        liveLink: "https://explorenet.netlify.app",
+        codeHost: "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
       },
       {
-        title: "Dabafinance Last",
+        title: "Artist Portfolio",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ["React", "Typescript", "Python"],
-        liveLink: "",
-        codeHost: "",
-        category: ["frontend"],
+          "A portfolio templte for an artists to display their work to his online viewers.",
+        stacks: ["HTML/CSS/JS"],
+        liveLink: "https://explorenet.netlify.app",
+        codeHost: "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
       },
       {
-        title: "Dabafinance Last",
+        title: "App Landing Page",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ["React", "Typescript", "Python"],
-        liveLink: "",
-        codeHost: "",
-        category: ["backend", "python"],
+          "futuristic app, landing page, for an app that can determine the age of a person through their picture. using AI",
+        stacks: ["HTML/CSS/JS"],
+        liveLink: "https://agereal.netlify.app",
+        codeHost: "https://github.com/raph941/age_scanner",
+      },
+      {
+        title: "Covid 19 Stats Tracker",
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "App that plots live data of of covid 19 cases, on chart and map",
+        stacks: ["HTML/CSS/JS", "React"],
+        liveLink: "https://covid19app-monitor.web.app",
+        codeHost: "https://github.com/raph941/Covid-19-Tracker",
       },
     ],
   },

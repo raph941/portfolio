@@ -39,7 +39,7 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
   const [posts, setPosts] = useState<BlogType[]>([]);
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_POSTS, {
     variables: {
-      first: 20,
+      first: 20, // NUmber of posts fetch at a time.
     },
   });
 
