@@ -1,17 +1,9 @@
+import moment from "moment";
 import React from "react";
 import styled from "styled-components";
 import { ThemeType } from "../styles/theme";
+import { BlogItemProps, DEFAULT_IMAGE } from "./BlogItem";
 import { StyledBodyText, StyledH3, StyledH4 } from "./StyledElements";
-
-interface FeaturedBlogItemProps {
-  slug: string;
-  title: string;
-  category?: string;
-  image: string;
-  date: string;
-  content?: string;
-  onClick: (slug: string) => void;
-}
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   cursor: pointer;
@@ -65,24 +57,32 @@ const StyledImage = styled.div<{ bgImage?: string }>`
   background-image: ${({ bgImage }) => `url(${bgImage})`};
 `;
 
-const FeaturedBlogItem: React.FunctionComponent<FeaturedBlogItemProps> = ({
+const FeaturedBlogItem: React.FunctionComponent<BlogItemProps> = ({
+  categories,
+  featuredImage,
   date,
-  image,
-  slug,
   title,
-  category,
+  slug,
   content,
   onClick,
 }) => {
   return (
-    <StyledWrapper onClick={() =>  onClick(slug)}>
-      <StyledImage className="img-wrap" bgImage={image}></StyledImage>
+    <StyledWrapper onClick={() => onClick(slug)}>
+      <StyledImage
+        className="img-wrap"
+        bgImage={featuredImage?.sourceUrl || DEFAULT_IMAGE}
+      ></StyledImage>
       <div className="text-wrap">
-        <StyledBodyText className="category">{category}</StyledBodyText>
+        <StyledBodyText className="category">
+          {categories?.[0].name}
+        </StyledBodyText>
         <StyledH3 className="title">{title}</StyledH3>
-        <StyledBodyText className="truncated-text">{content}</StyledBodyText>
+        <StyledBodyText
+          className="truncated-text"
+          dangerouslySetInnerHTML={{ __html: content?.substring(0, 300) || '' }}
+        />
         <StyledBodyText className="mb-0">
-          <small>{date}</small>
+          <small>{moment(date).format('Do MMM, YYYY')}</small>
         </StyledBodyText>
       </div>
     </StyledWrapper>

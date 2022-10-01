@@ -1,11 +1,16 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { PortfolioItem, RightLeftNav, StyledH1 } from "../components";
+import {
+  PortfolioItem,
+  RightLeftNav,
+  StyledBodyText,
+  StyledH1,
+} from "../components";
 import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
-import { Drawer } from "antd";
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { Drawer, Switch } from "antd";
+import { ProjectType } from "../lib/types";
 
 interface PortfolioProps {
   userData: UserDataType;
@@ -24,6 +29,14 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     padding: 0;
     margin: 0 0 2rem;
     text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    .ant-switch-checked {
+      background-color: ${({ theme }) => theme.colors.dark} !important;
+    }
 
     li {
       display: inline-block;
@@ -33,6 +46,10 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
       padding: 3px 14px;
       text-decoration: none;
       opacity: 0.6;
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.dark};
+      }
 
       &.active {
         opacity: 1;
@@ -72,21 +89,13 @@ const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
 
 const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   const { portfolio } = userData;
-  const [activeFilter, setActiveFilter] = useState<string | undefined>(
-    portfolio?.categories?.[0]
-  );
-  const allProjects = [
-    ...portfolio?.featuredProjects,
-    ...portfolio?.otherProjects,
-  ];
-  const [filteredProjects, setFilteredProjects] = useState(allProjects);
-  const [activeProject, setActiveproject] =
-    useState<typeof portfolio["featuredProjects"][number]>();
+  const [showAchieve, setShowAchieve] = useState<boolean>(false);
+  const [activeFilter, setActiveFilter] = useState<string>();
+  const [activeProject, setActiveproject] = useState<ProjectType>();
   const [activeProjectIndex, setActiveProjectIndex] = useState<number>();
-
-  const handleCloseDrawer = () => {
-    setActiveproject(undefined);
-  };
+  const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>(
+    portfolio?.featuredProjects || []
+  );
 
   const handleNavigate = (direction: "right" | "left") => {
     if (direction === "right") {
@@ -101,27 +110,44 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
     setActiveproject(filteredProjects[prevIndex]);
   };
 
+  const handlePortfolioItemClick = (project: ProjectType, index: number) => {
+    if (project.showDetailView) {
+      setActiveProjectIndex(index);
+      setActiveproject(project);
+    }
+  };
+
   useEffect(() => {
-    console.log({activeFilter})
-    if (!activeFilter || activeFilter?.toLowerCase() === 'all') {
-      setFilteredProjects(allProjects)
-      return
+    const projects =
+      portfolio[showAchieve ? "otherProjects" : "featuredProjects"];
+    if (!activeFilter || activeFilter === "All") {
+      setFilteredProjects(projects);
+      return;
     }
 
     setFilteredProjects(() =>
-      allProjects?.filter((instance) =>
-        instance?.category.includes(activeFilter?.toLowerCase() || '')
+      projects?.filter((instance) =>
+        instance?.stacks.includes(activeFilter || "")
       )
     );
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFilter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeFilter, showAchieve]);
 
   return (
     <StyledWrapper>
       <DrawerStyles />
       <StyledH1 className="page-title">Portfolio</StyledH1>
+      <StyledBodyText>
+        Some notable projecs I've worked on. To see more projects toggle the
+        "View Achieve" below (they probably have not been updated in a while)
+      </StyledBodyText>
 
       <ul className="portfolio-filters">
+        <div className="d-inline-flex align-items-center">
+          <Switch size="small" className="mx-2" onChange={setShowAchieve} />
+          view achieve
+        </div>
+
         {portfolio?.categories?.map((value, index) => (
           <li
             className={classNames(
@@ -138,22 +164,21 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
       </ul>
 
       <div className="projects-wrapper">
-        {filteredProjects?.map((projectData, index) => (
-          <PortfolioItem
-            onClick={() => {
-              setActiveProjectIndex(index);
-              setActiveproject(projectData);
-            }}
-            key={index}
-            {...projectData}
-          />
-        ))}
+        {filteredProjects?.map(
+          (projectData, index) => (
+            <PortfolioItem
+              onClick={() => handlePortfolioItemClick(projectData, index)}
+              key={index}
+              {...projectData}
+            />
+          )
+        )}
       </div>
 
       <Drawer
         title={activeProject?.title}
         placement="bottom"
-        onClose={() => handleCloseDrawer()}
+        onClose={() => setActiveproject(undefined)}
         visible={!!activeProject}
         size="large"
         extra={
@@ -165,7 +190,7 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
           />
         }
       >
-        Hello world
+        {/* TODO: Setup detail view */}
       </Drawer>
     </StyledWrapper>
   );
