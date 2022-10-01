@@ -14,8 +14,8 @@ import GithubIcon from "/public/assets/images/github-brands.svg";
 export const userData = {
   meta: {
     title: "<Web Developer />",
-    name: "I'm Raphael Ehindero",
-    bio: "Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.  ",
+    name: "Hi, am Raphael Ehindero",
+    bio: "I'm the software engineer that loves building cool things on the web.",
     imgSrc: Avatar.src,
     socialLinks: [
       {
@@ -114,107 +114,120 @@ export const userData = {
   },
   blogs: {
     featured: {
-      slug:  "the_hello_world_project5",
+      slug: "the_hello_world_project5",
       title: "The Hello world project",
       date: "04 Dec 2019",
       image:
         "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
       category: "Codeing",
-      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
     },
     otherBlogs: [
       {
-        slug:  "the_hello_world_project1",
+        slug: "the_hello_world_project1",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
           "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
         category: "Codeing",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+        content:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
       },
       {
-        slug:  "the_hello_world_project2",
+        slug: "the_hello_world_project2",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
           "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
         category: "Codeing",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+        content:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
       },
       {
-        slug:  "the_hello_world_project3",
+        slug: "the_hello_world_project3",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
           "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
         category: "Codeing",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+        content:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
       },
       {
-        slug:  "the_hello_world_project4",
+        slug: "the_hello_world_project4",
         title: "The Hello world project",
         date: "04 Dec 2019",
         image:
           "https://lmpixels.com/wp/leven-wp/full-width/wp-content/uploads/sites/3/2019/12/blog_post_6_full.jpg",
         category: "Codeing",
-        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem"
+        content:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem",
       },
     ],
   },
   portfolio: {
-    categories: [
-      'All', 'Frontend', 'Fullstack', 'Python', 'JavaScript'
-    ],
+    categories: ["All", "Frontend", "Fullstack", "Python", "JavaScript"],
     featuredProjects: [
       {
         title: "Dabafinance",
-        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ['React', 'Typescript', 'Python'],
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ["React", "Typescript", "Python"],
         liveLink: "",
         codeHost: "",
-        category: ['frontend', 'backend', 'fullstack']
+        category: ["frontend", "backend", "fullstack"],
       },
       {
         title: "Dabafinance",
-        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ['React', 'Typescript', 'Python'],
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ["React", "Typescript", "Python"],
         liveLink: "",
         codeHost: "",
-        category: ['frontend']
+        category: ["frontend"],
       },
     ],
     otherProjects: [
       {
         title: "Dabafinance",
-        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ['React', 'Typescript', 'Python'],
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ["React", "Typescript", "Python"],
         liveLink: "",
         codeHost: "",
-        category: ['fullstack']
+        category: ["fullstack"],
       },
       {
         title: "Dabafinance Last",
-        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ['React', 'Typescript', 'Python'],
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ["React", "Typescript", "Python"],
         liveLink: "",
         codeHost: "",
-        category: ['frontend']
+        category: ["frontend"],
       },
       {
         title: "Dabafinance Last",
-        image: "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
-        stacks: ['React', 'Typescript', 'Python'],
+        image:
+          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum.",
+        stacks: ["React", "Typescript", "Python"],
         liveLink: "",
         codeHost: "",
-        category: ['backend', 'python']
+        category: ["backend", "python"],
       },
-    ]
-  }
+    ],
+  },
 };
 
 export type UserDataType = typeof userData;
