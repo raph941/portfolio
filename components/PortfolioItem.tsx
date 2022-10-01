@@ -7,13 +7,12 @@ import {
   CardTitle,
   CardText,
 } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFolder } from "@fortawesome/free-solid-svg-icons";
 import GithubIcon from "/public/assets/icons/github-brands.svg";
 import GitLabIcon from "/public/assets/icons/gitlab-brands.svg";
 import FolderIcon from "/public/assets/icons/folder-solid.svg";
 import ExternalLinkIcon from "/public/assets/icons/external-link.svg";
 import Image from "next/image";
+import { ProjectType } from "../lib/types";
 
 const getCodeHostIcon = (hostLink: string) => {
   if (hostLink.includes("gitlab")) {
@@ -22,12 +21,7 @@ const getCodeHostIcon = (hostLink: string) => {
   return GithubIcon;
 };
 
-interface PortfolioItemProps {
-  title: string;
-  description: string;
-  stacks: string[];
-  codeHost: string;
-  liveLink: string;
+interface PortfolioItemProps extends ProjectType {
   icon?: string;
   onClick?: () => void;
 }
@@ -69,32 +63,36 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
           <Image src={icon || FolderIcon} width={30} height={30} alt="Folder" />
 
           <div className="d-flex align-items-center gap-2">
-            <a target="_blank" href={liveLink} rel="noreferrer">
-              <Image
-                src={ExternalLinkIcon}
-                width={15}
-                height={15}
-                alt="Folder"
-              />
-            </a>
+            {liveLink && (
+              <a target="_blank" href={liveLink} rel="noreferrer">
+                <Image
+                  src={ExternalLinkIcon}
+                  width={15}
+                  height={15}
+                  alt="Folder"
+                />
+              </a>
+            )}
 
-            <a target="_blank" href={codeHost} rel="noreferrer">
-              <Image
-                src={getCodeHostIcon(codeHost)}
-                width={15}
-                height={15}
-                alt="Folder"
-              />
-            </a>
+            {codeHost && (
+              <a target="_blank" href={codeHost} rel="noreferrer">
+                <Image
+                  src={getCodeHostIcon(codeHost)}
+                  width={15}
+                  height={15}
+                  alt="Folder"
+                />
+              </a>
+            )}
           </div>
         </div>
       </CardHeader>
-      <CardBody>
+      <CardBody className="d-flex flex-column">
         <CardTitle>{title}</CardTitle>
-        <CardText>{description}</CardText>
-        <CardFooter>
+        <CardText className="flex-fill">{description}</CardText>
+        <CardFooter className="mt-2">
           {stacks?.map((value, index) => (
-            <small className="mx-2" key={index}>
+            <small className="mx-2 text-nowrap" key={index}>
               {value}
             </small>
           ))}
