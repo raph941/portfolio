@@ -51,7 +51,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     }
 
     .img-frame {
-      border: 12px solid ${({ theme }) => theme.variables.light};
+      // border: 12px solid ${({ theme }) => theme.variables.light};
     }
 
     .img-frame,
@@ -96,7 +96,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
       <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
         <div className="img-frame" />
       </div>
-      <div className="d-flex flex-column justify-content-center flex-grow-1">
+      <div className="d-flex flex-column justify-content-start justify-content-sm-center flex-grow-1">
         <StyledH4 className="title-text text-muted mt-3 mt-sm-0">
           {title}
         </StyledH4>
