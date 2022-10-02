@@ -1,6 +1,7 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/router'
 import {
   Collapse,
   Nav,
@@ -8,7 +9,6 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
-  NavLink,
 } from "reactstrap";
 import styled from "styled-components";
 import { UserDataType } from "../data/userData";
@@ -55,6 +55,12 @@ interface NavBarProps {
 const NavBar: FC<NavBarProps> = ({ userData }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleNavbarToggle = () => setIsOpen((current) => !current);
+
+  const { pathname } = useRouter()
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <StyledWrapper className="px-2 px-sm-5">

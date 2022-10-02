@@ -45,6 +45,10 @@ const StyledWrapper = styled.div`
     padding-bottom: 0;
     padding-top: 1rem;
   }
+
+  .codehost-icon {
+    margin-left: 0.3125rem;
+  }
 `;
 
 const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
@@ -62,7 +66,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
         <div className="d-flex justify-content-between links">
           <Image src={icon || FolderIcon} width={30} height={30} alt="Folder" />
 
-          <div className="d-flex align-items-center gap-2">
+          <div className="d-flex align-items-center">
             {liveLink && (
               <a target="_blank" href={liveLink} rel="noreferrer">
                 <Image
@@ -75,7 +79,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
             )}
 
             {codeHost && (
-              <a target="_blank" href={codeHost} rel="noreferrer">
+              <a className="codehost-icon" target="_blank" href={codeHost} rel="noreferrer">
                 <Image
                   src={getCodeHostIcon(codeHost)}
                   width={15}
