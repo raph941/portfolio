@@ -20,7 +20,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   .img-frame {
     height: 400px;
     width: 400px;
-    border: 20px solid ${({ theme }) => theme.variableslight};
+    // border: 20px solid ${({ theme }) => theme.variableslight};
     border-radius: 50%;
     background: url(${RaphaelAvatar.src});
     background-size: cover;
@@ -39,8 +39,16 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     margin: 3rem 0;
   }
 
+  .bio-text {
+    text-align: left;
+  }
+
   @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     min-height: calc(100vh - 106px);
+
+    .bio-text {
+      text-align: center;
+    }
 
     .img-frame {
       border: 12px solid ${({ theme }) => theme.variables.light};
@@ -93,7 +101,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
           {title}
         </StyledH4>
         <StyledH1 className="name-text">{name}</StyledH1>
-        <StyledBodyText>{bio}</StyledBodyText>
+        <StyledBodyText className="bio-text">{bio}</StyledBodyText>
 
         <div className="mb-2 socials-wrapper">
           {socialLinks?.map((platform, index) => (
@@ -108,16 +116,16 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
               <Image
                 src={platform?.imgSrc}
                 alt={platform?.title}
-                height={25}
-                width={25}
+                height={20}
+                width={20}
               />
             </a>
           ))}
         </div>
 
-        <div className="d-flex flex-column flex-sm-row buttons-wrapper mb-3">
+        <div className="d-flex buttons-wrapper mb-3">
           <a href="public/assets/resume.pdf" download>
-            <span role="button" className="btn btn-secondary mb-2 mb-sm-0">
+            <span role="button" className="btn btn-secondary mx-2">
               Download CV
             </span>
           </a>

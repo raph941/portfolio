@@ -28,7 +28,7 @@ interface FooterProps {
 }
 
 const Footer: React.FunctionComponent<FooterProps> = ({ data }) => (
-  <StyledWrapper className="d-flex px-2 px-sm-5 py-3 justify-content-between">
+  <StyledWrapper className="d-flex flex-column flex-sm-row px-2 px-sm-5 py-4 justify-content-between">
     <Row className="d-flex">
       <div className="d-flex links-wrap">
         {data?.links?.map(({ label, link }, index) => (
@@ -39,7 +39,7 @@ const Footer: React.FunctionComponent<FooterProps> = ({ data }) => (
       </div>
     </Row>
 
-    <div className="footer-link-label">Copyright Raphael Ehindero 2022 &#169;</div>
+    <div className="footer-link-label mt-3 mt-sm-0 ">Copyright Raphael Ehindero 2022 &#169;</div>
   </StyledWrapper>
 );
 

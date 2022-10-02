@@ -15,7 +15,7 @@ export const userData = {
   meta: {
     title: "<Web Developer />",
     name: "Hi, am Raphael Ehindero",
-    bio: "I'm the software engineer that loves building cool things on the web.",
+    bio: "I'm a software engineer that loves building cool things on the web.",
     imgSrc: Avatar.src,
     socialLinks: [
       {
