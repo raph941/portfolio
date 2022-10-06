@@ -1,39 +1,33 @@
 import { useEffect, useState } from "react";
+import createPersistedState from 'use-persisted-state';
 import { darkTheme, lightTheme, ThemeType } from "../styles/theme";
 
-type ThemeModes = "light" | "dark";
-
 export interface ThemeModeResType {
-  themeMode: ThemeModes;
+  isLightMode: boolean;
   toggleThemeMode: () => void;
   theme: ThemeType;
 }
+
+const usePerstedThemeMode = createPersistedState<boolean>('isLightMode')
 
 /**
  * Handles setting and getting theme state
  * @returns themeMode, toggleThemeMode, theme
  */
 const useThemeMode = (): ThemeModeResType => {
-  const [themeMode, setThemeMode] = useState<ThemeModes>("light");
+  const [isLightMode, setIsLightMode] = usePerstedThemeMode(true);
+  const [theme, setTheme] = useState(lightTheme)
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem("theme");
-    savedTheme && setThemeMode(savedTheme as ThemeModes);
-  }, []);
+    setTheme(isLightMode ? lightTheme : darkTheme)
+  }, [isLightMode]);
 
-  const setMode = (mode: ThemeModes) => {
-    window.localStorage.setItem("theme", mode);
-    setThemeMode(mode);
-  };
-
-  const toggleThemeMode = () => {
-    themeMode === "light" ? setMode("dark") : setMode("light");
-  };
+  const toggleThemeMode = () => setIsLightMode(current  => !current);
 
   return {
-    themeMode,
+    isLightMode,
     toggleThemeMode,
-    theme: themeMode === "light" ? lightTheme : darkTheme,
+    theme,
   };
 };
 

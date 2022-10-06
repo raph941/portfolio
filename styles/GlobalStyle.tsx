@@ -4,7 +4,7 @@ import { ThemeType } from "./theme";
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 
     body {
-        background: ${({ theme }) => theme.variables.background};
+        background: ${({ theme }) => theme.variables.background} !important;
     }
 
     .text-muted {

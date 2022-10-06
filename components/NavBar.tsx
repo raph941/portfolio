@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import {
   Collapse,
   Nav,
@@ -13,6 +13,9 @@ import {
 import styled from "styled-components";
 import { UserDataType } from "../data/userData";
 import { ThemeType } from "../styles/theme";
+import { useThemeMode } from "../hooks/useThemeMode";
+import DarkIcon from "/public/assets/icons/brightness.png";
+import LightIcon from "/public/assets/icons/night.png";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   z-index: 1000;
@@ -50,17 +53,19 @@ const StyledNavItem = styled(NavItem)`
 
 interface NavBarProps {
   userData: UserDataType;
+  toggleThemeMode: () => void;
+  isLightMode: boolean;
 }
 
-const NavBar: FC<NavBarProps> = ({ userData }) => {
+const NavBar: FC<NavBarProps> = ({ userData, toggleThemeMode, isLightMode }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleNavbarToggle = () => setIsOpen((current) => !current);
 
-  const { pathname } = useRouter()
+  const { pathname } = useRouter();
 
   useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <StyledWrapper className="px-2 px-sm-5">
@@ -76,35 +81,46 @@ const NavBar: FC<NavBarProps> = ({ userData }) => {
             />
           </Link>
         </NavbarBrand>
-        <NavbarToggler onClick={handleNavbarToggle} />
-        <Collapse
-          isOpen={isOpen}
-          className="ml-auto justify-content-end"
-          navbar
-        >
-          <Nav navbar>
-            <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/#about">
-                <span className="nav-link">About</span>
-              </Link>
-            </StyledNavItem>
-            <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/#contact">
-                <span className="nav-link">Contact</span>
-              </Link>
-            </StyledNavItem>
-            <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/portfolio/">
-                <span className="nav-link">Portfolio</span>
-              </Link>
-            </StyledNavItem>
-            <StyledNavItem className="px-sm-3">
-              <Link className="nav-link" href="/blogs/">
-                <span className="nav-link">Blog</span>
-              </Link>
-            </StyledNavItem>
-          </Nav>
-        </Collapse>
+
+        <div className="d-flex align-items-center">
+          <NavbarToggler onClick={handleNavbarToggle} />
+          <Collapse
+            isOpen={isOpen}
+            className="ml-auto justify-content-end"
+            navbar
+          >
+            <Nav navbar>
+              <StyledNavItem className="px-sm-3">
+                <Link className="nav-link" href="/#about">
+                  <span className="nav-link">About</span>
+                </Link>
+              </StyledNavItem>
+              <StyledNavItem className="px-sm-3">
+                <Link className="nav-link" href="/#contact">
+                  <span className="nav-link">Contact</span>
+                </Link>
+              </StyledNavItem>
+              <StyledNavItem className="px-sm-3">
+                <Link className="nav-link" href="/portfolio/">
+                  <span className="nav-link">Portfolio</span>
+                </Link>
+              </StyledNavItem>
+              <StyledNavItem className="px-sm-3">
+                <Link className="nav-link" href="/blogs/">
+                  <span className="nav-link">Blog</span>
+                </Link>
+              </StyledNavItem>
+            </Nav>
+          </Collapse>
+
+          <div role="button" className="mt-2" onClick={() => toggleThemeMode()}>
+            <Image
+              src={isLightMode ? LightIcon : DarkIcon}
+              height={30}
+              width={30}
+            />
+          </div>
+        </div>
       </ReactStrapNavbar>
     </StyledWrapper>
   );
