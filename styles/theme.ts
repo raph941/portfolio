@@ -14,7 +14,9 @@ export const lightTheme = {
     light: "#ffffff",
     slightlyTransparent: "#ffffff89",
     darkText: "#222",
+    textColor: "",
     thetiary: "#9688ea",
+    navIconBg: 'transparent'
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -32,15 +34,17 @@ export const darkTheme = {
   variables: {
     primary: "#d5d5d5",
     secondary: "#535b61",
-    background: "#222222",
+    background: "#161616",
     bodyColor: "#d5d5d5",
     titleColor: "#333",
     textMuted: "#aaa",
     light: "#444444",
     // TODO: get dark variant for the following
-    slightlyTransparent: "#ffffff89",
+    slightlyTransparent: "#1e1e20",
     darkText: "#222",
+    textColor: "#EBEDF4",
     thetiary: "#9688ea",
+    navIconBg: '#EFEFEF'
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
