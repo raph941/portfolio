@@ -9,22 +9,20 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { useThemeMode } from "../hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";
 import { userData } from "../data/userData";
-import { GlobalStyle } from "../styles/GlobalStyle";
 import {
   Footer,
   StyledPageContentWrapper,
   NavBar,
-  SectionDivider,
 } from "../components";
 
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { theme } = useThemeMode();
+  const { theme, toggleThemeMode, isLightMode } = useThemeMode();
 
   return (
     <ApolloProvider client={client}>
       <MainThemeProvider theme={theme}>
-        <GlobalStyle />
-        <NavBar userData={userData} />
+        <NavBar userData={userData} toggleThemeMode={toggleThemeMode} isLightMode={isLightMode} />
 
         <StyledPageContentWrapper>
           <Component {...pageProps} userData={userData} />
