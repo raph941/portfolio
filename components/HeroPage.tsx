@@ -43,6 +43,10 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     text-align: left;
   }
 
+  /* .name-text {
+    color: ${({ theme }) => theme.variables.light};
+  } */
+
   @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     min-height: calc(100vh - 106px);
 
@@ -113,12 +117,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
               rel="noreferrer"
               className="px-1"
             >
-              <Image
-                src={platform?.imgSrc}
-                alt={platform?.title}
-                height={20}
-                width={20}
-              />
+              <platform.imgSrc className="px-1" height={30} width={25} />
             </a>
           ))}
         </div>

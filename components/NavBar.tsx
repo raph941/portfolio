@@ -13,15 +13,17 @@ import {
 import styled from "styled-components";
 import { UserDataType } from "../data/userData";
 import { ThemeType } from "../styles/theme";
-import { useThemeMode } from "../hooks/useThemeMode";
-import LightIcon from "/public/assets/icons/brightness.svg";
-import DarkIcon from "/public/assets/icons/night.svg";
+import ModeIcon from "/public/assets/icons/mode.svg";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   z-index: 1000;
   background-color: ${({ theme }) => theme.variables.slightlyTransparent};
   width: -webkit-fill-available;
   position: fixed;
+
+  .mode_toggler {
+    Z-index: 10;
+  }
 
   .navbar-collapse {
     margin-right: -18px;
@@ -91,13 +93,9 @@ const NavBar: FC<NavBarProps> = ({
           </Link>
         </NavbarBrand>
 
-        <Image
-          src={isLightMode ? LightIcon : DarkIcon}
-          height={30}
-          width={30}
-          role="button"
-          onClick={() => toggleThemeMode()}
-        />
+        <div className="mode_toggler flex-1" role="button" onClick={() => toggleThemeMode()}>
+          <ModeIcon height={30} width={30} />
+        </div>
         <NavbarToggler onClick={handleNavbarToggle} />
 
         <Collapse

@@ -16,11 +16,6 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
         margin: 0 auto;
     }
 
-    .btn {
-        border-radius: 1.875rem;
-        font-size: 0.875rem;
-    }
-
     .flex-next-img-wrap {
         width: 100%;
     }
@@ -34,6 +29,45 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     .flex-next-img-wrap span {
         padding-top: 0 !important;
         width: -webkit-fill-available;
+    }
+
+    svg {
+        fill: ${({ theme }) => theme.variables.iconFillColor};
+    }
+
+    /* Button */
+    .btn {
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .btn-secondary {
+        background-color: ${({ theme }) =>
+          theme.variables.btnSecondaryBg} !important;
+        color: ${({ theme }) => theme.variables.btnSecondaryColor} !important;
+
+        &:hover {
+            background-color: ${({ theme }) =>
+              theme.variables.btnSecoondaryHoverBg} !important;
+        }
+    }
+
+    .btn-outline-secondary {
+        border-color: ${({ theme }) =>
+          theme.variables.btnSecondaryBg} !important;
+        color: ${({ theme }) => theme.variables.btnSecondaryBg} !important;
+
+        &:hover {
+            background-color: ${({ theme }) =>
+              theme.variables.btnSecoondaryHoverBg} !important;
+            color: ${({ theme }) =>
+              theme.variables.btnSecondaryColor} !important;
+        }
+    }
+
+    .body-text {
+        color: ${({ theme }) => theme.variables.bodyColor} !important;
     }
 `;
 

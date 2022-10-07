@@ -57,37 +57,36 @@ const StyledSectionTitle = styled(StyledH2)`
   z-index: 1;
   padding-bottom: 7px;
   color: ${({ theme }) => theme.variables.titleColor};
+  text-align: center;
 
   &:before {
     display: block;
     position: absolute;
     content: "";
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: ${({ theme }) => theme.variables.light};
     height: 2px;
     bottom: 0;
   }
 
   &:after {
-    background-color: #54ca95;
     display: block;
     position: absolute;
     content: "";
     width: 30px;
-    background-color: ${({ theme }) => theme.colors.dark};
+    background-color: ${({ theme }) => theme.variables.textColor};
     height: 2px;
     bottom: 0;
   }
 
   &.weight-bold {
-    font-family: "Poppins", Helvetica, sans-serif;
     font-weight: 600;
     font-style: normal;
   }
 `;
 
 const StyledBodyText = styled.p<{ theme: ThemeType }>`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   text-align: justify;
@@ -96,7 +95,6 @@ const StyledBodyText = styled.p<{ theme: ThemeType }>`
 `;
 
 const SectionDivider = styled.div<{ theme: ThemeType }>`
-  /* padding: 0 1.625rem; */
   height: 120px;
   width: 100%;
 

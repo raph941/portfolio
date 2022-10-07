@@ -4,9 +4,7 @@ import classNames from "classnames";
 import { UserDataType } from "../data/userData";
 import { StyledBodyText, StyledSectionTitle, StyledH4 } from "./StyledElements";
 import { Col, Row } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import Image from "next/image";
 
 interface WhatIDoProps {
   data: UserDataType["whatIDo"];
@@ -16,9 +14,10 @@ interface WhatIDoProps {
 const StyledWrapper = styled.div`
   min-height: 60vh;
   padding: 100px 0;
-  .icon {
-    font-size: 2.0625rem;
-    margin-right: 20px;
+
+  .items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 `;
 
@@ -27,16 +26,16 @@ const WhatIDo: FC<WhatIDoProps> = ({ data, className }) => (
     <StyledSectionTitle className="weight-bold">What I Do</StyledSectionTitle>
 
     <Row>
-      {data?.map(({ title, description, icon }, key) => (
-        <Col md="6" key={key}>
-          <div className="d-flex">
-            <FontAwesomeIcon icon={icon} className="icon" />
-            <div>
-              <StyledH4>{title}</StyledH4>
-              <StyledBodyText>{description}</StyledBodyText>
+      {data?.map(({ title, description, icon: Icon }, key) => (
+        <div className="items-wrapper" key={key}>
+          <div className="d-flex flex-column align-items-center">
+            <Icon height={60} width={60} />
+            <div className="mt-4">
+              <StyledH4 className="text-center font-weight-bold">{title}</StyledH4>
+              <StyledBodyText className="text-justify">{description}</StyledBodyText>
             </div>
           </div>
-        </Col>
+        </div>
       ))}
     </Row>
   </StyledWrapper>

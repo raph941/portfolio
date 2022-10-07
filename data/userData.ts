@@ -10,27 +10,29 @@ import Avatar from "/public/assets/images/RaphaelAvatar.png";
 import LinkedinIcon from "/public/assets/images/linkedin-brands.svg";
 import TwitterIcon from "/public/assets/images/twitter-brands.svg";
 import GithubIcon from "/public/assets/images/github-brands.svg";
+import ContentIcon from "/public/assets/icons/content.svg";
+import CodeIcon from "/public/assets/icons/code.svg";
 
 export const userData = {
   meta: {
     title: "<Web Developer />",
     name: "Hi, am Raphael Ehindero",
-    bio: "I'm a software engineer that loves building cool things on the web.",
+    bio: "I'm a software engineer who loves building cool things on the web.",
     imgSrc: Avatar.src,
     socialLinks: [
       {
         title: "Github",
-        imgSrc: GithubIcon.src,
+        imgSrc: GithubIcon,
         link: "https://github.com/raph941",
       },
       {
         title: "Linkedin",
-        imgSrc: LinkedinIcon.src,
+        imgSrc: LinkedinIcon,
         link: "https://www.linkedin.com/in/raphaelehindero/",
       },
       {
         title: "Twitter",
-        imgSrc: TwitterIcon.src,
+        imgSrc: TwitterIcon,
         link: "https://twitter.com/RaphaelEhindero",
       },
     ],
@@ -38,13 +40,13 @@ export const userData = {
 
   whatIDo: [
     {
-      icon: faCode,
+      icon: CodeIcon,
       title: "Build Software Applications",
       description:
         "With over 4 years of software development experience, On day to day basis I contribute to building rohburst, scalable, and user friendly applications that solves user's problems. Checkout the portfolio section of this site to see some of my projects that are sharable here.",
     },
     {
-      icon: faParagraph,
+      icon: ContentIcon,
       title: "Content Writing",
       description:
         "This is a relatively newer area, where I try to share some ideas, knowledge and thoughts on various tech subjects and passionate about. Checkout the blog section of this site to see some of my writeups.",

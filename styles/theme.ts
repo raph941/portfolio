@@ -11,12 +11,18 @@ export const lightTheme = {
     bodyColor: "#666",
     titleColor: "#333",
     textMuted: "#aaa",
-    light: "#ffffff",
+    light: "#ebedf0",
     slightlyTransparent: "#ffffff89",
     darkText: "#222",
-    textColor: "",
+    textColor: "#333",
     thetiary: "#9688ea",
-    navIconBg: 'transparent'
+    navIconBg: 'transparent',
+    footerBg: "#ffffff",
+    iconFillColor: "",
+    // Btn
+    btnSecondaryBg: "",
+    btnSecoondaryHoverBg: "",
+    btnSecondaryColor: "",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -34,17 +40,23 @@ export const darkTheme = {
   variables: {
     primary: "#d5d5d5",
     secondary: "#535b61",
-    background: "#161616",
+    background: "#18191a",
     bodyColor: "#d5d5d5",
-    titleColor: "#333",
+    titleColor: "#f5f6f7",
     textMuted: "#aaa",
     light: "#444444",
     // TODO: get dark variant for the following
-    slightlyTransparent: "#1e1e20",
+    slightlyTransparent: "#242526",
     darkText: "#222",
     textColor: "#EBEDF4",
     thetiary: "#9688ea",
-    navIconBg: '#EFEFEF'
+    navIconBg: '#EFEFEF',
+    footerBg: "#303846",
+    iconFillColor: "#f5f6f7",
+    // Btn
+    btnSecondaryBg: "#ebedf0",
+    btnSecoondaryHoverBg: "#d4d5d8",
+    btnSecondaryColor: "#1c1e21",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

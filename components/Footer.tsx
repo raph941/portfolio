@@ -7,6 +7,7 @@ import { ThemeType } from "../styles/theme";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+  background-color: ${({ theme }) => theme.variables.footerBg};
   margin-top: 100px;
 
   .links-wrap {

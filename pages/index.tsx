@@ -17,11 +17,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 `;
 
 const Home: FC<HeroProps> = (props) => {
-  const { themeMode, toggleThemeMode } = useThemeMode();
-
-  useEffect(() => {
-    console.log('NEW: ', {themeMode})
-  }, [themeMode])
+  const { isLightMode } = useThemeMode();
   
   const { userData } = props;
   const wrapperClassName =

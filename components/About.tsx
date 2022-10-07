@@ -66,13 +66,9 @@ const About: React.FunctionComponent<AboutProps> = ({ data, techStack }) => (
       <ul className="stack-list">
         {techStack?.map((stack, key) => (
           <li key={key} className="">
-            <Image
-              src={stack.image}
-              alt="language"
-              height={20}
-              width={20}
-            />
-            <span className="stack-name">{stack.name}</span>
+
+            <stack.image height={30} width={25} role="img" />
+            <span className="body-text mx-2">{stack.name}</span>
           </li>
         ))}
       </ul>
