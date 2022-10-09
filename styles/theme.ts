@@ -23,6 +23,7 @@ export const lightTheme = {
     btnSecondaryBg: "",
     btnSecoondaryHoverBg: "",
     btnSecondaryColor: "",
+    borderColor: "#606770",
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
@@ -35,7 +36,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   colors: {
-    dark: "#333",
+    dark: "#ebedf0",
   },
   variables: {
     primary: "#d5d5d5",
@@ -57,6 +58,7 @@ export const darkTheme = {
     btnSecondaryBg: "#ebedf0",
     btnSecoondaryHoverBg: "#d4d5d8",
     btnSecondaryColor: "#1c1e21",
+    borderColor: "#606770"
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

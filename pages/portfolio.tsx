@@ -24,6 +24,18 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     margin-bottom: 50px;
   }
 
+  .achive-toggler-wrap {
+    color: ${({ theme }) => theme.colors.dark};
+
+    .ant-switch {
+      border: 1px solid ${({ theme }) => theme.colors.dark};
+    }
+
+    .ant-switch-handle {
+      margin-top: -1px; // Fix inherent issue with vertical alignment of switch dot.
+    }
+  }
+
   .portfolio-filters {
     list-style: none;
     padding: 0;
@@ -143,7 +155,7 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
       </StyledBodyText>
 
       <ul className="portfolio-filters">
-        <div className="d-inline-flex align-items-center">
+        <div className="d-inline-flex align-items-center achive-toggler-wrap">
           <Switch size="small" className="mx-2" onChange={setShowAchieve} />
           view achieve
         </div>
@@ -179,7 +191,7 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
         title={activeProject?.title}
         placement="bottom"
         onClose={() => setActiveproject(undefined)}
-        visible={!!activeProject}
+        open={!!activeProject}
         size="large"
         extra={
           <RightLeftNav

@@ -11,15 +11,8 @@ import GithubIcon from "/public/assets/icons/github-brands.svg";
 import GitLabIcon from "/public/assets/icons/gitlab-brands.svg";
 import FolderIcon from "/public/assets/icons/folder-solid.svg";
 import ExternalLinkIcon from "/public/assets/icons/external-link.svg";
-import Image from "next/image";
 import { ProjectType } from "../lib/types";
 
-const getCodeHostIcon = (hostLink: string) => {
-  if (hostLink.includes("gitlab")) {
-    return GitLabIcon;
-  }
-  return GithubIcon;
-};
 
 interface PortfolioItemProps extends ProjectType {
   icon?: string;
@@ -29,11 +22,14 @@ interface PortfolioItemProps extends ProjectType {
 const StyledWrapper = styled.div`
   box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.282);
   max-width: 343px;
+  border: 0.5px solid ${({ theme }) => theme.variables.borderColor};
+  background-color: transparent;
 
   .card-header,
   .card-body,
   .card-footer {
     background-color: transparent;
+    color: ${({ theme }) => theme.variables.bodyColor};
     border: none;
   }
 
@@ -52,7 +48,7 @@ const StyledWrapper = styled.div`
 `;
 
 const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
-  codeHost,
+  codeHost="",
   description,
   liveLink,
   stacks,
@@ -60,28 +56,23 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
   icon,
   onClick,
 }) => {
+  const CodehostIcon = codeHost.includes('gitlab') ? GitLabIcon : GithubIcon
   return (
     <StyledWrapper onClick={onClick} as={Card} className="card" role="button">
       <CardHeader>
         <div className="d-flex justify-content-between links">
-          <Image src={icon || FolderIcon} width={30} height={30} alt="Folder" />
+          <FolderIcon width={30} height={30} alt="Folder" />
 
           <div className="d-flex align-items-center">
             {liveLink && (
               <a target="_blank" href={liveLink} rel="noreferrer">
-                <Image
-                  src={ExternalLinkIcon}
-                  width={15}
-                  height={15}
-                  alt="Folder"
-                />
+                <ExternalLinkIcon width={15} height={15} />
               </a>
             )}
 
             {codeHost && (
               <a className="codehost-icon" target="_blank" href={codeHost} rel="noreferrer">
-                <Image
-                  src={getCodeHostIcon(codeHost)}
+                <CodehostIcon
                   width={15}
                   height={15}
                   alt="Folder"
