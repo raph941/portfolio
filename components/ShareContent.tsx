@@ -53,11 +53,9 @@ const ShareContent: React.FunctionComponent<ShareContentProps> = ({
           rel="noreferrer"
           href={`https://web.facebook.com/sharer.php?u=${shareUrl}`}
         >
-          <Image
-            loading="eager"
-            width={15}
-            height={15}
-            src={FacebookIcon}
+          <FacebookIcon
+            width={25}
+            height={25}
             alt="Facebook icon"
           />
         </a>
@@ -68,11 +66,9 @@ const ShareContent: React.FunctionComponent<ShareContentProps> = ({
           rel="noreferrer"
           href={`https://twitter.com/intent/tweet/?text=${title} on ${shareUrl}`}
         >
-          <Image
-            loading="eager"
-            width={15}
-            height={15}
-            src={TwitterIcon}
+          <TwitterIcon
+            width={25}
+            height={25}
             alt="Twitter icon"
           />
         </a>
@@ -83,11 +79,9 @@ const ShareContent: React.FunctionComponent<ShareContentProps> = ({
           rel="noreferrer"
           href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`}
         >
-          <Image
-            loading="eager"
-            width={15}
-            height={15}
-            src={LinkedinIcon}
+          <LinkedinIcon
+            width={25}
+            height={25}
             alt="LinkedIn icon"
           />
         </a>
@@ -98,11 +92,9 @@ const ShareContent: React.FunctionComponent<ShareContentProps> = ({
           rel="noreferrer"
           href={`https://api.whatsapp.com/send?text=${title} on ${shareUrl}`}
         >
-          <Image
-            loading="eager"
-            width={15}
-            height={15}
-            src={WhatsappIcon}
+          <WhatsappIcon
+            width={25}
+            height={25}
             alt="Whatsapp icon"
           />
         </a>

@@ -1,7 +1,14 @@
 import { mediaQueries } from "./media";
 
+// Holds colors that remains constant on every mode
+const colors = {
+  gray1: '#ebedf0',
+  textGray1: '#222'
+}
+
 export const lightTheme = {
   colors: {
+    ...colors,
     dark: "#333",
   },
   variables: {
@@ -36,6 +43,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   colors: {
+    ...colors,
     dark: "#ebedf0",
   },
   variables: {
@@ -48,7 +56,7 @@ export const darkTheme = {
     light: "#444444",
     // TODO: get dark variant for the following
     slightlyTransparent: "#242526",
-    darkText: "#222",
+    darkText: "#ffffff",
     textColor: "#EBEDF4",
     thetiary: "#9688ea",
     navIconBg: '#EFEFEF',

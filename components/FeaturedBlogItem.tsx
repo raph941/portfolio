@@ -8,7 +8,7 @@ import { StyledBodyText, StyledH3, StyledH4 } from "./StyledElements";
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   cursor: pointer;
   display: flex;
-  box-shadow: 0px 2px 21px -2px #efebf7;
+  box-shadow: 0px 2px 14px -10px ${({ theme }) => theme.colors.dark};
   border-radius: 25px;
   margin-bottom: 50px;
 

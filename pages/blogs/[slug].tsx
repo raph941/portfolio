@@ -2,12 +2,18 @@ import moment from "moment";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { StyledH1, StyledBodyText, ShareContent } from "../../components";
+import {
+  StyledH1,
+  StyledBodyText,
+  ShareContent,
+  StyledPageContentWrapper,
+} from "../../components";
 import { DEFAULT_IMAGE } from "../../components/BlogItem";
 import { UserDataType } from "../../data/userData";
 import { getAllPosts, getPostBySlug, getRecentPosts } from "../../lib/posts";
 import { BlogType } from "../../lib/types";
 import { getReadTime } from "../../lib/utils";
+import { ThemeType } from "../../styles/theme";
 
 const StyledWrapper = styled.div`
   min-height: calc(100vh - 120px);
@@ -16,26 +22,39 @@ const StyledWrapper = styled.div`
   .page-title {
     margin-bottom: 50px;
   }
+`;
 
-  .content {
-    display: flex;
-    margin-top: 50px;
-    max-width: 900px;
-    width: -webkit-fill-available;
+const StyledPageContentWrap = styled.div<{ theme: ThemeType }>`
+  display: flex;
+  margin-top: 50px;
+  max-width: 900px;
+  width: -webkit-fill-available;
+  margin-left: auto;
+  margin-right: auto;
+
+  img {
+    max-width: 100% !important;
+    // fixes squashed images
+    object-fit: contain;
+    height: unset;
+  }
+
+  p {
+    line-height: 30px;
+  }
+
+  @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     margin-left: auto;
     margin-right: auto;
-
-    img {
-      max-width: 100% !important;
-    }
   }
 `;
 
 interface BlogPageProps {
   post: BlogType;
+  userData: UserDataType;
 }
 
-const Blog: React.FunctionComponent<BlogPageProps> = ({ post }) => {
+const Blog: React.FunctionComponent<BlogPageProps> = ({ post, userData }) => {
   const [shareUrl, setShareUrl] = useState<string>("");
 
   useEffect(() => {
@@ -55,8 +74,8 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post }) => {
             <strong className="mx-2">-</strong> {getReadTime(post?.content)} min
             Read
           </div>
-
-          <ShareContent title={post.title} shareUrl={shareUrl} />
+          <ShareContent title={post.title} shareUrl={shareUrl} /> by{" "}
+          <strong>{userData?.meta?.fullname}</strong>
         </div>
       </StyledBodyText>
 
@@ -74,13 +93,13 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post }) => {
         />
       </div>
 
-      <div className="content">
+      <StyledPageContentWrap className="body-text">
         <div
           dangerouslySetInnerHTML={{
             __html: post?.content,
           }}
         />
-      </div>
+      </StyledPageContentWrap>
     </StyledWrapper>
   );
 };

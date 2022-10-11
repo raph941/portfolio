@@ -16,12 +16,12 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 
   .category {
     position: relative;
-    background: ${({ theme }) => theme.variables.light};
+    background: ${({ theme }) => theme.colors.gray1};
     border-radius: 3px;
     padding: 3px 7px;
     line-height: 1.2em;
     font-size: 11px;
-    color: ${({ theme }) => theme.variables.darkText};
+    color: ${({ theme }) => theme.colors.textGray1};
     width: fit-content;
   }
 `;

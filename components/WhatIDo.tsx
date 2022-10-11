@@ -12,6 +12,7 @@ interface WhatIDoProps {
 }
 
 const StyledWrapper = styled.div`
+  max-width: 700px;
   min-height: 60vh;
   padding: 100px 0;
 
@@ -27,12 +28,12 @@ const WhatIDo: FC<WhatIDoProps> = ({ data, className }) => (
 
     <Row>
       {data?.map(({ title, description, icon: Icon }, key) => (
-        <div className="items-wrapper" key={key}>
+        <div className="items-wrapper mt-3" key={key}>
           <div className="d-flex flex-column align-items-center">
             <Icon height={60} width={60} />
             <div className="mt-4">
               <StyledH4 className="text-center font-weight-bold">{title}</StyledH4>
-              <StyledBodyText className="text-justify">{description}</StyledBodyText>
+              <StyledBodyText className="text-center text-justify">{description}</StyledBodyText>
             </div>
           </div>
         </div>

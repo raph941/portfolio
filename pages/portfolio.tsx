@@ -9,7 +9,7 @@ import {
 } from "../components";
 import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
-import { Drawer, Switch } from "antd";
+import { Drawer, Empty, Switch } from "antd";
 import { ProjectType } from "../lib/types";
 
 interface PortfolioProps {
@@ -99,6 +99,11 @@ const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
     }
 `;
 
+const StyledEmpty = styled(Empty)`
+  color: ${({ theme }) => theme.colors.dark};
+  padding: 50px 0;
+`
+
 const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   const { portfolio } = userData;
   const [showAchieve, setShowAchieve] = useState<boolean>(false);
@@ -108,6 +113,14 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>(
     portfolio?.featuredProjects || []
   );
+
+  const getEmptyText = () => {
+    if (!portfolio?.featuredProjects?.length && !portfolio?.otherProjects?.length) {
+      return "Oops!, no portfolio project has been uploaded yet."
+    }
+    
+    return "There are no projects in this category. Perhaps check other categories"
+  }
 
   const handleNavigate = (direction: "right" | "left") => {
     if (direction === "right") {
@@ -156,8 +169,8 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
 
       <ul className="portfolio-filters">
         <div className="d-inline-flex align-items-center achive-toggler-wrap">
-          <Switch size="small" className="mx-2" onChange={setShowAchieve} />
-          view achieve
+          <Switch id="switch" size="small" className="mx-2" onChange={setShowAchieve} />
+          <label role="button" htmlFor="switch">view achieve</label>
         </div>
 
         {portfolio?.categories?.map((value, index) => (
@@ -176,14 +189,16 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
       </ul>
 
       <div className="projects-wrapper">
-        {filteredProjects?.map(
-          (projectData, index) => (
+        {!!filteredProjects.length ? (
+          filteredProjects?.map((projectData, index) => (
             <PortfolioItem
               onClick={() => handlePortfolioItemClick(projectData, index)}
               key={index}
               {...projectData}
             />
-          )
+          ))
+        ) : (
+          <StyledEmpty description={getEmptyText()} />
         )}
       </div>
 

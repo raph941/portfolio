@@ -16,7 +16,8 @@ import CodeIcon from "/public/assets/icons/code.svg";
 export const userData = {
   meta: {
     title: "<Web Developer />",
-    name: "Hi, am Raphael Ehindero",
+    fullname: "Raphael Ehindero",
+    greeting: "Hi, am Raphael Ehindero",
     bio: "I'm a software engineer who loves building cool things on the web.",
     imgSrc: Avatar.src,
     socialLinks: [
@@ -36,6 +37,7 @@ export const userData = {
         link: "https://twitter.com/RaphaelEhindero",
       },
     ],
+    resumeLink: "https://drive.google.com/file/d/1Xz0Js-22dn-Zm4O2hC5_6Qy9Xd98ahAK/view?usp=sharing"
   },
 
   whatIDo: [

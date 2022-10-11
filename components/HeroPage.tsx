@@ -89,7 +89,7 @@ interface HeroPageProps {
 
 const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
   const {
-    data: { bio, imgSrc, name, title, socialLinks },
+    data: { bio, imgSrc, greeting, title, socialLinks, resumeLink },
   } = props;
 
   return (
@@ -104,7 +104,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         <StyledH4 className="title-text text-muted mt-3 mt-sm-0">
           {title}
         </StyledH4>
-        <StyledH1 className="name-text">{name}</StyledH1>
+        <StyledH1 className="name-text">{greeting}</StyledH1>
         <StyledBodyText className="bio-text">{bio}</StyledBodyText>
 
         <div className="mb-2 socials-wrapper">
@@ -123,7 +123,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         </div>
 
         <div className="d-flex buttons-wrapper mb-3">
-          <a href="public/assets/resume.pdf" download>
+          <a href={resumeLink} download target="_blank">
             <span role="button" className="btn btn-secondary mx-2">
               Download CV
             </span>

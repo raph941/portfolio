@@ -9,11 +9,13 @@ import {
   NavbarBrand,
   NavbarToggler,
   NavItem,
+  NavLink,
 } from "reactstrap";
 import styled from "styled-components";
 import { UserDataType } from "../data/userData";
 import { ThemeType } from "../styles/theme";
 import ModeIcon from "/public/assets/icons/mode.svg";
+import GithubIcon from "/public/assets/images/github-brands.svg";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   z-index: 1000;
@@ -71,6 +73,7 @@ const NavBar: FC<NavBarProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleNavbarToggle = () => setIsOpen((current) => !current);
+  const PORTFOLIO_CODE_LINK = "https://github.com/raph941/portfolio"
 
   const { pathname } = useRouter();
 
@@ -123,6 +126,11 @@ const NavBar: FC<NavBarProps> = ({
               <Link className="nav-link" href="/blogs/">
                 <span className="nav-link">Blog</span>
               </Link>
+            </StyledNavItem>
+            <StyledNavItem className="px-sm-3 d-flex align-items-center">
+              <NavLink target="_blank" className="nav-link" href={PORTFOLIO_CODE_LINK}>
+                <GithubIcon height={20} width={20} />
+              </NavLink>
             </StyledNavItem>
           </Nav>
         </Collapse>
