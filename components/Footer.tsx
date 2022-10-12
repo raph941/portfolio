@@ -10,8 +10,8 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   background-color: ${({ theme }) => theme.variables.footerBg};
   margin-top: 100px;
 
-  .links-wrap {
-    gap: 20px;
+  .footer-link-label {
+    margin-right: 20px;
   }
 
   .footer-link-label {

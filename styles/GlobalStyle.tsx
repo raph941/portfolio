@@ -66,6 +66,16 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
         }
     }
 
+    // Typography
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: ${({ theme }) => theme.variables.titleColor} !important;
+    }
+
     .body-text {
         color: ${({ theme }) => theme.variables.bodyColor} !important;
     }

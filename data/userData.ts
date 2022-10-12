@@ -49,7 +49,7 @@ export const userData = {
     },
     {
       icon: ContentIcon,
-      title: "Content Writing",
+      title: "Technical Content Writing",
       description:
         "This is a relatively newer area, where I try to share some ideas, knowledge and thoughts on various tech subjects and passionate about. Checkout the blog section of this site to see some of my writeups.",
     },

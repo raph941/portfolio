@@ -43,19 +43,11 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     text-align: left;
   }
 
-  /* .name-text {
-    color: ${({ theme }) => theme.variables.light};
-  } */
-
   @media ${(props) => props.theme.mediaQueries.mobileTablet} {
     min-height: calc(100vh - 106px);
 
     .bio-text {
       text-align: center;
-    }
-
-    .img-frame {
-      // border: 12px solid ${({ theme }) => theme.variables.light};
     }
 
     .img-frame,
