@@ -15,8 +15,8 @@ const usePerstedThemeMode = createPersistedState<boolean>('isLightMode')
  * @returns themeMode, toggleThemeMode, theme
  */
 const useThemeMode = (): ThemeModeResType => {
-  const [isLightMode, setIsLightMode] = usePerstedThemeMode(true);
-  const [theme, setTheme] = useState(lightTheme)
+  const [isLightMode, setIsLightMode] = usePerstedThemeMode(false);
+  const [theme, setTheme] = useState(darkTheme)
 
   useEffect(() => {
     setTheme(isLightMode ? lightTheme : darkTheme)

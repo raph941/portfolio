@@ -6,11 +6,11 @@ import {
   StyledH1,
   StyledBodyText,
   ShareContent,
-  StyledPageContentWrapper,
+  Layout,
 } from "../../components";
 import { DEFAULT_IMAGE } from "../../components/BlogItem";
 import { UserDataType } from "../../data/userData";
-import { getAllPosts, getPostBySlug, getRecentPosts } from "../../lib/posts";
+import { getAllPosts, getPostBySlug } from "../../lib/posts";
 import { BlogType } from "../../lib/types";
 import { getReadTime } from "../../lib/utils";
 import { ThemeType } from "../../styles/theme";
@@ -64,43 +64,45 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post, userData }) => {
   }, []);
 
   return (
-    <StyledWrapper className="d-block">
-      <StyledH1 className="text-center">{post?.title}</StyledH1>
+    <Layout>
+      <StyledWrapper className="d-block">
+        <StyledH1 className="text-center">{post?.title}</StyledH1>
 
-      <StyledBodyText className="text-center">
-        <div>
-          <div className="mb-2">
-            {moment(post.date).format("Do MMM, YYYY")}{" "}
-            <strong className="mx-2">-</strong> {getReadTime(post?.content)} min
-            Read
+        <StyledBodyText className="text-center">
+          <div>
+            <div className="mb-2">
+              {moment(post.date).format("Do MMM, YYYY")}{" "}
+              <strong className="mx-2">-</strong> {getReadTime(post?.content)}{" "}
+              min Read
+            </div>
+            <ShareContent title={post.title} shareUrl={shareUrl} /> by{" "}
+            <strong>{userData?.meta?.fullname}</strong>
           </div>
-          <ShareContent title={post.title} shareUrl={shareUrl} /> by{" "}
-          <strong>{userData?.meta?.fullname}</strong>
+        </StyledBodyText>
+
+        <div className="flex-next-img-wrap d-flex justify-content-center mb-5">
+          <Image
+            alt=""
+            layout="responsive"
+            sizes="100vw"
+            height={400}
+            width="100vw"
+            src={post?.featuredImage?.sourceUrl || DEFAULT_IMAGE}
+            quality={100}
+            unoptimized
+            className="flex-next-img"
+          />
         </div>
-      </StyledBodyText>
 
-      <div className="flex-next-img-wrap d-flex justify-content-center mb-5">
-        <Image
-          alt=""
-          layout="responsive"
-          sizes="100vw"
-          height={400}
-          width="100vw"
-          src={post?.featuredImage?.sourceUrl || DEFAULT_IMAGE}
-          quality={100}
-          unoptimized
-          className="flex-next-img"
-        />
-      </div>
-
-      <StyledPageContentWrap className="body-text">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: post?.content,
-          }}
-        />
-      </StyledPageContentWrap>
-    </StyledWrapper>
+        <StyledPageContentWrap className="body-text">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: post?.content,
+            }}
+          />
+        </StyledPageContentWrap>
+      </StyledWrapper>
+    </Layout>
   );
 };
 
@@ -143,4 +145,3 @@ export const getStaticPaths = async () => {
     fallback: "blocking",
   };
 };
-

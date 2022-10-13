@@ -1,8 +1,9 @@
+import { AnimatePresence, motion } from "framer-motion"
 import { Button } from "reactstrap";
 import styled from "styled-components";
 import { ThemeType } from "../styles/theme";
 
-const StyledH1 = styled.h1<{ theme: ThemeType }>`
+const StyledH1 = styled(motion.h1)<{ theme: ThemeType }>`
   font-size: 48px;
   line-height: 56px;
   margin-top: 0;
@@ -17,7 +18,7 @@ const StyledH1 = styled.h1<{ theme: ThemeType }>`
   }
 `;
 
-const StyledH2 = styled.h2<{ theme: ThemeType }>`
+const StyledH2 = styled(motion.h2)<{ theme: ThemeType }>`
   display: inline-block;
   position: relative;
   font-size: 21px;
@@ -33,7 +34,7 @@ const StyledH2 = styled.h2<{ theme: ThemeType }>`
   }
 `;
 
-const StyledH3 = styled.h4<{ theme: ThemeType }>`
+const StyledH3 = styled(motion.h3)<{ theme: ThemeType }>`
   font-size: 20px;
   color: #aaa;
   margin-bottom: 10px;
@@ -41,7 +42,7 @@ const StyledH3 = styled.h4<{ theme: ThemeType }>`
   font-weight: 800;
 `;
 
-const StyledH4 = styled.h4<{ theme: ThemeType }>`
+const StyledH4 = styled(motion.h4)<{ theme: ThemeType }>`
   font-size: 16px;
   color: #aaa;
   margin-bottom: 10px;
@@ -85,7 +86,7 @@ const StyledSectionTitle = styled(StyledH2)`
   }
 `;
 
-const StyledBodyText = styled.p<{ theme: ThemeType }>`
+const StyledBodyText = styled(motion.p)<{ theme: ThemeType }>`
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
@@ -135,6 +136,8 @@ const BlogItemsWrapper = styled.div`
   row-gap: 2rem;
 `;
 
+const AnimatedDiv = styled(motion.div)``
+
 export {
   StyledH1,
   StyledBodyText,
@@ -146,4 +149,5 @@ export {
   StyledButton,
   BlogItemsWrapper,
   StyledH3,
+  AnimatedDiv,
 };

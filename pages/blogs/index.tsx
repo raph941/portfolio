@@ -7,6 +7,7 @@ import {
   StyledH1,
   StyledH2,
   BlogItem,
+  Layout,
 } from "../../components";
 import { FeaturedBlogItem } from "../../components/FeaturedBlogItem";
 import { UserDataType } from "../../data/userData";
@@ -85,58 +86,60 @@ const Blog: React.FunctionComponent<BlogPageProps> = () => {
   }, [data]);
 
   return (
-    <StyledWrapper className="">
-      <StyledH1 className="page-title">Blogs</StyledH1>
+    <Layout>
+      <StyledWrapper>
+        <StyledH1 className="page-title">Blogs</StyledH1>
 
-      <section>
-        <StyledH2 className="page-title">Featured</StyledH2>
-        {loading ? (
-          <div className="mb-3">
-            <Skeleton count={5} />
-          </div>
-        ) : (
-          !!posts?.length && (
-            <div>
-              <FeaturedBlogItem
-                onClick={handleNavigateToDetail}
-                {...posts?.[0]}
-              />
-            </div>
-          )
-        )}
-      </section>
-
-      <section>
-        <StyledH2 className="page-title">Others Blogs</StyledH2>
-
-        <BlogItemsWrapper>
+        <section>
+          <StyledH2 className="page-title">Featured</StyledH2>
           {loading ? (
             <div className="mb-3">
               <Skeleton count={5} />
             </div>
           ) : (
-            posts?.map((post, index) => (
-              <BlogItem
-                onClick={handleNavigateToDetail}
-                key={index}
-                {...post}
-              />
-            ))
+            !!posts?.length && (
+              <div>
+                <FeaturedBlogItem
+                  onClick={handleNavigateToDetail}
+                  {...posts?.[0]}
+                />
+              </div>
+            )
           )}
-        </BlogItemsWrapper>
-      </section>
+        </section>
 
-      {data?.posts?.pageInfo.hasNextPage && (
-        <div className="show-more-wrap">
-          <button
-            className="btn btn-outline-secondary"
-            onClick={() => handleShowMore()}
-          >
-            Show more
-          </button>
-        </div>
-      )}
-    </StyledWrapper>
+        <section>
+          <StyledH2 className="page-title">Others Blogs</StyledH2>
+
+          <BlogItemsWrapper>
+            {loading ? (
+              <div className="mb-3">
+                <Skeleton count={5} />
+              </div>
+            ) : (
+              posts?.map((post, index) => (
+                <BlogItem
+                  onClick={handleNavigateToDetail}
+                  key={index}
+                  {...post}
+                />
+              ))
+            )}
+          </BlogItemsWrapper>
+        </section>
+
+        {data?.posts?.pageInfo.hasNextPage && (
+          <div className="show-more-wrap">
+            <button
+              className="btn btn-outline-secondary"
+              onClick={() => handleShowMore()}
+            >
+              Show more
+            </button>
+          </div>
+        )}
+      </StyledWrapper>
+    </Layout>
   );
 };
 

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import {
+  AnimatedDiv,
   StyledBodyText,
   StyledH1,
   StyledH4,
@@ -9,6 +9,7 @@ import {
 import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
 import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
+import { fadeInCenter, fadeInDown } from "../data/animationConfigs";
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   min-height: calc(100vh - 30px);
@@ -20,7 +21,6 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
   .img-frame {
     height: 400px;
     width: 400px;
-    // border: 20px solid ${({ theme }) => theme.variableslight};
     border-radius: 50%;
     background: url(${RaphaelAvatar.src});
     background-size: cover;
@@ -90,7 +90,10 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
       role="navigation"
     >
       <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
-        <div className="img-frame" />
+        <AnimatedDiv
+          className="img-frame"
+          {...fadeInCenter}
+        />
       </div>
       <div className="d-flex flex-column justify-content-start justify-content-sm-center flex-grow-1">
         <StyledH4 className="title-text text-muted mt-3 mt-sm-0">
@@ -99,7 +102,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         <StyledH1 className="name-text">{greeting}</StyledH1>
         <StyledBodyText className="bio-text">{bio}</StyledBodyText>
 
-        <div className="mb-2 socials-wrapper">
+        <AnimatedDiv className="mb-2 socials-wrapper" {...fadeInDown({})}>
           {socialLinks?.map((platform, index) => (
             <a
               key={index}
@@ -112,9 +115,9 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
               <platform.imgSrc className="px-1" height={30} width={25} />
             </a>
           ))}
-        </div>
+        </AnimatedDiv>
 
-        <div className="d-flex buttons-wrapper mb-3">
+        <AnimatedDiv className="d-flex buttons-wrapper mb-3" {...fadeInDown({delay: 0.6})}>
           <a href={resumeLink} download target="_blank" rel="noreferrer">
             <span role="button" className="btn btn-secondary mx-2">
               Download CV
@@ -125,7 +128,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
               Contact
             </span>
           </Link>
-        </div>
+        </AnimatedDiv>
       </div>
     </StyledWrapper>
   );
