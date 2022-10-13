@@ -2,6 +2,8 @@ import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import {
+  AnimatedDiv,
+  Layout,
   PortfolioItem,
   RightLeftNav,
   StyledBodyText,
@@ -11,6 +13,8 @@ import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
 import { Drawer, Empty, Switch } from "antd";
 import { ProjectType } from "../lib/types";
+import { AnimatePresence } from "framer-motion";
+import { portfolioFilterAnimate } from "../data/animationConfigs";
 
 interface PortfolioProps {
   userData: UserDataType;
@@ -102,7 +106,7 @@ const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
 const StyledEmpty = styled(Empty)`
   color: ${({ theme }) => theme.colors.dark};
   padding: 50px 0;
-`
+`;
 
 const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   const { portfolio } = userData;
@@ -115,12 +119,15 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   );
 
   const getEmptyText = () => {
-    if (!portfolio?.featuredProjects?.length && !portfolio?.otherProjects?.length) {
-      return "Oops!, no portfolio project has been uploaded yet."
+    if (
+      !portfolio?.featuredProjects?.length &&
+      !portfolio?.otherProjects?.length
+    ) {
+      return "Oops!, no portfolio project has been uploaded yet.";
     }
-    
-    return "There are no projects in this category. Perhaps check other categories"
-  }
+
+    return "There are no projects in this category. Perhaps check other categories";
+  };
 
   const handleNavigate = (direction: "right" | "left") => {
     if (direction === "right") {
@@ -159,67 +166,82 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   }, [activeFilter, showAchieve]);
 
   return (
-    <StyledWrapper>
-      <DrawerStyles />
-      <StyledH1 className="page-title">Portfolio</StyledH1>
-      <StyledBodyText>
-        Some notable projecs I've worked on. To see more projects toggle the
-        "View Achieve" below (they probably have not been updated in a while)
-      </StyledBodyText>
+    <Layout>
+      <StyledWrapper>
+        <DrawerStyles />
+        <StyledH1 className="page-title">Portfolio</StyledH1>
+        <StyledBodyText>
+          Some notable projecs I've worked on. To see more projects toggle the
+          "View Achieve" below (they probably have not been updated in a while)
+        </StyledBodyText>
 
-      <ul className="portfolio-filters">
-        <div className="d-inline-flex align-items-center achive-toggler-wrap">
-          <Switch id="switch" size="small" className="mx-2" onChange={setShowAchieve} />
-          <label role="button" htmlFor="switch">view achieve</label>
-        </div>
-
-        {portfolio?.categories?.map((value, index) => (
-          <li
-            className={classNames(
-              activeFilter === value && "active",
-              "filter-item btn btn-sm btn-link"
-            )}
-            role="button"
-            onClick={() => setActiveFilter(value)}
-            key={index}
-          >
-            {value}
-          </li>
-        ))}
-      </ul>
-
-      <div className="projects-wrapper">
-        {!!filteredProjects.length ? (
-          filteredProjects?.map((projectData, index) => (
-            <PortfolioItem
-              onClick={() => handlePortfolioItemClick(projectData, index)}
-              key={index}
-              {...projectData}
+        <ul className="portfolio-filters">
+          <div className="d-inline-flex align-items-center achive-toggler-wrap">
+            <Switch
+              id="switch"
+              size="small"
+              className="mx-2"
+              onChange={setShowAchieve}
             />
-          ))
-        ) : (
-          <StyledEmpty description={getEmptyText()} />
-        )}
-      </div>
+            <label role="button" htmlFor="switch">
+              view achieve
+            </label>
+          </div>
 
-      <Drawer
-        title={activeProject?.title}
-        placement="bottom"
-        onClose={() => setActiveproject(undefined)}
-        open={!!activeProject}
-        size="large"
-        extra={
-          <RightLeftNav
-            disabledLeft={activeProjectIndex === 0}
-            disabledRight={activeProjectIndex === filteredProjects.length - 1}
-            onClickLeft={() => handleNavigate("left")}
-            onClickRight={() => handleNavigate("right")}
-          />
-        }
-      >
-        {/* TODO: Setup detail view */}
-      </Drawer>
-    </StyledWrapper>
+          {portfolio?.categories?.map((value, index) => (
+            <li
+              className={classNames(
+                activeFilter === value && "active",
+                "filter-item btn btn-sm btn-link"
+              )}
+              role="button"
+              onClick={() => setActiveFilter(value)}
+              key={index}
+            >
+              {value}
+            </li>
+          ))}
+        </ul>
+
+        <AnimatePresence exitBeforeEnter>
+          <AnimatedDiv
+            key={activeFilter}
+            className="projects-wrapper"
+            {...portfolioFilterAnimate}
+          >
+            {!!filteredProjects.length ? (
+              filteredProjects?.map((projectData, index) => (
+                <PortfolioItem
+                  onClick={() => handlePortfolioItemClick(projectData, index)}
+                  key={index}
+                  {...projectData}
+                />
+              ))
+            ) : (
+              <StyledEmpty description={getEmptyText()} />
+            )}
+          </AnimatedDiv>
+        </AnimatePresence>
+
+        <Drawer
+          title={activeProject?.title}
+          placement="bottom"
+          onClose={() => setActiveproject(undefined)}
+          open={!!activeProject}
+          size="large"
+          extra={
+            <RightLeftNav
+              disabledLeft={activeProjectIndex === 0}
+              disabledRight={activeProjectIndex === filteredProjects.length - 1}
+              onClickLeft={() => handleNavigate("left")}
+              onClickRight={() => handleNavigate("right")}
+            />
+          }
+        >
+          {/* TODO: Setup detail view */}
+        </Drawer>
+      </StyledWrapper>
+    </Layout>
   );
 };
 

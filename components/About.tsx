@@ -1,15 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+
 import { UserDataType } from "../data/userData";
-import { StyledSectionTitle, StyledH2, StyledBodyText } from "./StyledElements";
+import { StyledSectionTitle, StyledBodyText, AnimatedDiv } from "./StyledElements";
+import { sectionAnimateIntoView } from "../data/animationConfigs"
 
 interface AboutProps {
   data?: UserDataType["about"];
   techStack: UserDataType["techStack"];
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(AnimatedDiv)`
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -51,7 +53,7 @@ const StyledWrapper = styled.div`
 `;
 
 const About: React.FunctionComponent<AboutProps> = ({ data, techStack }) => (
-  <StyledWrapper id="about">
+  <StyledWrapper id="about" {...sectionAnimateIntoView()}>
     <StyledSectionTitle className="about-title">About me</StyledSectionTitle>
 
     <StyledBodyText className="text-justify about-text">

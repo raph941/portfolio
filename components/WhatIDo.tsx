@@ -12,11 +12,12 @@ interface WhatIDoProps {
 }
 
 const StyledWrapper = styled.div`
-  max-width: 700px;
   min-height: 60vh;
   padding: 100px 0;
 
   .items-wrapper {
+    max-width: 700px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
