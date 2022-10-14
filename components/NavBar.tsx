@@ -63,13 +63,11 @@ const StyledNavItem = styled(NavItem)`
 interface NavBarProps {
   userData: UserDataType;
   toggleThemeMode: () => void;
-  isLightMode: boolean;
 }
 
 const NavBar: FC<NavBarProps> = ({
   userData,
   toggleThemeMode,
-  isLightMode,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleNavbarToggle = () => setIsOpen((current) => !current);
@@ -91,6 +89,7 @@ const NavBar: FC<NavBarProps> = ({
               height={40}
               width={40}
               alt="Avatar"
+              loading="eager"
               className="avatar-image rounded-circle"
             />
           </Link>
