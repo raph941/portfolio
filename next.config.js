@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    // wordpress graphql server
+    // https://www.wpgraphql.com/
+    wordpressQlServer: process.env.NEXT_PUBLIC_WORDPRESSQL_SERVER
+  },
   reactStrictMode: true,
   swcMinify: true,
   images: {
