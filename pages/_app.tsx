@@ -27,7 +27,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <StyledPageContentWrapper>
           <AnimatePresence
             exitBeforeEnter
-            initial={false}
             onExitComplete={() => window.scrollTo(0, 0)}
           >
             <Component {...pageProps} userData={userData} />

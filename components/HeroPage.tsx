@@ -8,10 +8,9 @@ import {
 } from "../components/StyledElements";
 import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
-import RaphaelAvatar from "/public/assets/images/RaphaelAvatar.png";
 import { fadeInCenter, fadeInDown } from "../data/animationConfigs";
 
-const StyledWrapper = styled.div<{ theme: ThemeType }>`
+const StyledWrapper = styled.div<{ theme: ThemeType, imgSrc: string }>`
   min-height: calc(100vh - 30px);
 
   .hero-avatar > img {
@@ -22,7 +21,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     height: 400px;
     width: 400px;
     border-radius: 50%;
-    background: url(${RaphaelAvatar.src});
+    background: ${({ imgSrc }) => `url(${imgSrc})`};
     background-size: cover;
   }
 
@@ -86,6 +85,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
 
   return (
     <StyledWrapper
+      imgSrc={imgSrc}
       className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper"
       role="navigation"
     >
