@@ -21,7 +21,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <NavBar
           userData={userData}
           toggleThemeMode={toggleThemeMode}
-          isLightMode={isLightMode}
         />
 
         <StyledPageContentWrapper>
