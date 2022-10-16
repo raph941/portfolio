@@ -68,7 +68,7 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post, userData }) => {
     <Layout
       url={`${userData.og.siteBaseUrl}/blogs/${post.slug}`}
       title={post.title}
-      imageUrl={post.featuredImage.sourceUrl}
+      imageUrl={post?.featuredImage?.sourceUrl || userData?.og.image}
       description={post.title}
       articlePublishedDate={post.date}
       articleModifiedDate={post.modified}
