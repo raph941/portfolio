@@ -62,18 +62,19 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post, userData }) => {
       setShareUrl(window.location.href);
     }
   }, []);
-  console.log(post)
+  console.log({ date: post.date, modified: post.modified, tags: post.tags, urlArticle: [userData.og.authorUrl] })
 
   return (
     <Layout
       url={`${userData.og.siteBaseUrl}/blogs/${post.slug}`}
       title={post.title}
-      imageUrl={post?.featuredImage?.sourceUrl || userData?.og.image}
+      imageUrl={post?.featuredImage?.sourceUrl}
       description={post.title}
       articlePublishedDate={post.date}
       articleModifiedDate={post.modified}
       articleAuthorUrl={[userData.og.authorUrl]}
       articleTags={post.tags}
+      type="article"
     >
       <StyledWrapper className="d-block">
         <StyledH1 className="text-center">{post?.title}</StyledH1>
