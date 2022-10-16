@@ -57,6 +57,10 @@ const Layout = ({
           },
         ],
       }}
+      twitter={{
+        handle: userData.og.twitterHandle,
+        cardType: 'summary_large_image',
+      }}
     />
 
     <AnimatedDiv

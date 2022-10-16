@@ -45,7 +45,8 @@ export const userData = {
     siteBaseUrl: "https://raph941.com",
     description: "Hey, checkout some of my recent projects you might find interesting on my portfolio site.",
     image: OgImage.src,
-    authorUrl: "https://twitter.com/RaphaelEhindero"
+    authorUrl: "https://twitter.com/RaphaelEhindero",
+    twitterHandle: "@RaphaelEhindero"
   },
   whatIDo: [
     {
