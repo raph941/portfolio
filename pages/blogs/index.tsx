@@ -36,7 +36,7 @@ interface BlogPageProps {
   posts: BlogType[];
 }
 
-const Blog: React.FunctionComponent<BlogPageProps> = () => {
+const Blog: React.FunctionComponent<BlogPageProps> = ({ userData }) => {
   const [posts, setPosts] = useState<BlogType[]>([]);
   const { loading, error, data, fetchMore } = useQuery(GET_ALL_POSTS, {
     variables: {

@@ -10,6 +10,10 @@ export const formatPostData = (post: any) => {
     instance.categories = post?.categories?.nodes.map((value: any) => value);
   }
 
+  if (instance.tags) {
+    instance.tags = post?.tags?.nodes.map((value: any) => value?.name)
+  }
+
   if (instance.featuredImage) {
     instance.featuredImage = post.featuredImage.node;
   }
