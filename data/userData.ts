@@ -12,6 +12,7 @@ import TwitterIcon from "/public/assets/images/twitter-brands.svg";
 import GithubIcon from "/public/assets/images/github-brands.svg";
 import ContentIcon from "/public/assets/icons/content.svg";
 import CodeIcon from "/public/assets/icons/code.svg";
+import OgImage from "/public/assets/og.png"
 
 export const userData = {
   meta: {
@@ -39,7 +40,13 @@ export const userData = {
     ],
     resumeLink: "https://drive.google.com/file/d/1Xz0Js-22dn-Zm4O2hC5_6Qy9Xd98ahAK/view?usp=sharing"
   },
-
+  // SEO details
+  og: {
+    siteBaseUrl: "https://raph941.com",
+    description: "Hey, checkout some of my recent projects you might find interesting on my portfolio site.",
+    image: OgImage.src,
+    authorUrl: "https://twitter.com/RaphaelEhindero"
+  },
   whatIDo: [
     {
       icon: CodeIcon,

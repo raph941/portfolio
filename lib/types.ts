@@ -20,6 +20,7 @@ export interface BlogType {
   content: string;
   modified: string;
   featuredImage: FeaturedImageType;
+  tags: string[]
 }
 
 

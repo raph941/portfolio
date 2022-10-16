@@ -9,6 +9,11 @@ export const POST_FIELDS = gql`
     content
     modified
     slug
+    tags {
+      nodes {
+        name
+      }
+    }
     categories {
       nodes {
         name
@@ -28,6 +33,7 @@ export const POST_FIELDS = gql`
 `;
 
 export const GET_ALL_POSTS = gql`
+  ${POST_FIELDS}
   query Posts($first: Int, $after: String) {
     posts(first: $first, after: $after) {
       pageInfo {
@@ -35,27 +41,7 @@ export const GET_ALL_POSTS = gql`
         endCursor
       }
       nodes {
-        id
-        title
-        date
-        content
-        modified
-        slug
-        categories {
-          nodes {
-            name
-          }
-        }
-        featuredImage {
-          node {
-            altText
-            caption
-            sourceUrl
-            srcSet
-            sizes
-            id
-          }
-        }
+        ...PostFields
       }
     }
   }
