@@ -18,6 +18,10 @@ const StyledButtonGroup = styled(ButtonGroup)`
     :focus {
       box-shadow: none;
     }
+
+    svg {
+      fill: ${({ theme }) => theme.variables.background};
+    }
   }
 `;
 
@@ -27,9 +31,7 @@ const RightLeftNav: React.FunctionComponent<RightLeftNavProps> = ({
   disabledLeft,
   disabledRight,
 }) => {
-  useEffect(() => {
-    console.log({ disabledLeft, disabledRight });
-  }, [disabledLeft, disabledRight]);
+
   return (
     <div>
       <StyledButtonGroup className="me-2" aria-label="First group">

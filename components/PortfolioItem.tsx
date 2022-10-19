@@ -13,7 +13,6 @@ import FolderIcon from "/public/assets/icons/folder-solid.svg";
 import ExternalLinkIcon from "/public/assets/icons/external-link.svg";
 import { ProjectType } from "../lib/types";
 
-
 interface PortfolioItemProps extends ProjectType {
   icon?: string;
   onClick?: () => void;
@@ -45,10 +44,17 @@ const StyledWrapper = styled.div`
   .codehost-icon {
     margin-left: 0.3125rem;
   }
+
+  .item-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `;
 
 const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
-  codeHost="",
+  codeHost = "",
   description,
   liveLink,
   stacks,
@@ -56,7 +62,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
   icon,
   onClick,
 }) => {
-  const CodehostIcon = codeHost.includes('gitlab') ? GitLabIcon : GithubIcon
+  const CodehostIcon = codeHost.includes("gitlab") ? GitLabIcon : GithubIcon;
   return (
     <StyledWrapper onClick={onClick} as={Card} className="card" role="button">
       <CardHeader>
@@ -71,12 +77,13 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
             )}
 
             {codeHost && (
-              <a className="codehost-icon" target="_blank" href={codeHost} rel="noreferrer">
-                <CodehostIcon
-                  width={15}
-                  height={15}
-                  alt="Folder"
-                />
+              <a
+                className="codehost-icon"
+                target="_blank"
+                href={codeHost}
+                rel="noreferrer"
+              >
+                <CodehostIcon width={15} height={15} alt="Folder" />
               </a>
             )}
           </div>
@@ -84,7 +91,9 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
       </CardHeader>
       <CardBody className="d-flex flex-column">
         <CardTitle>{title}</CardTitle>
-        <CardText className="flex-fill">{description}</CardText>
+        <CardText className="flex-fill item-description">
+          {description}
+        </CardText>
         <CardFooter className="mt-2">
           {stacks?.map((value, index) => (
             <small className="mx-2 text-nowrap" key={index}>

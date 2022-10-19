@@ -12,7 +12,7 @@ import TwitterIcon from "/public/assets/images/twitter-brands.svg";
 import GithubIcon from "/public/assets/images/github-brands.svg";
 import ContentIcon from "/public/assets/icons/content.svg";
 import CodeIcon from "/public/assets/icons/code.svg";
-import OgImage from "/public/assets/og.png"
+import OgImage from "/public/assets/og.png";
 
 export const userData = {
   meta: {
@@ -38,15 +38,17 @@ export const userData = {
         link: "https://twitter.com/RaphaelEhindero",
       },
     ],
-    resumeLink: "https://drive.google.com/file/d/1Xz0Js-22dn-Zm4O2hC5_6Qy9Xd98ahAK/view?usp=sharing"
+    resumeLink:
+      "https://drive.google.com/file/d/1Xz0Js-22dn-Zm4O2hC5_6Qy9Xd98ahAK/view?usp=sharing",
   },
   // SEO details
   og: {
     siteBaseUrl: "https://raph941.com",
-    description: "Hey, checkout some of my recent projects you might find interesting on my portfolio site.",
+    description:
+      "Hey, checkout some of my recent projects you might find interesting on my portfolio site.",
     image: OgImage.src,
     authorUrl: "https://twitter.com/RaphaelEhindero",
-    twitterHandle: "@RaphaelEhindero"
+    twitterHandle: "@RaphaelEhindero",
   },
   whatIDo: [
     {
@@ -107,7 +109,7 @@ export const userData = {
   openSourceContrubutions: {},
   projects: {},
   about: {
-    text: 'Hello! My name is Raphael and I enjoy building softwares that solves world problems, one little piece at a time. My interests has largly been on the web development eco-system using various available tools, languages and frameworks.',
+    text: "Hello! My name is Raphael and I enjoy building softwares that solves world problems, one little piece at a time. My interests has largly been on the web development eco-system using various available tools, languages and frameworks.",
     recentStack: [
       "JavaScript (Es6+)",
       "TypeScript",
@@ -128,10 +130,11 @@ export const userData = {
     categories: ["All", "React", "NextJs", "Django/Python", "HTML/CSS/JS"],
     featuredProjects: [
       {
-        title: "Portfolio",
+        title: "Portfolio site",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "This current project, you are viewing.",
+          "https://cdn.loom.com/sessions/thumbnails/76de4cc0fd0e4d1c944a4b4ae4caf640-with-play.gif",
+        description:
+          "This is my portfolio project, built to show some of my works and also share technical contents that hopefuly would be benefitial to everyone that needs to get some context on the subject of discussion.",
         stacks: ["React", "Typescript", "NextJs", "GraphQl"],
         liveLink: "https://raph941.com",
         codeHost: "https://github.com/raph941/portfolio",
@@ -141,8 +144,8 @@ export const userData = {
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "This is a proprietary site I worked on, as a landing page for the dabafinance product.",
-        stacks: ["React", "Typescript", "JavaScript", "NextJs", "Wordpress"],
+          "This is a proprietary landing page I worked on, as part of the dabafinance team, for the dabafinance product.",
+        stacks: ["React", "Typescript", "JavaScript", "NextJs"],
         liveLink: "https://dabafinance.com",
         codeHost: "",
       },
@@ -151,7 +154,7 @@ export const userData = {
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "This is a demo version of a propietary enterprise software built, to manage company loans, repayments and other organizatioal functions.",
+          "This is a Loan management enterprise software I built for an organisation, to automate/digitise their manual processes of giving out loans to clients and tracking repayments",
         stacks: ["React", "Typescript", "Django/Python", "JavaScript"],
         liveLink: "https://opulent-systems.netlify.app/login",
         codeHost: "",
@@ -160,7 +163,7 @@ export const userData = {
         title: "Chat App",
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
-        description: "A fun sideproject, to build a fullstack chat system",
+        description: "This is a fun fullstack project I worked on, to demonstrait building a real time chat application using django and react web socket.",
         stacks: [
           "React",
           "Typescript",
@@ -179,7 +182,7 @@ export const userData = {
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "A travel agency template sie, built for practice during my HNG internship",
+          "A travel agency template sie.",
         stacks: ["HTML/CSS/JS"],
         liveLink: "https://explorenet.netlify.app",
         codeHost:
@@ -201,7 +204,7 @@ export const userData = {
         image:
           "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
         description:
-          "futuristic app, landing page, for an app that can determine the age of a person through their picture. using AI",
+          "A futuristic app landing page, for an app that can determine the age of a person through their picture. using AI",
         stacks: ["HTML/CSS/JS"],
         liveLink: "https://agereal.netlify.app",
         codeHost: "https://github.com/raph941/age_scanner",

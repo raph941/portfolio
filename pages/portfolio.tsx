@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import styled, { createGlobalStyle } from "styled-components";
 import {
   AnimatedDiv,
@@ -8,6 +9,7 @@ import {
   RightLeftNav,
   StyledBodyText,
   StyledH1,
+  StyledH3,
 } from "../components";
 import { ThemeType } from "../styles/theme";
 import { UserDataType } from "../data/userData";
@@ -15,6 +17,7 @@ import { Drawer, Empty, Switch } from "antd";
 import { ProjectType } from "../lib/types";
 import { AnimatePresence } from "framer-motion";
 import { portfolioFilterAnimate } from "../data/animationConfigs";
+import { Badge } from "reactstrap";
 
 interface PortfolioProps {
   userData: UserDataType;
@@ -23,6 +26,12 @@ interface PortfolioProps {
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
   min-height: calc(100vh - 120px);
   margin-top: 66px;
+
+  .portfolio-image {
+    img {
+      border-radius: 10px;
+    }
+  }
 
   .page-title {
     margin-bottom: 50px;
@@ -83,24 +92,42 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 `;
 
 const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
+  .ant-drawer-title {
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
   .ant-drawer-header {
-        border: none;
-    }
+    border: none;
+  }
     
-    .ant-drawer-content {
-        border-radius: 25px;
-    }
+  .ant-drawer-content {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
 
-    .anticon-close svg {
-      font-weight: bold;
-    }
+  .anticon-close svg {
+    font-weight: bold;
+  }
 
-    .navigation-button {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      font-weight: 600;
+  .navigation-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+  }
+
+  .ant-drawer-wrapper-body {
+    background-color: ${({ theme }) => theme.variables.footerBg};
+
+    .portfolio-image {
+      border-radius: 18px;
     }
+  }
 `;
 
 const StyledEmpty = styled(Empty)`
@@ -143,10 +170,8 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
   };
 
   const handlePortfolioItemClick = (project: ProjectType, index: number) => {
-    if (project.showDetailView) {
-      setActiveProjectIndex(index);
-      setActiveproject(project);
-    }
+    setActiveProjectIndex(index);
+    setActiveproject(project);
   };
 
   useEffect(() => {
@@ -224,7 +249,7 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
         </AnimatePresence>
 
         <Drawer
-          title={activeProject?.title}
+          title={<StyledH3>{activeProject?.title}</StyledH3>}
           placement="bottom"
           onClose={() => setActiveproject(undefined)}
           open={!!activeProject}
@@ -238,7 +263,36 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
             />
           }
         >
-          {/* TODO: Setup detail view */}
+          <AnimatePresence exitBeforeEnter>
+            <AnimatedDiv
+              key={activeProject?.title}
+              {...portfolioFilterAnimate}
+              className=""
+            >
+              <div className="stack-badges mb-3">
+                {activeProject?.stacks?.map((value) => (
+                  <Badge className="mx-2">{value}</Badge>
+                ))}
+              </div>
+              {/* <a href="https://www.loom.com/share/76de4cc0fd0e4d1c944a4b4ae4caf640">
+                <p>daba - join the future of investing in Africa - 19 October 2022 - Watch Video</p>
+                <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/76de4cc0fd0e4d1c944a4b4ae4caf640-with-play.gif">
+              </a> */}
+              {activeProject?.image && (
+                <Image
+                  src={activeProject?.image}
+                  layout="intrinsic"
+                  height="300"
+                  width="500"
+                  className="portfolio-image"
+                />
+              )}
+
+              <StyledBodyText className="mt-3">
+                {activeProject?.description}
+              </StyledBodyText>
+            </AnimatedDiv>
+          </AnimatePresence>
         </Drawer>
       </StyledWrapper>
     </Layout>

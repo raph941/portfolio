@@ -10,6 +10,7 @@ export const lightTheme = {
   colors: {
     ...colors,
     dark: "#333",
+    black: "#000000"
   },
   variables: {
     primary: "#d5d5d5",
@@ -45,6 +46,7 @@ export const darkTheme = {
   colors: {
     ...colors,
     dark: "#ebedf0",
+    black: "#000000"
   },
   variables: {
     primary: "#d5d5d5",

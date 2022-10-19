@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["cdn.pixabay.com"],
+    domains: ["cdn.pixabay.com", "cdn.loom.com"],
   },
   basePath: "",
   webpack(config) {
