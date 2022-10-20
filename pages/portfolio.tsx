@@ -128,6 +128,12 @@ const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
       border-radius: 18px;
     }
   }
+
+  @media ${(props) => props.theme.mediaQueries.mobileTablet} {
+    .ant-drawer-content-wrapper {
+      height: 70vh !important;
+    }
+  }
 `;
 
 const StyledEmpty = styled(Empty)`
