@@ -19,6 +19,10 @@ import { AnimatePresence } from "framer-motion";
 import { portfolioFilterAnimate } from "../data/animationConfigs";
 import { Badge } from "reactstrap";
 
+import ExternalLinkIcon from "/public/assets/icons/external-link.svg";
+import GithubIcon from "/public/assets/icons/github-brands.svg";
+import GitLabIcon from "/public/assets/icons/gitlab-brands.svg";
+
 interface PortfolioProps {
   userData: UserDataType;
 }
@@ -151,6 +155,10 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
     portfolio?.featuredProjects || []
   );
 
+  const CodehostIcon = activeProject?.codeHost?.includes("gitlab")
+    ? GitLabIcon
+    : GithubIcon;
+
   const getEmptyText = () => {
     if (
       !portfolio?.featuredProjects?.length &&
@@ -277,9 +285,36 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
             >
               <div className="stack-badges mb-3">
                 {activeProject?.stacks?.map((value, index) => (
-                  <Badge key={index} className="mx-2">{value}</Badge>
+                  <Badge key={index} className="mx-2">
+                    {value}
+                  </Badge>
                 ))}
               </div>
+
+              <div className="d-flex align-items-center">
+                {activeProject?.liveLink && (
+                  <a
+                    target="_blank"
+                    href={activeProject?.liveLink}
+                    rel="noreferrer"
+                    className="mx-2 mb-2"
+                  >
+                    <ExternalLinkIcon width={15} height={15} />
+                  </a>
+                )}
+
+                {activeProject?.codeHost && (
+                  <a
+                    className="codehost-icon mx-2 mb-2"
+                    target="_blank"
+                    href={activeProject?.codeHost}
+                    rel="noreferrer"
+                  >
+                    <CodehostIcon width={15} height={15} alt="Folder" />
+                  </a>
+                )}
+              </div>
+
               {activeProject?.image && (
                 <Image
                   src={activeProject?.image}
