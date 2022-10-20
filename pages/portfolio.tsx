@@ -270,14 +270,10 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
               className=""
             >
               <div className="stack-badges mb-3">
-                {activeProject?.stacks?.map((value) => (
-                  <Badge className="mx-2">{value}</Badge>
+                {activeProject?.stacks?.map((value, index) => (
+                  <Badge key={index} className="mx-2">{value}</Badge>
                 ))}
               </div>
-              {/* <a href="https://www.loom.com/share/76de4cc0fd0e4d1c944a4b4ae4caf640">
-                <p>daba - join the future of investing in Africa - 19 October 2022 - Watch Video</p>
-                <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/76de4cc0fd0e4d1c944a4b4ae4caf640-with-play.gif">
-              </a> */}
               {activeProject?.image && (
                 <Image
                   src={activeProject?.image}
@@ -285,6 +281,7 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
                   height="300"
                   width="500"
                   className="portfolio-image"
+                  alt={`${activeProject.title}'s thumbnail`}
                 />
               )}
 
