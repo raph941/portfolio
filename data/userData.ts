@@ -132,7 +132,7 @@ export const userData = {
       {
         title: "Portfolio site",
         image:
-          "https://cdn.loom.com/sessions/thumbnails/76de4cc0fd0e4d1c944a4b4ae4caf640-with-play.gif",
+          "https://res.cloudinary.com/raph941/image/upload/v1666299925/portfolio/portfolio_c8qvtl.gif",
         description:
           "This is my portfolio project, built to show some of my works and also share technical contents that hopefuly would be benefitial to everyone that needs to get some context on the subject of discussion.",
         stacks: ["React", "Typescript", "NextJs", "GraphQl"],
@@ -142,7 +142,7 @@ export const userData = {
       {
         title: "Dabafinance Landing Page",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666299358/portfolio/dabafinance_mec33x.gif",
         description:
           "This is a proprietary landing page I worked on, as part of the dabafinance team, for the dabafinance product.",
         stacks: ["React", "Typescript", "JavaScript", "NextJs"],
@@ -152,7 +152,7 @@ export const userData = {
       {
         title: "Loan Management System",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666300464/portfolio/opulent_m8ab0s.gif",
         description:
           "This is a Loan management enterprise software I built for an organisation, to automate/digitise their manual processes of giving out loans to clients and tracking repayments",
         stacks: ["React", "Typescript", "Django/Python", "JavaScript"],
@@ -162,7 +162,7 @@ export const userData = {
       {
         title: "Chat App",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666300975/portfolio/chat_wf4qsx.gif",
         description: "This is a fun fullstack project I worked on, to demonstrait building a real time chat application using django and react web socket.",
         stacks: [
           "React",
@@ -180,7 +180,7 @@ export const userData = {
       {
         title: "Travel Site",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666301446/portfolio/travel_zdavtj.gif",
         description:
           "A travel agency template sie.",
         stacks: ["HTML/CSS/JS"],
@@ -191,18 +191,18 @@ export const userData = {
       {
         title: "Artist Portfolio",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666301954/portfolio/tariamulani_rjuhbi.gif",
         description:
           "A portfolio templte for an artists to display their work to his online viewers.",
         stacks: ["HTML/CSS/JS"],
-        liveLink: "https://explorenet.netlify.app",
+        liveLink: "https://artist-portfoliosite.netlify.app/",
         codeHost:
-          "https://github.com/raph941/project_envato-Team-Fury-Travel.git",
+          "https://github.com/raph941/ArtistPortfolio",
       },
       {
         title: "App Landing Page",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666302112/portfolio/Screenshot_2022-10-20_at_10.41.36_PM_ocjy2v.png",
         description:
           "A futuristic app landing page, for an app that can determine the age of a person through their picture. using AI",
         stacks: ["HTML/CSS/JS"],
@@ -212,7 +212,7 @@ export const userData = {
       {
         title: "Covid 19 Stats Tracker",
         image:
-          "https://cdn.pixabay.com/photo/2022/08/04/16/01/sea-7364988_960_720.jpg",
+          "https://res.cloudinary.com/raph941/image/upload/v1666302527/portfolio/covid_oxdym6.gif",
         description:
           "App that plots live data of of covid 19 cases, on chart and map",
         stacks: ["HTML/CSS/JS", "React"],
