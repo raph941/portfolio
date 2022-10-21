@@ -90,6 +90,7 @@ const NavBar: FC<NavBarProps> = ({
               width={40}
               alt="Avatar"
               loading="eager"
+              priority={true}
               className="avatar-image rounded-circle"
             />
           </Link>
