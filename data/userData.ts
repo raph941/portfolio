@@ -182,7 +182,7 @@ export const userData = {
         image:
           "https://res.cloudinary.com/raph941/image/upload/v1666301446/portfolio/travel_zdavtj.gif",
         description:
-          "A travel agency template sie.",
+          "A travel agency template site.",
         stacks: ["HTML/CSS/JS"],
         liveLink: "https://explorenet.netlify.app",
         codeHost:
