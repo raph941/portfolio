@@ -72,6 +72,7 @@ const NavBar: FC<NavBarProps> = ({
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleNavbarToggle = () => setIsOpen((current) => !current);
   const PORTFOLIO_CODE_LINK = "https://github.com/raph941/portfolio"
+  const hasWordpressServer = !!process.env.NEXT_PUBLIC_WORDPRESSQL_SERVER
 
   const { pathname } = useRouter();
 
@@ -122,11 +123,11 @@ const NavBar: FC<NavBarProps> = ({
                 <span className="nav-link">Portfolio</span>
               </Link>
             </StyledNavItem>
-            <StyledNavItem className="px-sm-3">
+            {hasWordpressServer && <StyledNavItem className="px-sm-3">
               <Link className="nav-link" href="/blogs/">
                 <span className="nav-link">Blog</span>
               </Link>
-            </StyledNavItem>
+            </StyledNavItem>}
             <StyledNavItem className="px-sm-3 d-flex align-items-center">
               <NavLink target="_blank" className="nav-link" href={PORTFOLIO_CODE_LINK}>
                 <GithubIcon height={20} width={20} />

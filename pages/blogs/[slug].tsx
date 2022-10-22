@@ -62,7 +62,6 @@ const Blog: React.FunctionComponent<BlogPageProps> = ({ post, userData }) => {
       setShareUrl(window.location.href);
     }
   }, []);
-  console.log(post)
 
   return (
     <Layout
