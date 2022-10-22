@@ -12,7 +12,6 @@ import TwitterIcon from "/public/assets/images/twitter-brands.svg";
 import GithubIcon from "/public/assets/images/github-brands.svg";
 import ContentIcon from "/public/assets/icons/content.svg";
 import CodeIcon from "/public/assets/icons/code.svg";
-import OgImage from "/public/assets/og.png";
 
 export const userData = {
   meta: {
@@ -46,7 +45,7 @@ export const userData = {
     siteBaseUrl: "https://raph941.com",
     description:
       "Hey, checkout some of my recent projects you might find interesting on my portfolio site.",
-    image: OgImage.src,
+    image: "https://res.cloudinary.com/raph941/image/upload/v1666447953/portfolio/Screenshot_2022-10-22_at_3.12.12_PM_upxc0n.png",
     authorUrl: "https://twitter.com/RaphaelEhindero",
     twitterHandle: "@RaphaelEhindero",
   },

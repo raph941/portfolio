@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import styled from "styled-components";
 import { WhatIDo, HeroPage, About, Contact, Layout } from "../components";
 import { ThemeType } from "../styles/theme";
