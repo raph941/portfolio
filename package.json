@@ -1,7 +1,9 @@
 {
-  "name": "portfolio-project",
+  "name": "nextjs-wordpress-portfolio",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://raph941.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
