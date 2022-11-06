@@ -129,6 +129,16 @@ export const userData = {
     categories: ["All", "React", "NextJs", "Django/Python", "HTML/CSS/JS"],
     featuredProjects: [
       {
+        title: "Loan Management System",
+        image:
+          "https://res.cloudinary.com/raph941/image/upload/v1666300464/portfolio/opulent_m8ab0s.gif",
+        description:
+          "This is a Loan management enterprise software I built for an organisation, to automate/digitise their manual processes of giving out loans to clients and tracking repayments. <br /> <strong>Test Credentials:</strong> <br /> email: sampledr@email.com <br />password: nigerians",
+        stacks: ["React", "Typescript", "Django/Python", "JavaScript"],
+        liveLink: "https://opulent-systems.netlify.app/login",
+        codeHost: "",
+      },
+      {
         title: "Portfolio site",
         image:
           "https://res.cloudinary.com/raph941/image/upload/v1666299925/portfolio/portfolio_c8qvtl.gif",
@@ -146,16 +156,6 @@ export const userData = {
           "This is a proprietary landing page I worked on, as part of the dabafinance team, for the dabafinance product.",
         stacks: ["React", "Typescript", "JavaScript", "NextJs"],
         liveLink: "https://dabafinance.com",
-        codeHost: "",
-      },
-      {
-        title: "Loan Management System",
-        image:
-          "https://res.cloudinary.com/raph941/image/upload/v1666300464/portfolio/opulent_m8ab0s.gif",
-        description:
-          "This is a Loan management enterprise software I built for an organisation, to automate/digitise their manual processes of giving out loans to clients and tracking repayments",
-        stacks: ["React", "Typescript", "Django/Python", "JavaScript"],
-        liveLink: "https://opulent-systems.netlify.app/login",
         codeHost: "",
       },
       {

@@ -326,8 +326,8 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
                 />
               )}
 
-              <StyledBodyText className="mt-3">
-                {activeProject?.description}
+              <StyledBodyText className="mt-3" dangerouslySetInnerHTML={{__html: activeProject?.description || ""}}>
+                {/* {activeProject?.description} */}
               </StyledBodyText>
             </AnimatedDiv>
           </AnimatePresence>
