@@ -40,3 +40,7 @@ To run this project locally or contribute, follow the short steps below.
     ```
     yarn dev
     ```
+
+## 🏋️‍♂️ Suppoort 
+
+If you found this useful, remember to leave a star ⭐️
