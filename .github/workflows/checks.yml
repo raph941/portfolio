@@ -1,0 +1,56 @@
+name: Checks
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+
+  linters:
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: "--max_old_space_size=4096"
+
+    strategy:
+      matrix:
+        node-version: [16.16.0]
+
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.7.0
+        with:
+          access_token: ${{ github.token }}
+      - uses: actions/checkout@v1
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Yarn install
+        run: yarn --immutable
+
+      - name: Verify Typescript build
+        if: ${{ failure() || success() }}
+        run: yarn build-ts
+
+      - name: Prettier check
+        if: ${{ failure() || success() }}
+        run: yarn format:check
+      
+      - name: Build
+        if: ${{ failure() || success() }}
+        run: yarn build
