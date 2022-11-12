@@ -1,10 +1,10 @@
 interface FeaturedImageType {
-  altText: string;
-  caption: string;
-  id: string;
-  sizes: string;
-  sourceUrl: string;
-  srcSet: string;
+    altText: string
+    caption: string
+    id: string
+    sizes: string
+    sourceUrl: string
+    srcSet: string
 }
 
 interface CategoryType {
@@ -12,24 +12,23 @@ interface CategoryType {
 }
 
 export interface BlogType {
-  id: string;
-  slug: string;
-  title: string;
-  date: string;
-  categories: CategoryType[];
-  content: string;
-  modified: string;
-  featuredImage: FeaturedImageType;
-  tags: string[]
+    id: string
+    slug: string
+    title: string
+    date: string
+    categories: CategoryType[]
+    content: string
+    modified: string
+    featuredImage: FeaturedImageType
+    tags: string[]
 }
 
-
 export interface ProjectType {
-  title: string;
-  image?: string;
-  description?: string;
-  stacks?: string[];
-  liveLink?: string;
-  codeHost?: string;
-  showDetailView?: boolean
+    title: string
+    image?: string
+    description?: string
+    stacks?: string[]
+    liveLink?: string
+    codeHost?: string
+    showDetailView?: boolean
 }

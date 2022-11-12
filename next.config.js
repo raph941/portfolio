@@ -3,27 +3,27 @@ const nextConfig = {
   env: {
     // wordpress graphql server
     // https://www.wpgraphql.com/
-    wordpressQlServer: process.env.NEXT_PUBLIC_WORDPRESSQL_SERVER
+    wordpressQlServer: process.env.NEXT_PUBLIC_WORDPRESSQL_SERVER,
   },
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["cdn.pixabay.com", "cdn.loom.com", "res.cloudinary.com"],
+    domains: ['cdn.pixabay.com', 'cdn.loom.com', 'res.cloudinary.com'],
   },
-  basePath: "",
+  basePath: '',
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
+      use: ['@svgr/webpack'],
+    })
     config.module.rules.push({
       test: /\.pdf$/i,
-      type: "asset/source",
-    });
+      type: 'asset/source',
+    })
 
-    return config;
+    return config
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

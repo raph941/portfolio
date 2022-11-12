@@ -1,99 +1,105 @@
-import classNames from "classnames";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import styled, { createGlobalStyle } from "styled-components";
-import {
-  AnimatedDiv,
-  Layout,
-  PortfolioItem,
-  RightLeftNav,
-  StyledBodyText,
-  StyledH1,
-  StyledH3,
-} from "../components";
-import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../data/userData";
-import { Drawer, Empty, Switch } from "antd";
-import { ProjectType } from "../lib/types";
-import { AnimatePresence } from "framer-motion";
-import { portfolioFilterAnimate } from "../data/animationConfigs";
-import { Badge } from "reactstrap";
+import classNames from 'classnames'
+import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import ExternalLinkIcon from "/public/assets/icons/external-link.svg";
-import GithubIcon from "/public/assets/icons/github-brands.svg";
-import GitLabIcon from "/public/assets/icons/gitlab-brands.svg";
+import {
+    AnimatedDiv,
+    Layout,
+    PortfolioItem,
+    RightLeftNav,
+    StyledBodyText,
+    StyledH1,
+    StyledH3,
+} from '../components'
+import { ThemeType } from '../styles/theme'
+import { UserDataType } from '../data/userData'
+
+import { Drawer, Empty, Switch } from 'antd'
+
+import { ProjectType } from '../lib/types'
+
+import { AnimatePresence } from 'framer-motion'
+
+import { portfolioFilterAnimate } from '../data/animationConfigs'
+
+import { Badge } from 'reactstrap'
+
+import ExternalLinkIcon from '/public/assets/icons/external-link.svg'
+import GithubIcon from '/public/assets/icons/github-brands.svg'
+import GitLabIcon from '/public/assets/icons/gitlab-brands.svg'
 
 interface PortfolioProps {
-  userData: UserDataType;
+    userData: UserDataType
 }
 
 const StyledWrapper = styled.div<{ theme: ThemeType }>`
-  min-height: calc(100vh - 120px);
-  margin-top: 66px;
+    min-height: calc(100vh - 120px);
+    margin-top: 66px;
 
-  .portfolio-image {
-    img {
-      border-radius: 10px;
-    }
-  }
-
-  .page-title {
-    margin-bottom: 50px;
-  }
-
-  .achive-toggler-wrap {
-    color: ${({ theme }) => theme.colors.dark};
-
-    .ant-switch {
-      border: 1px solid ${({ theme }) => theme.colors.dark};
+    .portfolio-image {
+        img {
+            border-radius: 10px;
+        }
     }
 
-    .ant-switch-handle {
-      margin-top: -1px; // Fix inherent issue with vertical alignment of switch dot.
-    }
-  }
-
-  .portfolio-filters {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    text-align: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-
-    .ant-switch-checked {
-      background-color: ${({ theme }) => theme.colors.dark} !important;
+    .page-title {
+        margin-bottom: 50px;
     }
 
-    li {
-      display: inline-block;
-      color: ${({ theme }) => theme.colors.dark};
-      font-size: 12px;
-      line-height: 1.5;
-      padding: 3px 14px;
-      text-decoration: none;
-      opacity: 0.6;
-
-      &:hover {
+    .achive-toggler-wrap {
         color: ${({ theme }) => theme.colors.dark};
-      }
 
-      &.active {
-        opacity: 1;
-        font-weight: bold;
-      }
+        .ant-switch {
+            border: 1px solid ${({ theme }) => theme.colors.dark};
+        }
+
+        .ant-switch-handle {
+            margin-top: -1px; // Fix inherent issue with vertical alignment of switch dot.
+        }
     }
-  }
 
-  .projects-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    column-gap: 2rem;
-    row-gap: 2rem;
-  }
-`;
+    .portfolio-filters {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        .ant-switch-checked {
+            background-color: ${({ theme }) => theme.colors.dark} !important;
+        }
+
+        li {
+            display: inline-block;
+            color: ${({ theme }) => theme.colors.dark};
+            font-size: 12px;
+            line-height: 1.5;
+            padding: 3px 14px;
+            text-decoration: none;
+            opacity: 0.6;
+
+            &:hover {
+                color: ${({ theme }) => theme.colors.dark};
+            }
+
+            &.active {
+                opacity: 1;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .projects-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+`
 
 const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
   .ant-drawer-title {
@@ -138,203 +144,200 @@ const DrawerStyles = createGlobalStyle<{ theme: ThemeType }>`
       height: 70vh !important;
     }
   }
-`;
+`
 
 const StyledEmpty = styled(Empty)`
-  color: ${({ theme }) => theme.colors.dark};
-  padding: 50px 0;
-`;
+    color: ${({ theme }) => theme.colors.dark};
+    padding: 50px 0;
+`
 
 const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
-  const { portfolio } = userData;
-  const [showAchieve, setShowAchieve] = useState<boolean>(false);
-  const [activeFilter, setActiveFilter] = useState<string>();
-  const [activeProject, setActiveproject] = useState<ProjectType>();
-  const [activeProjectIndex, setActiveProjectIndex] = useState<number>();
-  const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>(
-    portfolio?.featuredProjects || []
-  );
+    const { portfolio } = userData
+    const [showAchieve, setShowAchieve] = useState<boolean>(false)
+    const [activeFilter, setActiveFilter] = useState<string>()
+    const [activeProject, setActiveproject] = useState<ProjectType>()
+    const [activeProjectIndex, setActiveProjectIndex] = useState<number>()
+    const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>(
+        portfolio?.featuredProjects || []
+    )
 
-  const CodehostIcon = activeProject?.codeHost?.includes("gitlab")
-    ? GitLabIcon
-    : GithubIcon;
+    const CodehostIcon = activeProject?.codeHost?.includes('gitlab') ? GitLabIcon : GithubIcon
 
-  const getEmptyText = () => {
-    if (
-      !portfolio?.featuredProjects?.length &&
-      !portfolio?.otherProjects?.length
-    ) {
-      return "Oops!, no portfolio project has been uploaded yet.";
+    const getEmptyText = () => {
+        if (!portfolio?.featuredProjects?.length && !portfolio?.otherProjects?.length) {
+            return 'Oops!, no portfolio project has been uploaded yet.'
+        }
+
+        return 'There are no projects in this category. Perhaps check other categories'
     }
 
-    return "There are no projects in this category. Perhaps check other categories";
-  };
+    const handleNavigate = (direction: 'right' | 'left') => {
+        if (direction === 'right') {
+            const nextIndex = (activeProjectIndex || 0) + 1
+            setActiveProjectIndex(nextIndex)
+            setActiveproject(filteredProjects[nextIndex])
+            return
+        }
 
-  const handleNavigate = (direction: "right" | "left") => {
-    if (direction === "right") {
-      const nextIndex = (activeProjectIndex || 0) + 1;
-      setActiveProjectIndex(nextIndex);
-      setActiveproject(filteredProjects[nextIndex]);
-      return;
+        const prevIndex = (activeProjectIndex || 0) - 1
+        setActiveProjectIndex(prevIndex)
+        setActiveproject(filteredProjects[prevIndex])
     }
 
-    const prevIndex = (activeProjectIndex || 0) - 1;
-    setActiveProjectIndex(prevIndex);
-    setActiveproject(filteredProjects[prevIndex]);
-  };
-
-  const handlePortfolioItemClick = (project: ProjectType, index: number) => {
-    setActiveProjectIndex(index);
-    setActiveproject(project);
-  };
-
-  useEffect(() => {
-    const projects =
-      portfolio[showAchieve ? "otherProjects" : "featuredProjects"];
-    if (!activeFilter || activeFilter === "All") {
-      setFilteredProjects(projects);
-      return;
+    const handlePortfolioItemClick = (project: ProjectType, index: number) => {
+        setActiveProjectIndex(index)
+        setActiveproject(project)
     }
 
-    setFilteredProjects(() =>
-      projects?.filter((instance) =>
-        instance?.stacks.includes(activeFilter || "")
-      )
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeFilter, showAchieve]);
+    useEffect(() => {
+        const projects = portfolio[showAchieve ? 'otherProjects' : 'featuredProjects']
+        if (!activeFilter || activeFilter === 'All') {
+            setFilteredProjects(projects)
+            return
+        }
 
-  return (
-    <Layout>
-      <StyledWrapper>
-        <DrawerStyles />
-        <StyledH1 className="page-title">Portfolio</StyledH1>
-        <StyledBodyText>
-          Some notable projecs I've worked on. To see more projects toggle the
-          "View Achieve" below (they probably have not been updated in a while)
-        </StyledBodyText>
+        setFilteredProjects(() =>
+            projects?.filter((instance) => instance?.stacks.includes(activeFilter || ''))
+        )
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [activeFilter, showAchieve])
 
-        <ul className="portfolio-filters">
-          <div className="d-inline-flex align-items-center achive-toggler-wrap">
-            <Switch
-              id="switch"
-              size="small"
-              className="mx-2"
-              onChange={setShowAchieve}
-            />
-            <label role="button" htmlFor="switch">
-              view achieve
-            </label>
-          </div>
+    return (
+        <Layout>
+            <StyledWrapper>
+                <DrawerStyles />
+                <StyledH1 className="page-title">Portfolio</StyledH1>
+                <StyledBodyText>
+                    Some notable projecs I've worked on. To see more projects toggle the "View
+                    Achieve" below (they probably have not been updated in a while)
+                </StyledBodyText>
 
-          {portfolio?.categories?.map((value, index) => (
-            <li
-              className={classNames(
-                activeFilter === value && "active",
-                "filter-item btn btn-sm btn-link"
-              )}
-              role="button"
-              onClick={() => setActiveFilter(value)}
-              key={index}
-            >
-              {value}
-            </li>
-          ))}
-        </ul>
+                <ul className="portfolio-filters">
+                    <div className="d-inline-flex align-items-center achive-toggler-wrap">
+                        <Switch
+                            id="switch"
+                            size="small"
+                            className="mx-2"
+                            onChange={setShowAchieve}
+                        />
+                        <label role="button" htmlFor="switch">
+                            view achieve
+                        </label>
+                    </div>
 
-        <AnimatePresence exitBeforeEnter>
-          <AnimatedDiv
-            key={activeFilter}
-            className="projects-wrapper"
-            {...portfolioFilterAnimate}
-          >
-            {!!filteredProjects.length ? (
-              filteredProjects?.map((projectData, index) => (
-                <PortfolioItem
-                  onClick={() => handlePortfolioItemClick(projectData, index)}
-                  key={index}
-                  {...projectData}
-                />
-              ))
-            ) : (
-              <StyledEmpty description={getEmptyText()} />
-            )}
-          </AnimatedDiv>
-        </AnimatePresence>
+                    {portfolio?.categories?.map((value, index) => (
+                        <li
+                            className={classNames(
+                                activeFilter === value && 'active',
+                                'filter-item btn btn-sm btn-link'
+                            )}
+                            role="button"
+                            onClick={() => setActiveFilter(value)}
+                            key={index}
+                        >
+                            {value}
+                        </li>
+                    ))}
+                </ul>
 
-        <Drawer
-          title={<StyledH3>{activeProject?.title}</StyledH3>}
-          placement="bottom"
-          onClose={() => setActiveproject(undefined)}
-          open={!!activeProject}
-          size="large"
-          extra={
-            <RightLeftNav
-              disabledLeft={activeProjectIndex === 0}
-              disabledRight={activeProjectIndex === filteredProjects.length - 1}
-              onClickLeft={() => handleNavigate("left")}
-              onClickRight={() => handleNavigate("right")}
-            />
-          }
-        >
-          <AnimatePresence exitBeforeEnter>
-            <AnimatedDiv
-              key={activeProject?.title}
-              {...portfolioFilterAnimate}
-              className=""
-            >
-              <div className="stack-badges mb-3">
-                {activeProject?.stacks?.map((value, index) => (
-                  <Badge key={index} className="mx-2">
-                    {value}
-                  </Badge>
-                ))}
-              </div>
+                <AnimatePresence exitBeforeEnter>
+                    <AnimatedDiv
+                        key={activeFilter}
+                        className="projects-wrapper"
+                        {...portfolioFilterAnimate}
+                    >
+                        {!!filteredProjects.length ? (
+                            filteredProjects?.map((projectData, index) => (
+                                <PortfolioItem
+                                    onClick={() => handlePortfolioItemClick(projectData, index)}
+                                    key={index}
+                                    {...projectData}
+                                />
+                            ))
+                        ) : (
+                            <StyledEmpty description={getEmptyText()} />
+                        )}
+                    </AnimatedDiv>
+                </AnimatePresence>
 
-              <div className="d-flex align-items-center">
-                {activeProject?.liveLink && (
-                  <a
-                    target="_blank"
-                    href={activeProject?.liveLink}
-                    rel="noreferrer"
-                    className="mx-2 mb-2"
-                  >
-                    <ExternalLinkIcon width={15} height={15} />
-                  </a>
-                )}
+                <Drawer
+                    title={<StyledH3>{activeProject?.title}</StyledH3>}
+                    placement="bottom"
+                    onClose={() => setActiveproject(undefined)}
+                    open={!!activeProject}
+                    size="large"
+                    extra={
+                        <RightLeftNav
+                            disabledLeft={activeProjectIndex === 0}
+                            disabledRight={activeProjectIndex === filteredProjects.length - 1}
+                            onClickLeft={() => handleNavigate('left')}
+                            onClickRight={() => handleNavigate('right')}
+                        />
+                    }
+                >
+                    <AnimatePresence exitBeforeEnter>
+                        <AnimatedDiv
+                            key={activeProject?.title}
+                            {...portfolioFilterAnimate}
+                            className=""
+                        >
+                            <div className="stack-badges mb-3">
+                                {activeProject?.stacks?.map((value, index) => (
+                                    <Badge key={index} className="mx-2">
+                                        {value}
+                                    </Badge>
+                                ))}
+                            </div>
 
-                {activeProject?.codeHost && (
-                  <a
-                    className="codehost-icon mx-2 mb-2"
-                    target="_blank"
-                    href={activeProject?.codeHost}
-                    rel="noreferrer"
-                  >
-                    <CodehostIcon width={15} height={15} alt="Folder" />
-                  </a>
-                )}
-              </div>
+                            <div className="d-flex align-items-center">
+                                {activeProject?.liveLink && (
+                                    <a
+                                        target="_blank"
+                                        href={activeProject?.liveLink}
+                                        rel="noreferrer"
+                                        className="mx-2 mb-2"
+                                    >
+                                        <ExternalLinkIcon width={15} height={15} />
+                                    </a>
+                                )}
 
-              {activeProject?.image && (
-                <Image
-                  src={activeProject?.image}
-                  layout="intrinsic"
-                  height="300"
-                  width="500"
-                  className="portfolio-image"
-                  alt={`${activeProject.title}'s thumbnail`}
-                />
-              )}
+                                {activeProject?.codeHost && (
+                                    <a
+                                        className="codehost-icon mx-2 mb-2"
+                                        target="_blank"
+                                        href={activeProject?.codeHost}
+                                        rel="noreferrer"
+                                    >
+                                        <CodehostIcon width={15} height={15} alt="Folder" />
+                                    </a>
+                                )}
+                            </div>
 
-              <StyledBodyText className="mt-3" dangerouslySetInnerHTML={{__html: activeProject?.description || ""}}>
-                {/* {activeProject?.description} */}
-              </StyledBodyText>
-            </AnimatedDiv>
-          </AnimatePresence>
-        </Drawer>
-      </StyledWrapper>
-    </Layout>
-  );
-};
+                            {activeProject?.image && (
+                                <Image
+                                    src={activeProject?.image}
+                                    layout="intrinsic"
+                                    height="300"
+                                    width="500"
+                                    className="portfolio-image"
+                                    alt={`${activeProject.title}'s thumbnail`}
+                                />
+                            )}
 
-export default Portfolio;
+                            <StyledBodyText
+                                className="mt-3"
+                                dangerouslySetInnerHTML={{
+                                    __html: activeProject?.description || '',
+                                }}
+                            >
+                                {/* {activeProject?.description} */}
+                            </StyledBodyText>
+                        </AnimatedDiv>
+                    </AnimatePresence>
+                </Drawer>
+            </StyledWrapper>
+        </Layout>
+    )
+}
+
+export default Portfolio

@@ -1,5 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "./theme";
+import { createGlobalStyle } from 'styled-components'
+
+import { ThemeType } from './theme'
 
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 
@@ -43,26 +44,21 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     }
 
     .btn-secondary {
-        background-color: ${({ theme }) =>
-          theme.variables.btnSecondaryBg} !important;
+        background-color: ${({ theme }) => theme.variables.btnSecondaryBg} !important;
         color: ${({ theme }) => theme.variables.btnSecondaryColor} !important;
 
         &:hover {
-            background-color: ${({ theme }) =>
-              theme.variables.btnSecoondaryHoverBg} !important;
+            background-color: ${({ theme }) => theme.variables.btnSecoondaryHoverBg} !important;
         }
     }
 
     .btn-outline-secondary {
-        border-color: ${({ theme }) =>
-          theme.variables.btnSecondaryBg} !important;
+        border-color: ${({ theme }) => theme.variables.btnSecondaryBg} !important;
         color: ${({ theme }) => theme.variables.btnSecondaryBg} !important;
 
         &:hover {
-            background-color: ${({ theme }) =>
-              theme.variables.btnSecoondaryHoverBg} !important;
-            color: ${({ theme }) =>
-              theme.variables.btnSecondaryColor} !important;
+            background-color: ${({ theme }) => theme.variables.btnSecoondaryHoverBg} !important;
+            color: ${({ theme }) => theme.variables.btnSecondaryColor} !important;
         }
     }
 
@@ -79,6 +75,6 @@ const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
     .body-text {
         color: ${({ theme }) => theme.variables.bodyColor} !important;
     }
-`;
+`
 
-export { GlobalStyle };
+export { GlobalStyle }

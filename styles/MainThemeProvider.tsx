@@ -1,19 +1,21 @@
-import { FC, ReactNode } from "react";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./GlobalStyle";
+import { FC, ReactNode } from 'react'
+import { ThemeProvider } from 'styled-components'
+
+import { GlobalStyle } from './GlobalStyle'
+import { ThemeType } from './theme'
 
 interface MainThemeProviderPropos {
-    children: ReactNode,
-    theme: DTO.ThemeState
+    children: ReactNode
+    theme: ThemeType
 }
 
 const MainThemeProvider: FC<MainThemeProviderPropos> = ({ children, theme }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      {children}
-      <GlobalStyle />
-    </ThemeProvider>
-  );
-};
+    return (
+        <ThemeProvider theme={theme}>
+            {children}
+            <GlobalStyle />
+        </ThemeProvider>
+    )
+}
 
-export default MainThemeProvider;
+export default MainThemeProvider

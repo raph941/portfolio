@@ -1,137 +1,131 @@
-import Link from "next/link";
-import styled from "styled-components";
-import {
-  AnimatedDiv,
-  StyledBodyText,
-  StyledH1,
-  StyledH4,
-} from "../components/StyledElements";
-import { ThemeType } from "../styles/theme";
-import { UserDataType } from "../data/userData";
-import { fadeInCenter, fadeInDown } from "../data/animationConfigs";
+import Link from 'next/link'
+import styled from 'styled-components'
 
-const StyledWrapper = styled.div<{ theme: ThemeType, imgSrc: string }>`
-  min-height: calc(100vh - 30px);
+import { AnimatedDiv, StyledBodyText, StyledH1, StyledH4 } from '../components/StyledElements'
+import { fadeInCenter, fadeInDown } from '../data/animationConfigs'
+import { UserDataType } from '../data/userData'
+import { ThemeType } from '../styles/theme'
 
-  .hero-avatar > img {
-    height: 350px;
-  }
+const StyledWrapper = styled.div<{ theme: ThemeType; imgSrc: string }>`
+    min-height: calc(100vh - 30px);
 
-  .img-frame {
-    height: 400px;
-    width: 400px;
-    border-radius: 50%;
-    background: ${({ imgSrc }) => `url(${imgSrc})`};
-    background-size: cover;
-  }
+    .hero-avatar > img {
+        height: 350px;
+    }
 
-  .buttons-wrapper {
-    gap: 0.625rem;
-  }
+    .img-frame {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        background: ${({ imgSrc }) => `url(${imgSrc})`};
+        background-size: cover;
+    }
 
-  .img-frame {
-    box-shadow: 0px 2px 21px -2px rgba(0, 0, 0, 0.75);
-  }
+    .buttons-wrapper {
+        gap: 0.625rem;
+    }
 
-  .section {
-    width: 100%;
-    margin: 3rem 0;
-  }
+    .img-frame {
+        box-shadow: 0px 2px 21px -2px rgba(0, 0, 0, 0.75);
+    }
 
-  .bio-text {
-    text-align: left;
-  }
-
-  @media ${(props) => props.theme.mediaQueries.mobileTablet} {
-    min-height: calc(100vh - 106px);
+    .section {
+        width: 100%;
+        margin: 3rem 0;
+    }
 
     .bio-text {
-      text-align: center;
+        text-align: left;
     }
 
-    .img-frame,
-    .hero-avatar {
-      height: 250px;
-      width: 250px;
-    }
+    @media ${(props) => props.theme.mediaQueries.mobileTablet} {
+        min-height: calc(100vh - 106px);
 
-    .socials-wrapper,
-    .buttons-wrapper {
-      gap: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        .bio-text {
+            text-align: center;
+        }
 
-      .btn {
-        width: max-content;
-      }
-    }
+        .img-frame,
+        .hero-avatar {
+            height: 250px;
+            width: 250px;
+        }
 
-    .name-text,
-    .title-text {
-      text-align: center;
+        .socials-wrapper,
+        .buttons-wrapper {
+            gap: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                width: max-content;
+            }
+        }
+
+        .name-text,
+        .title-text {
+            text-align: center;
+        }
     }
-  }
-`;
+`
 
 interface HeroPageProps {
-  data: UserDataType["meta"];
+    data: UserDataType['meta']
 }
 
 const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
-  const {
-    data: { bio, imgSrc, greeting, title, socialLinks, resumeLink },
-  } = props;
+    const {
+        data: { bio, imgSrc, greeting, title, socialLinks, resumeLink },
+    } = props
 
-  return (
-    <StyledWrapper
-      imgSrc={imgSrc}
-      className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper"
-      role="navigation"
-    >
-      <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
-        <AnimatedDiv
-          className="img-frame"
-          {...fadeInCenter}
-        />
-      </div>
-      <div className="d-flex flex-column justify-content-start justify-content-sm-center flex-grow-1">
-        <StyledH4 className="title-text text-muted mt-3 mt-sm-0">
-          {title}
-        </StyledH4>
-        <StyledH1 className="name-text">{greeting}</StyledH1>
-        <StyledBodyText className="bio-text">{bio}</StyledBodyText>
+    return (
+        <StyledWrapper
+            imgSrc={imgSrc}
+            className="d-flex gap-sm-5 flex-wrap flex-sm-nowrap items-wrap hero-wrapper"
+            role="navigation"
+        >
+            <div className="hero-avatar d-flex justify-content-center align-items-center flex-grow-1">
+                <AnimatedDiv className="img-frame" {...fadeInCenter} />
+            </div>
+            <div className="d-flex flex-column justify-content-start justify-content-sm-center flex-grow-1">
+                <StyledH4 className="title-text text-muted mt-3 mt-sm-0">{title}</StyledH4>
+                <StyledH1 className="name-text">{greeting}</StyledH1>
+                <StyledBodyText className="bio-text">{bio}</StyledBodyText>
 
-        <AnimatedDiv className="mb-2 socials-wrapper" {...fadeInDown({})}>
-          {socialLinks?.map((platform, index) => (
-            <a
-              key={index}
-              href={platform?.link}
-              aria-label={platform?.title}
-              target="_blank"
-              rel="noreferrer"
-              className="px-1"
-            >
-              <platform.imgSrc className="px-1" height={30} width={25} />
-            </a>
-          ))}
-        </AnimatedDiv>
+                <AnimatedDiv className="mb-2 socials-wrapper" {...fadeInDown({})}>
+                    {socialLinks?.map((platform, index) => (
+                        <a
+                            key={index}
+                            href={platform?.link}
+                            aria-label={platform?.title}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="px-1"
+                        >
+                            <platform.imgSrc className="px-1" height={30} width={25} />
+                        </a>
+                    ))}
+                </AnimatedDiv>
 
-        <AnimatedDiv className="d-flex buttons-wrapper mb-3" {...fadeInDown({delay: 0.6})}>
-          <a href={resumeLink} download target="_blank" rel="noreferrer">
-            <span role="button" className="btn btn-secondary mx-2">
-              Download CV
-            </span>
-          </a>
-          <Link href="/#contact">
-            <span role="button" className="btn btn-outline-secondary">
-              Contact
-            </span>
-          </Link>
-        </AnimatedDiv>
-      </div>
-    </StyledWrapper>
-  );
-};
+                <AnimatedDiv
+                    className="d-flex buttons-wrapper mb-3"
+                    {...fadeInDown({ delay: 0.6 })}
+                >
+                    <a href={resumeLink} download target="_blank" rel="noreferrer">
+                        <span role="button" className="btn btn-secondary mx-2">
+                            Download CV
+                        </span>
+                    </a>
+                    <Link href="/#contact">
+                        <span role="button" className="btn btn-outline-secondary">
+                            Contact
+                        </span>
+                    </Link>
+                </AnimatedDiv>
+            </div>
+        </StyledWrapper>
+    )
+}
 
-export { HeroPage };
+export { HeroPage }
