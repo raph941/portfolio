@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import createPersistedState from 'use-persisted-state';
-import { darkTheme, lightTheme, ThemeType } from "../styles/theme";
+import { darkTheme, lightTheme, ThemeType } from "../../styles/theme";
 
 export interface ThemeModeResType {
   isLightMode: boolean;
@@ -12,7 +12,7 @@ const usePerstedThemeMode = createPersistedState<boolean>('isLightMode')
 
 /**
  * Handles setting and getting theme state
- * @returns themeMode, toggleThemeMode, theme
+ * @returns isLightMode, toggleThemeMode, theme
  */
 const useThemeMode = (): ThemeModeResType => {
   const [isLightMode, setIsLightMode] = usePerstedThemeMode(false);

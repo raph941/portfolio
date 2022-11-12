@@ -6,7 +6,7 @@ import client from "../lib/apollo-client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-loading-skeleton/dist/skeleton.css";
 
-import { useThemeMode } from "../hooks/useThemeMode";
+import { useThemeMode } from "../lib/hooks/useThemeMode";
 import MainThemeProvider from "../styles/MainThemeProvider";
 import { userData } from "../data/userData";
 import { Footer, StyledPageContentWrapper, NavBar } from "../components";
