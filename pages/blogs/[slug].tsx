@@ -39,6 +39,10 @@ const StyledPageContentWrap = styled.div<{ theme: ThemeType }>`
         line-height: 30px;
     }
 
+    > div {
+        width: inherit;
+    }
+
     @media ${(props) => props.theme.mediaQueries.mobileTablet} {
         margin-left: auto;
         margin-right: auto;
