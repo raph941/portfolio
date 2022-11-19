@@ -27,6 +27,8 @@ export const lightTheme = {
         navIconBg: 'transparent',
         footerBg: '#ffffff',
         iconFillColor: '#333',
+        codeBgBlack: '#303846',
+        codeColor: '#d5d5d5',
         // Btn
         btnSecondaryBg: '#6c757d',
         btnSecoondaryHoverBg: '#6c757dc9',
@@ -64,6 +66,8 @@ export const darkTheme = {
         navIconBg: '#EFEFEF',
         footerBg: '#303846',
         iconFillColor: '#f5f6f7',
+        codeBgBlack: '#303846',
+        codeColor: '#d5d5d5',
         // Btn
         btnSecondaryBg: '#ebedf0',
         btnSecoondaryHoverBg: '#d4d5d8',

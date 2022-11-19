@@ -5,6 +5,7 @@ import JavaScriptIcon from '/public/assets/icons/square-js-brands.svg'
 import DjangoIcon from '/public/assets/icons/django.svg'
 import TypeScriptIcon from '/public/assets/icons/typescript.svg'
 import Avatar from '/public/assets/images/RaphaelAvatar.png'
+import Favico from '/public/assets/images/favico_32.png'
 import LinkedinIcon from '/public/assets/images/linkedin-brands.svg'
 import TwitterIcon from '/public/assets/images/twitter-brands.svg'
 import GithubIcon from '/public/assets/images/github-brands.svg'
@@ -18,6 +19,7 @@ export const userData = {
         greeting: 'Hi, am Raphael Ehindero',
         bio: "I'm a software engineer who loves building cool things on the web.",
         imgSrc: Avatar.src,
+        favicon: Favico.src,
         socialLinks: [
             {
                 title: 'Github',

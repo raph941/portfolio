@@ -1,5 +1,14 @@
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
+import Document, {
+    DocumentContext,
+    DocumentInitialProps,
+    Head,
+    Html,
+    Main,
+    NextScript,
+} from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+
+import { userData } from '../data/userData'
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -25,5 +34,20 @@ export default class MyDocument extends Document {
         } finally {
             sheet.seal()
         }
+    }
+
+    render() {
+        return (
+            <Html>
+                <Head>
+                    <link rel="icon" type="image/png" sizes="32x32" href={userData.meta.favicon} />
+                    <link rel="icon" type="image/png" sizes="16x16" href={userData.meta.favicon} />
+                </Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
     }
 }
