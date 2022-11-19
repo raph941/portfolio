@@ -43,6 +43,17 @@ const StyledPageContentWrap = styled.div<{ theme: ThemeType }>`
         width: inherit;
     }
 
+    .wp-block-code {
+        background-color: ${({ theme }) => theme.variables.codeBgBlack};
+        padding: 1em 1.5em;
+        border-radius: 8px;
+        cursor: text;
+
+        code {
+            color: ${({ theme }) => theme.variables.codeColor};
+        }
+    }
+
     @media ${(props) => props.theme.mediaQueries.mobileTablet} {
         margin-left: auto;
         margin-right: auto;
