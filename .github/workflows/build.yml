@@ -1,0 +1,18 @@
+# This triggers the build hook on netlify, once every week. It ensures the sitemap is up to date
+name: netlify-build
+
+on:
+  schedule:
+    # Run this job once a week, every Sunday at midnight
+    - cron: '0 0 * * 0'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send POST request to build hook
+        uses: peter-evans/create-or-update-file@v2
+        with:
+          # URL of build hook, created on netlify
+          url: ${{ secrets.BUILD_HOOK_URL }}
+          method: POST
