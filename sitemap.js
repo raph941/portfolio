@@ -50,7 +50,7 @@ fetchSlugs()
       targetDirectory: 'public/',
       nextConfigPath: cwd + '/next.config.js',
       ignoredExtensions: ['png', 'jpg'],
-      pagesConfig: {},
+      ignoreIndexFiles: true,
       extraPaths: res,
     })
   })
