@@ -33,7 +33,7 @@ async function fetchSlugs() {
       }
 
       const slugsObject = JSON.parse(res.body)?.data?.posts?.nodes
-      resolve(slugsObject?.map((data) => `/${data?.slug}`))
+      resolve(slugsObject?.map((data) => `/blogs/${data?.slug}`))
     })
   })
 }
