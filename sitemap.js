@@ -42,7 +42,7 @@ async function fetchSlugs() {
 fetchSlugs()
   .then((res) => {
     sitemap({
-      baseUrl: 'raph941.com',
+      baseUrl: 'https://raph941.com',
       ignoredPaths: ['[slug]'],
       pagesDirectory: cwd + '/pages',
       targetDirectory: 'public/',
