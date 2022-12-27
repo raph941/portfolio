@@ -53,7 +53,7 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
 `
 
 const StyledImage = styled.div<{ bgImage?: string }>`
-    height: 250px;
+    min-height: 250px;
     border-radius: 25px;
     background-size: cover;
     background-image: ${({ bgImage }) => `url(${bgImage})`};

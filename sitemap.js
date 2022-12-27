@@ -1,5 +1,3 @@
-const https = require('https')
-
 const sitemap = require('nextjs-sitemap-generator')
 const request = require('request')
 
