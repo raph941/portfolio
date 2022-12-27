@@ -49,6 +49,6 @@ jobs:
         if: ${{ failure() || success() }}
         run: yarn format:check
       
-      - name: Build
-        if: ${{ failure() || success() }}
-        run: yarn build
+      # - name: Build
+      #   if: ${{ failure() || success() }}
+      #   run: yarn build
