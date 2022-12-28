@@ -39,13 +39,6 @@ const StyledWrapper = styled.div`
     .codehost-icon {
         margin-left: 0.3125rem;
     }
-
-    .item-description {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
 `
 
 const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
@@ -86,7 +79,17 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
             </CardHeader>
             <CardBody className="d-flex flex-column">
                 <CardTitle>{title}</CardTitle>
-                <CardText className="flex-fill item-description">{description}</CardText>
+                {description && (
+                    <CardText
+                        className="flex-fill"
+                        dangerouslySetInnerHTML={{
+                            __html:
+                                description?.length > 200
+                                    ? `${description.substring(0, 150)}...`
+                                    : description,
+                        }}
+                    />
+                )}
                 <CardFooter className="mt-2">
                     {stacks?.map((value, index) => (
                         <small className="mx-2 text-nowrap" key={index}>

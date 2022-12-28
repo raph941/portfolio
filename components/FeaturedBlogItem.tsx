@@ -36,13 +36,6 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
         }
     }
 
-    .truncated-text {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
     @media ${(props) => props.theme.mediaQueries.mobileTablet} {
         flex-direction: column;
 
@@ -78,8 +71,7 @@ const FeaturedBlogItem: React.FunctionComponent<BlogItemProps> = ({
                 <StyledBodyText className="category">{categories?.[0].name}</StyledBodyText>
                 <StyledH3 className="title">{title}</StyledH3>
                 <StyledBodyText
-                    className="truncated-text"
-                    dangerouslySetInnerHTML={{ __html: content?.substring(0, 300) || '' }}
+                    dangerouslySetInnerHTML={{ __html: `${content?.substring(0, 200)}...` || '' }}
                 />
                 <StyledBodyText className="mb-0">
                     <small>{moment(date).format('Do MMM, YYYY')}</small>
