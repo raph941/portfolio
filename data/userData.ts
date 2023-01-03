@@ -38,7 +38,7 @@ export const userData = {
             },
         ],
         resumeLink:
-            'https://drive.google.com/file/d/1Xz0Js-22dn-Zm4O2hC5_6Qy9Xd98ahAK/view?usp=sharing',
+            'https://drive.google.com/file/d/1LpzbNMItRHSXkSW4VwPH7DkBbXnoShCd/view?usp=sharing',
     },
     // SEO details
     og: {
