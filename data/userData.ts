@@ -127,7 +127,7 @@ export const userData = {
                 description:
                     'This is a Loan management enterprise software I built for an organisation, to automate/digitise their manual processes of giving out loans to clients and tracking repayments. <br /> <strong>Test Credentials:</strong> <br /> email: sampledr@email.com <br />password: nigerians',
                 stacks: ['React', 'Typescript', 'Django/Python', 'JavaScript'],
-                liveLink: 'https://opulent-systems.netlify.app/login',
+                liveLink: 'https://opullent-monthly-frontend.onrender.com',
                 codeHost: '',
             },
             {
