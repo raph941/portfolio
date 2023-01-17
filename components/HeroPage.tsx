@@ -118,10 +118,10 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
                 </AnimatedDiv>
 
                 <AnimatedDiv
-                    className="d-flex buttons-wrapper mb-3"
+                    className="d-flex buttons-wrapper mb-3 mt-3"
                     {...fadeInDown({ delay: 0.6 })}
                 >
-                    <a
+                    {/* <a
                         href={resumeLink}
                         download
                         target="_blank"
@@ -131,7 +131,7 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
                         <span role="button" className="btn btn-secondary mx-2">
                             Download CV
                         </span>
-                    </a>
+                    </a> */}
                     <Link href="/#contact">
                         <span role="button" className="btn btn-outline-secondary">
                             Contact
