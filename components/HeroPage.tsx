@@ -7,6 +7,7 @@ import { fadeInCenter, fadeInDown } from '../data/animationConfigs'
 import { UserDataType } from '../data/userData'
 import { ThemeType } from '../styles/theme'
 
+// 👍 Test comment for sourcegraph
 const StyledWrapper = styled.div<{ theme: ThemeType; imgSrc: string }>`
     min-height: calc(100vh - 30px);
 
