@@ -25,6 +25,10 @@ const StyledWrapper = styled.div<{ theme: ThemeType }>`
     width: -webkit-fill-available;
     position: fixed;
 
+    box-shadow: 0 4px 30px ${({ theme }) => theme.variables.slightlyTransparent};
+    backdrop-filter: blur(7.3px);
+    -webkit-backdrop-filter: blur(7.3px);
+
     .mode_toggler {
         z-index: 10;
     }

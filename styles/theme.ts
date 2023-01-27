@@ -20,7 +20,7 @@ export const lightTheme = {
         titleColor: '#333',
         textMuted: '#aaa',
         light: '#ebedf0',
-        slightlyTransparent: '#ffffff89',
+        slightlyTransparent: 'rgba(255, 255, 255, 0.3)',
         darkText: '#222',
         textColor: '#333',
         thetiary: '#9688ea',
@@ -59,7 +59,7 @@ export const darkTheme = {
         textMuted: '#aaa',
         light: '#444444',
         // TODO: get dark variant for the following
-        slightlyTransparent: '#242526',
+        slightlyTransparent: 'rgba(36, 37, 38, 0.78)',
         darkText: '#ffffff',
         textColor: '#EBEDF4',
         thetiary: '#9688ea',
