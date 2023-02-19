@@ -6,27 +6,37 @@
       xmlns:xhtml="http://www.w3.org/1999/xhtml">
       
 	<url>
-		<loc>raph941.com/blogs</loc>
-		<lastmod>2022-12-26</lastmod>
+		<loc>https://raph941.com/blogs</loc>
+		<lastmod>2023-02-19</lastmod>
 	</url>
 
 	<url>
-		<loc>raph941.com/contact</loc>
-		<lastmod>2022-12-26</lastmod>
+		<loc>https://raph941.com/contact</loc>
+		<lastmod>2023-02-19</lastmod>
 	</url>
 
 	<url>
-		<loc>raph941.com</loc>
-		<lastmod>2022-12-26</lastmod>
+		<loc>https://raph941.com</loc>
+		<lastmod>2023-02-19</lastmod>
 	</url>
 
 	<url>
-		<loc>raph941.com/portfolio</loc>
-		<lastmod>2022-12-26</lastmod>
+		<loc>https://raph941.com/portfolio</loc>
+		<lastmod>2023-02-19</lastmod>
 	</url>
 
 	<url>
-		<loc>raph941.comunderstanding-big-0-and-time-complexity</loc>
-		<lastmod>2022-12-26</lastmod>
+		<loc>https://raph941.com/blogs/my-opensource-workflow</loc>
+		<lastmod>2023-02-19</lastmod>
+	</url>
+
+	<url>
+		<loc>https://raph941.com/blogs/step-by-step-guide-to-generating-and-automating-dynamic-sitemaps-in-next-js</loc>
+		<lastmod>2023-02-19</lastmod>
+	</url>
+
+	<url>
+		<loc>https://raph941.com/blogs/understanding-big-0-and-time-complexity</loc>
+		<lastmod>2023-02-19</lastmod>
 	</url>
 </urlset>
