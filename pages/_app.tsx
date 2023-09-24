@@ -9,13 +9,11 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import { Footer, StyledPageContentWrapper, NavBar } from '../components'
 import { userData } from '../data/userData'
 import client from '../lib/apollo-client'
-import { useGoogleAnalytics } from '../lib/hooks/useGoogleAnalytics'
 import { useThemeMode } from '../lib/hooks/useThemeMode'
 import MainThemeProvider from '../styles/MainThemeProvider'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
     const { theme, toggleThemeMode, isLightMode } = useThemeMode()
-    const { trackEvent } = useGoogleAnalytics()
 
     return (
         <ApolloProvider client={client}>
@@ -24,7 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
                 <StyledPageContentWrapper>
                     <AnimatePresence exitBeforeEnter onExitComplete={() => window.scrollTo(0, 0)}>
-                        <Component {...pageProps} userData={userData} trackEvent={trackEvent} />
+                        <Component {...pageProps} userData={userData} />
                     </AnimatePresence>
                 </StyledPageContentWrapper>
 

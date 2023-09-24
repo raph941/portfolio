@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import ReactGA from 'react-ga'
 import styled from 'styled-components'
 
 import { AnimatedDiv, StyledBodyText, StyledH1, StyledH4 } from '../components/StyledElements'
@@ -81,14 +80,6 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
         data: { bio, imgSrc, greeting, title, socialLinks, resumeLink },
     } = props
 
-    const handleClick = () => {
-        ReactGA.event({
-            category: 'Button',
-            action: 'Click',
-            label: 'CV Downlaod',
-        })
-    }
-
     return (
         <StyledWrapper
             imgSrc={imgSrc}
@@ -122,17 +113,6 @@ const HeroPage: React.FunctionComponent<HeroPageProps> = (props) => {
                     className="d-flex buttons-wrapper mb-3 mt-3"
                     {...fadeInDown({ delay: 0.6 })}
                 >
-                    {/* <a
-                        href={resumeLink}
-                        download
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={handleClick}
-                    >
-                        <span role="button" className="btn btn-secondary mx-2">
-                            Download CV
-                        </span>
-                    </a> */}
                     <Link href="/#contact">
                         <span role="button" className="btn btn-outline-secondary">
                             Contact

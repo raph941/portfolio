@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import React, { useEffect, useState } from 'react'
-import ReactGA from 'react-ga'
 import Image from 'next/image'
 import styled, { createGlobalStyle } from 'styled-components'
 
@@ -188,12 +187,6 @@ const Portfolio: React.FunctionComponent<PortfolioProps> = ({ userData }) => {
     const handlePortfolioItemClick = (project: ProjectType, index: number) => {
         setActiveProjectIndex(index)
         setActiveproject(project)
-
-        ReactGA.event({
-            category: 'Card',
-            action: 'Click',
-            label: `Project View: ${project?.title}`,
-        })
     }
 
     useEffect(() => {
