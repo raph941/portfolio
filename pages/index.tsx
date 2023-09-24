@@ -30,8 +30,6 @@ const Home: FC<HeroProps> = (props) => {
 
                 <WhatIDo data={userData?.whatIDo} className="section mt-5 w-100" />
 
-                {/* <TechStack data={userData?.techStack} className="section" /> */}
-
                 <Contact data={userData?.contact} className="section" />
             </StyledWrapper>
         </Layout>
